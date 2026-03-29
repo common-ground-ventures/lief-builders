@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="white">
+  <!-- Peacock feathers -->
+  <g transform="translate(90, 10)">
+    <!-- Yellow feather -->
+    <path d="M55 120 Q30 60 55 20 Q65 60 55 120" fill="#F9A825"/>
+    <!-- Orange feather -->
+    <path d="M50 118 Q15 70 30 15 Q50 65 50 118" fill="#EF6C00"/>
+    <!-- Red feather -->
+    <path d="M48 115 Q5 80 10 20 Q38 72 48 115" fill="#C62828"/>
+    <!-- Purple feather -->
+    <path d="M65 120 Q90 60 65 20 Q55 60 65 120" fill="#6A1B9A"/>
+    <!-- Blue feather -->
+    <path d="M70 118 Q105 70 90 15 Q70 65 70 118" fill="#1565C0"/>
+    <!-- Green feather -->
+    <path d="M72 115 Q115 80 110 20 Q82 72 72 115" fill="#2E7D32"/>
+  </g>
+  <!-- NBC text -->
+  <text x="200" y="180" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="60" fill="white" letter-spacing="6">NBC</text>
+</svg>

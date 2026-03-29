@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="white">
+  <!-- PBS Head silhouette in circle -->
+  <g transform="translate(200,75)">
+    <circle cx="0" cy="0" r="42" fill="none" stroke="white" stroke-width="3.5"/>
+    <!-- Simplified head profile facing right -->
+    <path d="M-8,-30 Q5,-32 10,-25 Q18,-18 16,-8 Q20,-6 20,0 Q20,5 16,8 Q14,15 8,18 Q2,22 -5,22 Q-10,22 -14,18 Q-18,14 -18,8 L-18,-20 Q-18,-28 -8,-30Z" fill="white"/>
+  </g>
+  <!-- PBS text -->
+  <text x="200" y="170" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="54" fill="white" letter-spacing="12">PBS</text>
+</svg>

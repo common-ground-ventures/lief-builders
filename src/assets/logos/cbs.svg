@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="white">
+  <!-- CBS Eye -->
+  <g transform="translate(200,70)">
+    <ellipse cx="0" cy="0" rx="55" ry="30" fill="none" stroke="white" stroke-width="4"/>
+    <circle cx="0" cy="0" r="18" fill="white"/>
+    <circle cx="0" cy="0" r="10" fill="#0a0a0a"/>
+  </g>
+  <!-- CBS text -->
+  <text x="200" y="170" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="54" fill="white" letter-spacing="10">CBS</text>
+</svg>
