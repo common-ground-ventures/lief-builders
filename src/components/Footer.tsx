@@ -156,8 +156,8 @@ const Footer = () => {
               Lip Loi Creative
             </a>
             &nbsp;|&nbsp;Enhanced by{" "}
-            <a href="https://apexx.agency" target="_blank" rel="noopener noreferrer" style={{ color: "#8B5CF6", textDecoration: "none" }} className="hover-purple transition-colors duration-300">
-              APEXX AI
+            <a href="https://commonground.ventures" target="_blank" rel="noopener noreferrer" style={{ color: "#8B5CF6", textDecoration: "none" }} className="hover-purple transition-colors duration-300">
+              Common Ground
             </a>
           </p>
         </div>
