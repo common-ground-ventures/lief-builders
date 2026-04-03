@@ -47,7 +47,7 @@ const accentColor = "#00FF88";
 
 const specs = [
   { value: "0%", label: "Flame Spread" },
-  { value: "260 MPH", label: "Wind Rating" },
+  { value: "250 MPH", label: "Wind Rating" },
   { value: "R-75 to R-100", label: "Insulation Rating" },
   { value: "100%", label: "Mold & Termite Immune" },
 ];
@@ -57,7 +57,7 @@ const attributes = [
   { icon: Droplets, title: "Anti-Mold & Moisture", desc: "100% impermeable to Arizona's extreme monsoon elements. Zero moisture intrusion." },
   { icon: Bug, title: "Anti-Termite", desc: "Zero wood framing means zero risk from structural pests. Permanent protection." },
   { icon: Thermometer, title: "Thermal Performance", desc: "R-75 to R-100 insulation rating. Massive HVAC overhead reduction through high-density insulation." },
-  { icon: Wind, title: "260 MPH Wind Rating", desc: "Exceeds Florida hurricane zone requirements. Built for extreme conditions" },
+  { icon: Wind, title: "250 MPH Wind Rating", desc: "Exceeds Florida hurricane zone requirements. Built for extreme conditions" },
   { icon: Recycle, title: "100% Recyclable", desc: "EPS foam core is fully recyclable. Zero construction waste to landfill" },
 ];
 
@@ -267,7 +267,7 @@ const LiefBlocks = () => {
                   WHAT IS SABS&trade;<span className="v2-neon-period">?</span>
                 </motion.h2>
                 <motion.p initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="mb-6" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                  SABS (Saebi Alternative Building System) is a patented cementitious coating technology that transforms lightweight structural panels into fire-proof, mold-proof, termite-proof concrete structures. The result: a monolithic building envelope with zero flame spread, 260 MPH wind resistance, and built-in R-75 to R-100 insulation, exceeding every major structural and energy code in the industry.
+                  SABS (Saebi Alternative Building System) is a patented cementitious coating technology that transforms lightweight structural panels into fire-proof, mold-proof, termite-proof concrete structures. The result: a monolithic building envelope with zero flame spread, 250 MPH wind resistance, and built-in R-75 to R-100 insulation, exceeding every major structural and energy code in the industry.
                 </motion.p>
                 <motion.p initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.24, ease }} style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
                   We deploy SABS through our proprietary L&iuml;ef Block&trade; components, precision-engineered EPS panels that form the structural core of walls, floors, and roofs. Once assembled and coated with the SABS compound, the system creates a seamless, reinforced concrete structure from the ground up.

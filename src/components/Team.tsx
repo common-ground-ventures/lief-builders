@@ -20,7 +20,7 @@ const principals: Member[] = [
   {
     name: "Jesse Fowler",
     title: "Owner's Rep",
-    bio: "25+ years in design, build & development. $300M+ in completed projects. Featured in Architectural Digest, HGTV, and Discovery Channel. Insurance coordination, contractor oversight, and cost control across Southern California and the Southwest.",
+    bio: "25+ years in design, build & development. $500M+ in completed projects. Featured in Architectural Digest, HGTV, and Discovery Channel. Contractor oversight, cost control, and project advocacy across Southern California and the Southwest.",
     img: jesseImg,
     imgStyle: { transform: "scale(1.6) translateY(-2%)", transformOrigin: "center top" },
   },

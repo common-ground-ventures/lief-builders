@@ -23,17 +23,17 @@ const faqs: FAQItem[] = [
   {
     question: "What areas does Lïef Builders serve?",
     answer:
-      "Lïef Builders serves property owners in Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California. The team has completed over $300M in projects across these markets, ranging from luxury residential builds to large-scale commercial developments and disaster recovery rebuilds.",
+      "Lïef Builders serves property owners in Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California. The team has completed over $500M in projects across these markets, ranging from luxury residential builds to large-scale commercial developments and disaster recovery rebuilds.",
   },
   {
-    question: "Does Lïef Builders handle insurance claims for construction projects?",
+    question: "How does Lïef Builders save clients money on construction projects?",
     answer:
-      "Yes. Lïef Builders provides full insurance claim navigation including coordination with adjusters, preparation of detailed draw requests, claim settlement negotiation, and partnership with legal counsel. The team has experience with disaster recovery rebuilds including the Greensburg, Kansas tornado and Santa Barbara fire damage, and has recovered millions for property owners through effective claim management.",
+      "Lïef Builders protects owners from the cost overruns, unnecessary change orders, and contractor markups that plague most construction projects. The team negotiates contracts, verifies vendor pricing, identifies red flags before they become expensive problems, and conducts regular site inspections to keep projects on track. With over $40M saved for clients and a minimum 100% ROI on every engagement, the investment in owner's representation pays for itself.",
   },
   {
     question: "What is SABS construction technology?",
     answer:
-      "SABS (Steel Automated Building Systems) is a proprietary construction technology offered through Lïef Builders. It uses precision-engineered steel framing and automated manufacturing to deliver faster build times, lower costs, and higher structural quality compared to traditional construction methods. SABS technology is used across Lïef Builders' development projects.",
+      "SABS (Saebi Alternative Building System) is a patented building technology available through Lïef Builders. It uses EPS foam panels with a high-strength cementitious composite coating called SABSCRETE to create a monolithic structural system. SABS delivers 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and 100% mold and termite immunity, with 15-20% cost savings and faster build times compared to traditional construction. Lïef offers SABS alongside traditional stick framing, giving clients the right building method for their project.",
   },
 ];
 
