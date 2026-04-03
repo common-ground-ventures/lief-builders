@@ -18,22 +18,22 @@ const faqs: FAQItem[] = [
   {
     question: "Why do I need an owner's rep for my construction project?",
     answer:
-      "Most property owners lack the technical expertise to evaluate contractor bids, negotiate change orders, or identify red flags during construction. An owner's rep brings decades of industry experience to protect you from cost overruns, schedule delays, and contractor disputes. Lief Builders has saved clients over $40M and delivers a minimum 100% ROI on every engagement.",
+      "Most property owners lack the technical expertise to evaluate contractor bids, negotiate change orders, or identify red flags during construction. An owner's rep brings decades of industry experience to protect you from cost overruns, schedule delays, and contractor disputes. Lïef Builders has saved clients over $40M and delivers a minimum 100% ROI on every engagement.",
   },
   {
-    question: "What areas does Lief Builders serve?",
+    question: "What areas does Lïef Builders serve?",
     answer:
-      "Lief Builders serves property owners in Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California. The team has completed over $300M in projects across these markets, ranging from luxury residential builds to large-scale commercial developments and disaster recovery rebuilds.",
+      "Lïef Builders serves property owners in Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California. The team has completed over $300M in projects across these markets, ranging from luxury residential builds to large-scale commercial developments and disaster recovery rebuilds.",
   },
   {
-    question: "Does Lief Builders handle insurance claims for construction projects?",
+    question: "Does Lïef Builders handle insurance claims for construction projects?",
     answer:
-      "Yes. Lief Builders provides full insurance claim navigation including coordination with adjusters, preparation of detailed draw requests, claim settlement negotiation, and partnership with legal counsel. The team has experience with disaster recovery rebuilds including the Greensburg, Kansas tornado and Santa Barbara fire damage, and has recovered millions for property owners through effective claim management.",
+      "Yes. Lïef Builders provides full insurance claim navigation including coordination with adjusters, preparation of detailed draw requests, claim settlement negotiation, and partnership with legal counsel. The team has experience with disaster recovery rebuilds including the Greensburg, Kansas tornado and Santa Barbara fire damage, and has recovered millions for property owners through effective claim management.",
   },
   {
     question: "What is SABS construction technology?",
     answer:
-      "SABS (Steel Automated Building Systems) is a proprietary construction technology offered through Lief Builders. It uses precision-engineered steel framing and automated manufacturing to deliver faster build times, lower costs, and higher structural quality compared to traditional construction methods. SABS technology is used across Lief Builders' development projects.",
+      "SABS (Steel Automated Building Systems) is a proprietary construction technology offered through Lïef Builders. It uses precision-engineered steel framing and automated manufacturing to deliver faster build times, lower costs, and higher structural quality compared to traditional construction methods. SABS technology is used across Lïef Builders' development projects.",
   },
 ];
 

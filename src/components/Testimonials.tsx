@@ -11,7 +11,7 @@ const featured = {
 
 const testimonials = [
   {
-    quote: "We hired Lief for a complete home remodel and they exceeded every expectation. Hands-on throughout the entire process. The attention to detail was unmatched and the project came in on time.",
+    quote: "We hired Lïef for a complete home remodel and they exceeded every expectation. Hands-on throughout the entire process. The attention to detail was unmatched and the project came in on time.",
     name: "Michael R.",
     title: "Homeowner, Orange County",
   },
@@ -31,12 +31,12 @@ const testimonials = [
     title: "Keller Williams, Los Angeles",
   },
   {
-    quote: "We were overwhelmed after the fire and had no idea where to start. Lief came in, took over the insurance coordination, vetted every contractor, and saved us nearly 10% on the total rebuild. Worth every penny.",
+    quote: "We were overwhelmed after the fire and had no idea where to start. Lïef came in, took over the insurance coordination, vetted every contractor, and saved us nearly 10% on the total rebuild. Worth every penny.",
     name: "Patricia & Mark D.",
     title: "Homeowners, Santa Barbara Fire Rebuild",
   },
   {
-    quote: "We built from the ground up and thought we could manage it ourselves. Within two months we were drowning in change orders and missed deadlines. Lief stepped in, renegotiated three major contracts, and got us back on track. We would have lost six figures without them.",
+    quote: "We built from the ground up and thought we could manage it ourselves. Within two months we were drowning in change orders and missed deadlines. Lïef stepped in, renegotiated three major contracts, and got us back on track. We would have lost six figures without them.",
     name: "Daniel & Christine W.",
     title: "Custom Home Build, Scottsdale",
   },
