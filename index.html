@@ -28,14 +28,25 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": ["Organization", "LocalBusiness"],
       "name": "Lïef Builders",
       "url": "https://liefbuilders.com",
       "description": "Owner's Rep, Project Advocacy and Oversight. Over 100 years of combined expertise advocating for owners in construction, insurance claims, and project management.",
       "founders": [
         { "@type": "Person", "name": "Jesse Fowler" }
       ],
-      "sameAs": []
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "State", "name": "Arizona" },
+        { "@type": "State", "name": "California" }
+      ],
+      "serviceType": ["Owner's Representation", "Project Advocacy", "Construction Oversight"],
+      "sameAs": ["https://www.linkedin.com/company/lief-builders"]
     }
     </script>
 

@@ -8,6 +8,7 @@ const SabsPage = () => {
 
   return (
     <div>
+      <h1 className="sr-only">SABS Technology</h1>
       <LiefBlocks />
     </div>
   );

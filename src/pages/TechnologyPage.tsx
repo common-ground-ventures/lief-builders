@@ -8,6 +8,7 @@ const TechnologyPage = () => {
 
   return (
     <div className="pt-16 md:pt-20">
+      <h1 className="sr-only">Our Technology</h1>
       <AISection />
     </div>
   );

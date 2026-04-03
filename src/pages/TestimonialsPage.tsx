@@ -8,6 +8,7 @@ const TestimonialsPage = () => {
 
   return (
     <div className="pt-16 md:pt-20">
+      <h1 className="sr-only">Client Testimonials</h1>
       <Testimonials />
     </div>
   );
