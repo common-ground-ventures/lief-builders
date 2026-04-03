@@ -5,6 +5,7 @@ import AlignmentBanner from "@/components/AlignmentBanner";
 import Capabilities from "@/components/Capabilities";
 import PartnersPress from "@/components/PartnersPress";
 import Markets from "@/components/Markets";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 
 const Home = () => (
@@ -16,6 +17,7 @@ const Home = () => (
     <Capabilities />
     <PartnersPress />
     <Markets />
+    <FAQ />
     <Contact />
   </>
 );
