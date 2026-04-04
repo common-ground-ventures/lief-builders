@@ -18,7 +18,7 @@ const faqs: FAQItem[] = [
   {
     question: "Why do I need an owner's rep for my construction project?",
     answer:
-      "Most property owners lack the technical expertise to evaluate contractor bids, negotiate change orders, or identify red flags during construction. An owner's rep brings decades of industry experience to protect you from cost overruns, schedule delays, and contractor disputes. Lïef Builders has saved clients over $40M and delivers a minimum 100% ROI on every engagement.",
+      "Because the people building your project are not paid to protect your interests. They are paid to finish the job. An owner\u2019s rep sits on your side of the table \u2014 reviewing bids, catching red flags, negotiating change orders, and making sure every dollar goes where it should. It is the difference between hoping the build goes well and knowing someone is watching every line item. L\u00efef Builders delivers a minimum 100% ROI on every engagement.",
   },
   {
     question: "What areas does Lïef Builders serve?",
@@ -28,12 +28,12 @@ const faqs: FAQItem[] = [
   {
     question: "How does Lïef Builders save clients money on construction projects?",
     answer:
-      "Lïef Builders protects owners from the cost overruns, unnecessary change orders, and contractor markups that plague most construction projects. The team negotiates contracts, verifies vendor pricing, identifies red flags before they become expensive problems, and conducts regular site inspections to keep projects on track. With over $40M saved for clients and a minimum 100% ROI on every engagement, the investment in owner's representation pays for itself.",
+      "Three ways. First, contract negotiation \u2014 the team reviews every scope, bid, and vendor agreement before you sign anything. Second, ongoing site oversight \u2014 regular inspections catch problems when they are cheap to fix, not after they have become six-figure change orders. Third, vendor and material verification \u2014 confirming that pricing, quantities, and specs match what was agreed to. Over $40M saved across the portfolio. The investment in owner\u2019s representation has never failed to pay for itself.",
   },
   {
     question: "What is SABS construction technology?",
     answer:
-      "SABS (Saebi Alternative Building System) is a patented building technology available through Lïef Builders. It uses EPS foam panels with a high-strength cementitious composite coating called SABSCRETE to create a monolithic structural system. SABS delivers 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and 100% mold and termite immunity, with 15-20% cost savings and faster build times compared to traditional construction. Lïef offers SABS alongside traditional stick framing, giving clients the right building method for their project.",
+      "SABS stands for Saebi Alternative Building System. Think of it as the next generation of how buildings get built. EPS foam panels \u2014 L\u00efef calls them L\u00efef Blocks \u2014 are coated with SABSCRETE, a high-strength cementitious composite, to form a single monolithic structure. The result: 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity. It builds faster and costs 15-20% less than traditional methods. L\u00efef is the leading SABS builder in Arizona and offers it alongside conventional framing so clients get the right system for their project.",
   },
 ];
 
