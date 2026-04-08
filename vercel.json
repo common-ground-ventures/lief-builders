@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/technology", "destination": "/ai", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
+  ]
+}
