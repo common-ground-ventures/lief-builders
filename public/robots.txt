@@ -19,4 +19,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://liefbuilders.com/sitemap.xml
+Sitemap: https://www.liefbuilders.com/sitemap.xml
