@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import MainLayout from "@/layouts/MainLayout";
 import Home from "@/pages/Home";
 import TechnologyPage from "@/pages/TechnologyPage";
@@ -8,6 +9,7 @@ import TeamPage from "@/pages/TeamPage";
 import TestimonialsPage from "@/pages/TestimonialsPage";
 
 const App = () => (
+  <HelmetProvider>
   <BrowserRouter>
     <Routes>
       <Route element={<MainLayout />}>
@@ -20,6 +22,7 @@ const App = () => (
       </Route>
     </Routes>
   </BrowserRouter>
+  </HelmetProvider>
 );
 
 export default App;
