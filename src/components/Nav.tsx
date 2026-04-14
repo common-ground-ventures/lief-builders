@@ -125,10 +125,11 @@ const Nav = () => {
       className="fixed top-0 left-0 right-0 z-50"
       style={{
         background: scrolled ? "rgba(10,10,10,.95)" : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px)",
         borderBottom: scrolled ? "1px solid rgba(0,255,136,.06)" : "1px solid transparent",
-        transition: "background 0.5s, backdrop-filter 0.5s, border-bottom 0.5s",
-        willChange: "background, backdrop-filter",
+        transition: "background 0.5s, border-bottom 0.5s",
+        willChange: "background",
       }}
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">

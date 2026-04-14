@@ -17,7 +17,16 @@ const Hero = () => {
   const [showScroll, setShowScroll] = useState(true);
 
   useEffect(() => {
-    const onScroll = () => setShowScroll(window.scrollY < 200);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setShowScroll(window.scrollY < 200);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
