@@ -151,11 +151,7 @@ const Footer = () => {
             </p>
           </div>
           <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)", opacity: 0.5 }}>
-            Branded by{" "}
-            <a href="https://liploicreative.com" target="_blank" rel="noopener noreferrer" style={{ color: "#D4A843", textDecoration: "none" }} className="hover-gold transition-colors duration-300">
-              Lip Loi Creative
-            </a>
-            &nbsp;|&nbsp;Enhanced by{" "}
+            Created by{" "}
             <a href="https://commonground.ventures" target="_blank" rel="noopener noreferrer" style={{ color: "#8B5CF6", textDecoration: "none" }} className="hover-purple transition-colors duration-300">
               Common Ground
             </a>
