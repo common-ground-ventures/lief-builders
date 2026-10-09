@@ -14,6 +14,7 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { href: "/", label: "Home", type: "route" },
   { href: "#services", label: "Services", type: "scroll" },
+  { href: "/national", label: "National", type: "route" },
   { href: "/ai", label: "AI", type: "route" },
   { href: "/projects", label: "Projects", type: "route" },
   { href: "/sabs", label: "L\u00efef x SABS", type: "route" },
@@ -147,7 +148,7 @@ const Nav = () => {
             <img src={logoConcrete} alt="Lïef" className="h-6 md:h-7 w-auto block" />
           </button>
           <span
-            className="v2-headline hidden lg:flex items-center"
+            className="v2-headline hidden xl:flex items-center"
             style={{
               fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)",
               color: "var(--v2-neon)",
@@ -163,13 +164,14 @@ const Nav = () => {
           </span>
         </div>
 
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden xl:flex items-center gap-7">
           {navLinks.map((l) => {
             const active = isLinkActive(l);
             const hovered = hoveredLink === l.href;
             return (
               <button
                 key={l.href}
+                className="whitespace-nowrap"
                 onClick={() => handleNav(l)}
                 onMouseEnter={() => setHoveredLink(l.href)}
                 onMouseLeave={() => setHoveredLink(null)}
@@ -212,7 +214,7 @@ const Nav = () => {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden"
+          className="xl:hidden"
           style={{ color: "#F5F5F3", background: "none", border: "none", cursor: "pointer" }}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -225,7 +227,7 @@ const Nav = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden"
+            className="xl:hidden"
             style={{ background: "rgba(10,10,10,.98)", borderTop: "1px solid rgba(0,255,136,.06)" }}
           >
             <nav className="px-6 py-8 flex flex-col gap-6">

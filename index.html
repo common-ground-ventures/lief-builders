@@ -21,8 +21,11 @@
     <link rel="canonical" href="https://liefbuilders.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQFMFY0NEK"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EQFMFY0NEK');</script>
+    <script>
+      // GA4 runs on the production hosts only, so preview and staging visits never count as traffic.
+      if (/^(www\.)?liefbuilders\.com$/.test(location.hostname)) {
+        var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-EQFMFY0NEK'; document.head.appendChild(s);
+        window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EQFMFY0NEK');</script>
 
     <!-- JSON-LD Organization Schema -->
     <script type="application/ld+json">
@@ -119,7 +122,7 @@
           "name": "Nick Scavio",
           "jobTitle": "General Counsel",
           "description": "15+ years in business law, real estate, and transactions. Insurance negotiation and legal consultation for construction disputes.",
-          "sameAs": ["https://nickscavio.com"]
+          "sameAs": ["https://nick.commonground.ventures"]
         }
       ]
     }

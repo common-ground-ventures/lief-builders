@@ -122,8 +122,9 @@ footer a.hover-gold:hover {
   color: #f8d456 !important;
 }
 
-footer a.hover-purple:hover {
-  color: #9b59b6 !important;
+/* Common Ground credit: footer grey at rest, Lïef green on hover */
+footer a.hover-cg:hover {
+  color: #00FF88 !important;
 }
 
 /* ── Partner & press logos ── */
@@ -156,6 +157,11 @@ footer a.hover-purple:hover {
   filter: grayscale(0%) brightness(0.7);
   transform: scale(1.08);
 }
+
+/* National map: pin labels only read at tablet width and up; the state list
+   under the map carries the names on phones. */
+.nm-label { display: none; }
+@media (min-width: 768px) { .nm-label { display: block; } }
 
 /* Smooth scroll */
 html {
