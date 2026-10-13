@@ -95,6 +95,10 @@ body.wk{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--
 .wk-credit a{color:var(--muted);text-decoration:none}
 .wk-credit a:hover{color:var(--credit-hover,var(--accent));text-decoration:none}
 
+/* Phone: long source URLs in the numbered sources list wrap instead of pushing
+   the page sideways (measured 448px scroll width at 375px before this rule) */
+.wk-body li,.wk-body p,.wk-body dd,.wk-facts dd,.wk-foot p{overflow-wrap:anywhere}
+
 /* Lïef company brand (System A): neon is a signal, never a fill. The credit
    hover is Neon Signal Green, the same value as the site footer. */
 :root{--credit-hover:#00FF88}
