@@ -1,1 +1,9 @@
-/*    /404.html   404
+# Vercel vercel.json: permanent redirect is a 308.
+/technology /national 308
+
+# Vercel cleanUrls + trailingSlash:false answers 308; Workers html_handling
+# drop-trailing-slash answers 307. Explicit rules keep the permanent status.
+/index.html / 308
+/*/index.html /:splat 308
+/*.html /:splat 308
+/*/ /:splat 308
