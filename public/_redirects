@@ -3,7 +3,10 @@
 
 # Vercel cleanUrls + trailingSlash:false answers 308; Workers html_handling
 # drop-trailing-slash answers 307. Explicit rules keep the permanent status.
+# Bare /index aliases (no .html) also 308 on Vercel; Workers sends 307 for them.
 /index.html / 308
+/index / 308
 /*/index.html /:splat 308
+/*/index /:splat 308
 /*.html /:splat 308
 /*/ /:splat 308
