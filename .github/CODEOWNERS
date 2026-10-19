@@ -1,0 +1,5 @@
+# Brand files route to brand review. Copy and content changes do not.
+/src/index.css                 @jimmyk247
+/src/styles/                   @jimmyk247
+/src/components/Footer.tsx     @jimmyk247
+/public/wiki/_assets/wiki.css  @jimmyk247
