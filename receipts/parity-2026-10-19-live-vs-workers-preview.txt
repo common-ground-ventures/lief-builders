@@ -1,0 +1,380 @@
+======================================================================
+PART A: redirects, aliases, case, query strings, GET and HEAD on every path
+======================================================================
+hdr  GET  /                                  live 200 15dcbce7a4  local 200 15dcbce7a4
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /                                  live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /national                          live 200 dc6058baae  local 200 dc6058baae
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /national                          live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /ai                                live 200 adb40f14b7  local 200 adb40f14b7
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /ai                                live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /sabs                              live 200 d5561ebc8f  local 200 d5561ebc8f
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /sabs                              live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /projects                          live 200 755733a4dd  local 200 755733a4dd
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /projects                          live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /team                              live 200 795e94f923  local 200 795e94f923
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /team                              live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /testimonials                      live 200 9d273dbcd0  local 200 9d273dbcd0
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /testimonials                      live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /wiki                              live 200 22c0e39166  local 200 22c0e39166
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /wiki                              live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /wiki/common-ground                live 200 f925ada544  local 200 f925ada544
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /wiki/common-ground                live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /technology                        live 308 /national  local 308 /national
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /technology                        live 308 /national  local 308 /national
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /national/                         live 308 /national  local 308 /national
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /national/                         live 308 /national  local 308 /national
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /team/                             live 308 /team  local 308 /team
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /team/                             live 308 /team  local 308 /team
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /wiki/                             live 308 /wiki  local 308 /wiki
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /wiki/                             live 308 /wiki  local 308 /wiki
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /about                             live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /about                             live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  GET  /nonexistent                       live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /nonexistent                       live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  GET  /404                               live 200 9e8399a4fb  local 200 9e8399a4fb
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /404                               live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /404.html                          live 308 /404  local 308 /404
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /404.html                          live 308 /404  local 308 /404
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /robots.txt                        live 200 01a7103a34  local 200 01a7103a34
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /robots.txt                        live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /sitemap.xml                       live 200 d9d6539a6d  local 200 d9d6539a6d
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /sitemap.xml                       live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /llms.txt                          live 200 cce6824f0b  local 200 cce6824f0b
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /llms.txt                          live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /wiki/sitemap-wiki.xml             live 200 8470efcd7d  local 200 8470efcd7d
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /wiki/sitemap-wiki.xml             live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /favicon-lief.png                  live 200 86695c1c11  local 200 86695c1c11
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /favicon-lief.png                  live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /og-image.png                      live 200 1454b3d8e8  local 200 1454b3d8e8
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /og-image.png                      live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /og-image.svg                      live 200 e159157ddb  local 200 e159157ddb
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /og-image.svg                      live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /lief-logo-green.png               live 200 5863b6992e  local 200 5863b6992e
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /lief-logo-green.png               live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /assets/index-g2X6BtXd.css         live 200 5869ed50b1  local 200 5869ed50b1
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /assets/index-g2X6BtXd.css         live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /assets/index-DRQ0kxr8.js          live 200 9eb344aefe  local 200 9eb344aefe
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /assets/index-DRQ0kxr8.js          live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /assets/forbes-DiguZep2.png        live 200 9511c554e4  local 200 9511c554e4
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /assets/forbes-DiguZep2.png        live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /assets/lief-logo-light-O5v9duEF.png live 200 b84e0aaa08  local 200 b84e0aaa08
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /assets/lief-logo-light-O5v9duEF.png live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /assets/zillow-rlV3J0xi.png        live 200 897d5e9e01  local 200 897d5e9e01
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /assets/zillow-rlV3J0xi.png        live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /wiki/_assets/wiki.css             live 200 7f64f45a10  local 200 7f64f45a10
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /wiki/_assets/wiki.css             live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /national.html                     live 308 /national  local 308 /national
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /national.html                     live 308 /national  local 308 /national
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /index.html                        live 308 /  local 308 /
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /index.html                        live 308 /  local 308 /
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /index                             live 308 /  local 308 /
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /index                             live 308 /  local 308 /
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /national/index                    live 308 /national  local 308 /national
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /national/index                    live 308 /national  local 308 /national
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /national/index.html               live 308 /national  local 308 /national
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /national/index.html               live 308 /national  local 308 /national
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /wiki/index                        live 308 /wiki  local 308 /wiki
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /wiki/index                        live 308 /wiki  local 308 /wiki
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /wiki/index.html                   live 308 /wiki  local 308 /wiki
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /wiki/index.html                   live 308 /wiki  local 308 /wiki
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /wiki/common-ground/index          live 308 /wiki/common-ground  local 308 /wiki/common-ground
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /wiki/common-ground/index          live 308 /wiki/common-ground  local 308 /wiki/common-ground
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /wiki/common-ground/index.html     live 308 /wiki/common-ground  local 308 /wiki/common-ground
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /wiki/common-ground/index.html     live 308 /wiki/common-ground  local 308 /wiki/common-ground
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /National                          live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /National                          live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  GET  /TEAM                              live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /TEAM                              live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  GET  /Wiki                              live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /Wiki                              live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  GET  /NATIONAL/                         live 308 /NATIONAL  local 308 /NATIONAL
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /NATIONAL/                         live 308 /NATIONAL  local 308 /NATIONAL
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /Wiki/Common-Ground                live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /Wiki/Common-Ground                live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  GET  /INDEX                             live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /INDEX                             live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  GET  /Index.html                        live 308 /Index  local 308 /Index
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /Index.html                        live 308 /Index  local 308 /Index
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /?utm_source=x                     live 200 15dcbce7a4  local 200 15dcbce7a4
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /?utm_source=x                     live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /national?ref=1                    live 200 dc6058baae  local 200 dc6058baae
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /national?ref=1                    live 200 -  local 200 -
+       header diff (non-core) {'x-robots-tag': ('', 'noindex')}
+hdr  GET  /national/?ref=1                   live 308 /national?ref=1  local 308 /national?ref=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /national/?ref=1                   live 308 /national?ref=1  local 308 /national?ref=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /technology?x=1                    live 308 /national?x=1  local 308 /national?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /technology?x=1                    live 308 /national?x=1  local 308 /national?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /index.html?x=1                    live 308 /?x=1  local 308 /?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /index.html?x=1                    live 308 /?x=1  local 308 /?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /index?x=1                         live 308 /?x=1  local 308 /?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /index?x=1                         live 308 /?x=1  local 308 /?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /national/index?x=1                live 308 /national?x=1  local 308 /national?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /national/index?x=1                live 308 /national?x=1  local 308 /national?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /national.html?x=1                 live 308 /national?x=1  local 308 /national?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /national.html?x=1                 live 308 /national?x=1  local 308 /national?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /team/?a=1&b=2                     live 308 /team?a=1&b=2  local 308 /team?a=1&b=2
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /team/?a=1&b=2                     live 308 /team?a=1&b=2  local 308 /team?a=1&b=2
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /technology/?x=1                   live 308 /technology?x=1  local 308 /technology?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /technology/?x=1                   live 308 /technology?x=1  local 308 /technology?x=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  GET  /nonexistent?x=1                   live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  HEAD /nonexistent?x=1                   live 404 -  local 404 -
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex')}
+hdr  GET  /wiki/?q=1                         live 308 /wiki?q=1  local 308 /wiki?q=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+hdr  HEAD /wiki/?q=1                         live 308 /wiki?q=1  local 308 /wiki?q=1
+       header diff (non-core) {'cache-control': ('public, max-age=0, must-revalidate', ''), 'x-robots-tag': ('', 'noindex'), 'content-type': ('text/plain', '')}
+
+PART A SUMMARY: 118 requests; 118 identical on status+Location+body hash+content-type; 0 identical on every compared header too; 0 core differences
+
+======================================================================
+PART B: browser navigation load, refresh (304), asset resolution
+======================================================================
+DIFF /                      first: live 200 15dcbce7a4 / local 200 15dcbce7a4 (text/html) | refresh: live 304 / local 200 | hard reload: live 200 / local 200 same body True
+       validators live etag=True lm=True cc='public, max-age=0, must-revalidate' | local etag=False lm=False cc='public, max-age=0, must-revalidate' | encoding live=gzip local=gzip
+       assets referenced: live 24, local 24; local non-200: none; live-vs-local mismatches: none
+         /assets/architectural-digest-DuFnHwfd.png        local 200 image/png                live 200 image/png
+         /assets/builder-magazine-CwJSZlui.png            local 200 image/png                live 200 image/png
+         /assets/discovery-channel-DrwVHaPd.png           local 200 image/png                live 200 image/png
+         /assets/diy-network-CsSScfcu.png                 local 200 image/png                live 200 image/png
+         /assets/forbes-DiguZep2.png                      local 200 image/png                live 200 image/png
+         /assets/fox-BuxMQH3m.png                         local 200 image/png                live 200 image/png
+         /assets/hgtv-CkRf6Cjw.png                        local 200 image/png                live 200 image/png
+         /assets/index-DRQ0kxr8.js                        local 200 application/javascript   live 200 application/javascript
+         /assets/index-g2X6BtXd.css                       local 200 text/css                 live 200 text/css
+         /assets/keller-williams-BIcORWOv.png             local 200 image/png                live 200 image/png
+         /assets/la-times-RTkYLatW.png                    local 200 image/png                live 200 image/png
+         /assets/lacma-Dv1b60h2.png                       local 200 image/png                live 200 image/png
+         /assets/lief-logo-light-O5v9duEF.png             local 200 image/png                live 200 image/png
+         /assets/logo-concrete-BJwcKtx7.png               local 200 image/png                live 200 image/png
+         /assets/maya-v7pnuLWg.png                        local 200 image/png                live 200 image/png
+         /assets/oakley-BoGXNFOv.png                      local 200 image/png                live 200 image/png
+         /assets/pga-tour-B90bA1qL.png                    local 200 image/png                live 200 image/png
+         /assets/planet-green-BtPpLdiQ.png                local 200 image/png                live 200 image/png
+         /assets/ritz-carlton-BC8_pOkW.png                local 200 image/png                live 200 image/png
+         /assets/robb-report-Uw_NynVN.png                 local 200 image/png                live 200 image/png
+         /assets/shelby-B-8CSwXE.png                      local 200 image/png                live 200 image/png
+         /assets/us-news-Do5zx5z1.png                     local 200 image/png                live 200 image/png
+         /assets/zillow-rlV3J0xi.png                      local 200 image/png                live 200 image/png
+         /favicon-lief.png                                local 200 image/png                live 200 image/png
+DIFF /national              first: live 200 dc6058baae / local 200 dc6058baae (text/html) | refresh: live 304 / local 200 | hard reload: live 200 / local 200 same body True
+       validators live etag=True lm=True cc='public, max-age=0, must-revalidate' | local etag=False lm=False cc='public, max-age=0, must-revalidate' | encoding live=gzip local=gzip
+       assets referenced: live 4, local 4; local non-200: none; live-vs-local mismatches: none
+         /assets/index-DRQ0kxr8.js                        local 200 application/javascript   live 200 application/javascript
+         /assets/index-g2X6BtXd.css                       local 200 text/css                 live 200 text/css
+         /assets/logo-concrete-BJwcKtx7.png               local 200 image/png                live 200 image/png
+         /favicon-lief.png                                local 200 image/png                live 200 image/png
+DIFF /ai                    first: live 200 adb40f14b7 / local 200 adb40f14b7 (text/html) | refresh: live 304 / local 200 | hard reload: live 200 / local 200 same body True
+       validators live etag=True lm=True cc='public, max-age=0, must-revalidate' | local etag=False lm=False cc='public, max-age=0, must-revalidate' | encoding live=gzip local=gzip
+       assets referenced: live 4, local 4; local non-200: none; live-vs-local mismatches: none
+         /assets/index-DRQ0kxr8.js                        local 200 application/javascript   live 200 application/javascript
+         /assets/index-g2X6BtXd.css                       local 200 text/css                 live 200 text/css
+         /assets/logo-concrete-BJwcKtx7.png               local 200 image/png                live 200 image/png
+         /favicon-lief.png                                local 200 image/png                live 200 image/png
+DIFF /sabs                  first: live 200 d5561ebc8f / local 200 d5561ebc8f (text/html) | refresh: live 304 / local 200 | hard reload: live 200 / local 200 same body True
+       validators live etag=True lm=True cc='public, max-age=0, must-revalidate' | local etag=False lm=False cc='public, max-age=0, must-revalidate' | encoding live=gzip local=gzip
+       assets referenced: live 24, local 24; local non-200: none; live-vs-local mismatches: none
+         /assets/architectural-digest-DuFnHwfd.png        local 200 image/png                live 200 image/png
+         /assets/builder-magazine-CwJSZlui.png            local 200 image/png                live 200 image/png
+         /assets/discovery-channel-DrwVHaPd.png           local 200 image/png                live 200 image/png
+         /assets/diy-network-CsSScfcu.png                 local 200 image/png                live 200 image/png
+         /assets/dots-neon-C9gJBOKh.png                   local 200 image/png                live 200 image/png
+         /assets/forbes-DiguZep2.png                      local 200 image/png                live 200 image/png
+         /assets/fox-BuxMQH3m.png                         local 200 image/png                live 200 image/png
+         /assets/hgtv-CkRf6Cjw.png                        local 200 image/png                live 200 image/png
+         /assets/index-DRQ0kxr8.js                        local 200 application/javascript   live 200 application/javascript
+         /assets/index-g2X6BtXd.css                       local 200 text/css                 live 200 text/css
+         /assets/keller-williams-BIcORWOv.png             local 200 image/png                live 200 image/png
+         /assets/la-times-RTkYLatW.png                    local 200 image/png                live 200 image/png
+         /assets/lacma-Dv1b60h2.png                       local 200 image/png                live 200 image/png
+         /assets/logo-concrete-BJwcKtx7.png               local 200 image/png                live 200 image/png
+         /assets/maya-v7pnuLWg.png                        local 200 image/png                live 200 image/png
+         /assets/oakley-BoGXNFOv.png                      local 200 image/png                live 200 image/png
+         /assets/pga-tour-B90bA1qL.png                    local 200 image/png                live 200 image/png
+         /assets/planet-green-BtPpLdiQ.png                local 200 image/png                live 200 image/png
+         /assets/ritz-carlton-BC8_pOkW.png                local 200 image/png                live 200 image/png
+         /assets/robb-report-Uw_NynVN.png                 local 200 image/png                live 200 image/png
+         /assets/shelby-B-8CSwXE.png                      local 200 image/png                live 200 image/png
+         /assets/us-news-BtDP55-2.png                     local 200 image/png                live 200 image/png
+         /assets/zillow-rlV3J0xi.png                      local 200 image/png                live 200 image/png
+         /favicon-lief.png                                local 200 image/png                live 200 image/png
+DIFF /projects              first: live 200 755733a4dd / local 200 755733a4dd (text/html) | refresh: live 304 / local 200 | hard reload: live 200 / local 200 same body True
+       validators live etag=True lm=True cc='public, max-age=0, must-revalidate' | local etag=False lm=False cc='public, max-age=0, must-revalidate' | encoding live=gzip local=gzip
+       assets referenced: live 9, local 9; local non-200: none; live-vs-local mismatches: none
+         /assets/301-osborn-CdJDg9di.png                  local 200 image/png                live 200 image/png
+         /assets/canyon-corporate-DyhEcC9H.jpg            local 200 image/jpeg               live 200 image/jpeg
+         /assets/index-DRQ0kxr8.js                        local 200 application/javascript   live 200 application/javascript
+         /assets/index-g2X6BtXd.css                       local 200 text/css                 live 200 text/css
+         /assets/logo-concrete-BJwcKtx7.png               local 200 image/png                live 200 image/png
+         /assets/pahrump-basin-D0rEQl1L.jpg               local 200 image/jpeg               live 200 image/jpeg
+         /assets/silver-mountain-BVPniM1P.jpg             local 200 image/jpeg               live 200 image/jpeg
+         /assets/the-vail-CsEKpHIO.png                    local 200 image/png                live 200 image/png
+         /favicon-lief.png                                local 200 image/png                live 200 image/png
+DIFF /team                  first: live 200 795e94f923 / local 200 795e94f923 (text/html) | refresh: live 304 / local 200 | hard reload: live 200 / local 200 same body True
+       validators live etag=True lm=True cc='public, max-age=0, must-revalidate' | local etag=False lm=False cc='public, max-age=0, must-revalidate' | encoding live=gzip local=gzip
+       assets referenced: live 8, local 8; local non-200: none; live-vs-local mismatches: none
+         /assets/index-DRQ0kxr8.js                        local 200 application/javascript   live 200 application/javascript
+         /assets/index-g2X6BtXd.css                       local 200 text/css                 live 200 text/css
+         /assets/jesse-BvmC-zU5.png                       local 200 image/png                live 200 image/png
+         /assets/josh-BInwDPDx.png                        local 200 image/png                live 200 image/png
+         /assets/logo-concrete-BJwcKtx7.png               local 200 image/png                live 200 image/png
+         /assets/nick-BsE5dslA.png                        local 200 image/png                live 200 image/png
+         /assets/scott-CvJLIS_C.png                       local 200 image/png                live 200 image/png
+         /favicon-lief.png                                local 200 image/png                live 200 image/png
+DIFF /testimonials          first: live 200 9d273dbcd0 / local 200 9d273dbcd0 (text/html) | refresh: live 304 / local 200 | hard reload: live 200 / local 200 same body True
+       validators live etag=True lm=True cc='public, max-age=0, must-revalidate' | local etag=False lm=False cc='public, max-age=0, must-revalidate' | encoding live=gzip local=gzip
+       assets referenced: live 4, local 4; local non-200: none; live-vs-local mismatches: none
+         /assets/index-DRQ0kxr8.js                        local 200 application/javascript   live 200 application/javascript
+         /assets/index-g2X6BtXd.css                       local 200 text/css                 live 200 text/css
+         /assets/logo-concrete-BJwcKtx7.png               local 200 image/png                live 200 image/png
+         /favicon-lief.png                                local 200 image/png                live 200 image/png
+DIFF /wiki                  first: live 200 22c0e39166 / local 200 22c0e39166 (text/html) | refresh: live 304 / local 200 | hard reload: live 200 / local 200 same body True
+       validators live etag=True lm=True cc='public, max-age=0, must-revalidate' | local etag=False lm=False cc='public, max-age=0, must-revalidate' | encoding live=gzip local=gzip
+       assets referenced: live 3, local 3; local non-200: none; live-vs-local mismatches: none
+         /favicon-lief.png                                local 200 image/png                live 200 image/png
+         /wiki/_assets/logo-concrete.png                  local 200 image/png                live 200 image/png
+         /wiki/_assets/wiki.css                           local 200 text/css                 live 200 text/css
+DIFF /wiki/common-ground    first: live 200 f925ada544 / local 200 f925ada544 (text/html) | refresh: live 304 / local 200 | hard reload: live 200 / local 200 same body True
+       validators live etag=True lm=True cc='public, max-age=0, must-revalidate' | local etag=False lm=False cc='public, max-age=0, must-revalidate' | encoding live=gzip local=gzip
+       assets referenced: live 3, local 3; local non-200: none; live-vs-local mismatches: none
+         /favicon-lief.png                                local 200 image/png                live 200 image/png
+         /wiki/_assets/logo-concrete.png                  local 200 image/png                live 200 image/png
+         /wiki/_assets/wiki.css                           local 200 text/css                 live 200 text/css
+DIFF /404                   first: live 200 9e8399a4fb / local 200 9e8399a4fb (text/html) | refresh: live 304 / local 200 | hard reload: live 200 / local 200 same body True
+       validators live etag=True lm=True cc='public, max-age=0, must-revalidate' | local etag=False lm=False cc='public, max-age=0, must-revalidate' | encoding live=gzip local=gzip
+       assets referenced: live 3, local 3; local non-200: none; live-vs-local mismatches: none
+         /assets/index-DRQ0kxr8.js                        local 200 application/javascript   live 200 application/javascript
+         /assets/index-g2X6BtXd.css                       local 200 text/css                 live 200 text/css
+         /favicon-lief.png                                local 200 image/png                live 200 image/png
+
+PART B SUMMARY: 0 of 10 routes identical on load, refresh and assets
+
+======================================================================
+PART C: contact form evidence (no POST, no lead created)
+======================================================================
+live: /assets/index-DRQ0kxr8.js 200 sha1 9eb344aefe0e contains webhook URL: True; count of leadconnectorhq refs: 2; fetch POST json: True
+live /: html has <iframe: False; html has <form: True; html mentions leadconnector/msgsndr/gohighlevel: False; CSP/framing/COEP headers present: none; meta CSP: False
+live /national: html has <iframe: False; html has <form: False; html mentions leadconnector/msgsndr/gohighlevel: False; CSP/framing/COEP headers present: none; meta CSP: False
+live /team: html has <iframe: False; html has <form: False; html mentions leadconnector/msgsndr/gohighlevel: False; CSP/framing/COEP headers present: none; meta CSP: False
+local: /assets/index-DRQ0kxr8.js 200 sha1 9eb344aefe0e contains webhook URL: True; count of leadconnectorhq refs: 2; fetch POST json: True
+local /: html has <iframe: False; html has <form: True; html mentions leadconnector/msgsndr/gohighlevel: False; CSP/framing/COEP headers present: none; meta CSP: False
+local /national: html has <iframe: False; html has <form: False; html mentions leadconnector/msgsndr/gohighlevel: False; CSP/framing/COEP headers present: none; meta CSP: False
+local /team: html has <iframe: False; html has <form: False; html mentions leadconnector/msgsndr/gohighlevel: False; CSP/framing/COEP headers present: none; meta CSP: False
+
+CORS preflight (OPTIONS only, creates no lead) from each origin the page could run on:
+  Origin https://www.liefbuilders.com: 204 allow-origin=* allow-methods=GET,HEAD,PUT,PATCH,POST,DELETE allow-headers=*
+  Origin https://lief-builders.example.workers.dev: 204 allow-origin=* allow-methods=GET,HEAD,PUT,PATCH,POST,DELETE allow-headers=*
+  Origin http://127.0.0.1:8788: 204 allow-origin=* allow-methods=GET,HEAD,PUT,PATCH,POST,DELETE allow-headers=*
