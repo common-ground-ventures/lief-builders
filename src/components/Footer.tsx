@@ -38,13 +38,14 @@ const Footer = () => {
               <li><span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Insurance Coordination</span></li>
               <li><span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Cost Control</span></li>
               <li>
-                <button
-                  onClick={() => { navigate("/sabs"); window.scrollTo({ top: 0 }); }}
-                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                <a
+                  href="/sabs"
+                  onClick={(e) => { e.preventDefault(); navigate("/sabs"); window.scrollTo({ top: 0 }); }}
+                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none", display: "inline-block", cursor: "pointer", padding: 0 }}
                   className="hover:text-[#00FF88] transition-colors duration-300"
                 >
                   SABS&#8482; Technology
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -54,67 +55,74 @@ const Footer = () => {
             <h5 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-neon)" }}>Explore</h5>
             <ul className="space-y-3">
               <li>
-                <button
-                  onClick={() => { navigate("/"); window.scrollTo({ top: 0 }); }}
-                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                <a
+                  href="/"
+                  onClick={(e) => { e.preventDefault(); navigate("/"); window.scrollTo({ top: 0 }); }}
+                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none", display: "inline-block", cursor: "pointer", padding: 0 }}
                   className="hover:text-[#00FF88] transition-colors duration-300"
                 >
                   Home
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => { navigate("/national"); window.scrollTo({ top: 0 }); }}
-                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                <a
+                  href="/national"
+                  onClick={(e) => { e.preventDefault(); navigate("/national"); window.scrollTo({ top: 0 }); }}
+                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none", display: "inline-block", cursor: "pointer", padding: 0 }}
                   className="hover:text-[#00FF88] transition-colors duration-300"
                 >
                   National
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => { navigate("/ai"); window.scrollTo({ top: 0 }); }}
-                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                <a
+                  href="/ai"
+                  onClick={(e) => { e.preventDefault(); navigate("/ai"); window.scrollTo({ top: 0 }); }}
+                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none", display: "inline-block", cursor: "pointer", padding: 0 }}
                   className="hover:text-[#00FF88] transition-colors duration-300"
                 >
                   AI
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => { navigate("/projects"); window.scrollTo({ top: 0 }); }}
-                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                <a
+                  href="/projects"
+                  onClick={(e) => { e.preventDefault(); navigate("/projects"); window.scrollTo({ top: 0 }); }}
+                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none", display: "inline-block", cursor: "pointer", padding: 0 }}
                   className="hover:text-[#00FF88] transition-colors duration-300"
                 >
                   Projects
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => { navigate("/sabs"); window.scrollTo({ top: 0 }); }}
-                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                <a
+                  href="/sabs"
+                  onClick={(e) => { e.preventDefault(); navigate("/sabs"); window.scrollTo({ top: 0 }); }}
+                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none", display: "inline-block", cursor: "pointer", padding: 0 }}
                   className="hover:text-[#00FF88] transition-colors duration-300"
                 >
                   L&iuml;ef x SABS
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => { navigate("/team"); window.scrollTo({ top: 0 }); }}
-                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                <a
+                  href="/team"
+                  onClick={(e) => { e.preventDefault(); navigate("/team"); window.scrollTo({ top: 0 }); }}
+                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none", display: "inline-block", cursor: "pointer", padding: 0 }}
                   className="hover:text-[#00FF88] transition-colors duration-300"
                 >
                   Team
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => { navigate("/testimonials"); window.scrollTo({ top: 0 }); }}
-                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                <a
+                  href="/testimonials"
+                  onClick={(e) => { e.preventDefault(); navigate("/testimonials"); window.scrollTo({ top: 0 }); }}
+                  style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none", display: "inline-block", cursor: "pointer", padding: 0 }}
                   className="hover:text-[#00FF88] transition-colors duration-300"
                 >
                   Testimonials
-                </button>
+                </a>
               </li>
               <li>
                 <a href="https://anewlief.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
