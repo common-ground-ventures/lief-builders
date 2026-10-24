@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
-import { useCountUp } from "@/hooks/useCountUp";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -9,10 +8,6 @@ interface ServiceData {
   label: string;
   title: string;
   body: string;
-  statEnd?: number;
-  statPrefix?: string;
-  statSuffix?: string;
-  statLabel?: string;
 }
 
 const services: ServiceData[] = [
@@ -27,34 +22,14 @@ const services: ServiceData[] = [
     label: "INSURANCE & LEGAL COORDINATION",
     title: "Navigate the claim. Maximize the recovery.",
     body: "We coordinate directly with insurance adjusters, prepare detailed draw requests, negotiate claim settlements, and partner with legal counsel to protect your position. From documentation to dispute resolution, we handle it so you don't have to.",
-    statEnd: 40,
-    statPrefix: "$",
-    statSuffix: "M+",
-    statLabel: "OF THIRD-PARTY WORK UNDER OWNER'S REPRESENTATION",
   },
   {
     num: "03",
     label: "COST CONTROL & SCHEDULE OPTIMIZATION",
     title: "Faster builds. Tighter budgets. Zero surprises.",
     body: "Change order negotiation, site walks, vendor discount verification, value engineering, and red flag identification. We catch the problems before they cost you time and money. Our job is to make your project go faster and come in cheaper than you thought possible.",
-    statEnd: 4,
-    statPrefix: "$",
-    statSuffix: "M+",
-    statLabel: "IN DELAY COSTS AVOIDED",
   },
 ];
-
-const CountUpStat = ({ service }: { service: ServiceData }) => {
-  const { ref, inView } = useInView(0.5);
-  const count = useCountUp(service.statEnd ?? 0, 2000, 0, inView);
-  return (
-    <div ref={ref}>
-      <span className="v2-headline" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "var(--v2-white)" }}>
-        {service.statPrefix || ""}{count}{service.statSuffix}
-      </span>
-    </div>
-  );
-};
 
 const Services = () => {
   const { ref, inView } = useInView(0.1);
@@ -85,7 +60,7 @@ const Services = () => {
                 initial={{ opacity: 0, y: 35 }}
                 animate={inView ? { opacity: 1, y: 0 } : false}
                 transition={{ duration: 0.75, delay: 0.2 + i * 0.15, ease }}
-                className={`grid grid-cols-1 gap-8 md:gap-16 py-12 ${s.statEnd !== undefined ? "md:grid-cols-[1fr_auto]" : ""}`}
+                className="py-12"
                 style={{ borderTop: "1px solid var(--v2-rule)" }}
               >
                 <div>
@@ -100,14 +75,6 @@ const Services = () => {
                     {s.body}
                   </p>
                 </div>
-                {s.statEnd !== undefined && (
-                  <div className="flex flex-col items-center justify-center text-center md:min-w-[200px]">
-                    <CountUpStat service={s} />
-                    <span style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--v2-muted)", marginTop: "8px" }}>
-                      {s.statLabel}
-                    </span>
-                  </div>
-                )}
               </motion.div>
             ))}
           </>
