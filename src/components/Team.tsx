@@ -19,8 +19,8 @@ interface Member {
 const principals: Member[] = [
   {
     name: "Jesse Fowler",
-    title: "Owner's Rep",
-    bio: "25 years in design, build and development. $400M+ of built work at Tellus Design + Build. Featured in Architectural Digest, HGTV, and Discovery Channel. Contractor oversight, cost control, and project advocacy across Southern California and the Southwest.",
+    title: "Principal and Operating Partner, LÏEF Development",
+    bio: "25 years in design, build and development. Featured in Architectural Digest, HGTV, and Discovery Channel. Contractor oversight, cost control, and project advocacy across Southern California and the Southwest.",
     img: jesseImg,
     imgStyle: { transform: "scale(1.6) translateY(-2%)", transformOrigin: "center top" },
   },
