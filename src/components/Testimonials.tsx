@@ -4,14 +4,14 @@ import { useInView } from "@/hooks/useInView";
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const featured = {
-  quote: "They handled our VIP event space build from start to finish. What started as a small mural project turned into a complete facility build-out. That's what trust looks like \u2014 you earn it, then you deliver.",
+  quote: "They handled our VIP event space build from start to finish. What started as a small mural project turned into a complete facility build-out. That's what trust looks like: you earn it, then you deliver.",
   name: "Gary Cummings",
   title: "VP Operations, Carroll Shelby International",
 };
 
 const testimonials = [
   {
-    quote: "We hired Lïef for a complete home remodel and they exceeded every expectation. Hands-on throughout the entire process. The attention to detail was unmatched and the project came in on time.",
+    quote: "We hired LÏEF for a complete home remodel and they exceeded every expectation. Hands-on throughout the entire process. The attention to detail was unmatched and the project came in on time.",
     name: "Michael R.",
     title: "Homeowner, Orange County",
   },
@@ -31,12 +31,12 @@ const testimonials = [
     title: "Keller Williams, Los Angeles",
   },
   {
-    quote: "We were overwhelmed after the fire and had no idea where to start. Lïef came in, took over the insurance coordination, vetted every contractor, and saved us nearly 10% on the total rebuild. Worth every penny.",
+    quote: "We were overwhelmed after the fire and had no idea where to start. LÏEF came in, took over the insurance coordination, vetted every contractor, and saved us nearly 10% on the total rebuild. Worth every penny.",
     name: "Patricia & Mark D.",
     title: "Homeowners, Santa Barbara Fire Rebuild",
   },
   {
-    quote: "We built from the ground up and thought we could manage it ourselves. Within two months we were drowning in change orders and missed deadlines. Lïef stepped in, renegotiated three major contracts, and got us back on track. We would have lost six figures without them.",
+    quote: "We built from the ground up and thought we could manage it ourselves. Within two months we were drowning in change orders and missed deadlines. LÏEF stepped in, renegotiated three major contracts, and got us back on track. We would have lost six figures without them.",
     name: "Daniel & Christine W.",
     title: "Custom Home Build, Scottsdale",
   },
@@ -104,18 +104,6 @@ const Testimonials = () => {
                   </div>
                 </div>
               ))}
-            </motion.div>
-
-            {/* Ratings */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : false}
-              transition={{ duration: 0.75, delay: 0.35, ease }}
-              className="text-center"
-            >
-              <span style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--v2-dim)" }}>
-                YELP &middot; HOUZZ &middot; 5/5 RATING &middot; A+ BBB
-              </span>
             </motion.div>
           </>
       </div>

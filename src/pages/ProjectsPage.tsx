@@ -43,7 +43,7 @@ const projects = [
     img: silverImg,
     name: "Silver Mountain Ranches",
     type: "Equestrian Community",
-    desc: "100+ acre equestrian community with luxury custom homes built using L\u00efef Blocks with SABS Technology.",
+    desc: "100+ acre equestrian community with luxury custom homes built using LÏEF Blocks with SABS Technology.",
     location: "Scottsdale, AZ",
     status: "In Development",
     featured: false,
@@ -87,7 +87,7 @@ const ProjectsPage = () => {
                   <div className="absolute top-4 left-4 z-10">
                     <span className="inline-flex items-center gap-2 px-4 py-2" style={{ background: accentColor, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#0a0a0a", fontWeight: 700 }}>
                       <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#0a0a0a", display: "inline-block" }} />
-                      Featured &mdash; {proj.status}
+                      Featured: {proj.status}
                     </span>
                   </div>
                   <div className="absolute bottom-0 left-0 p-10 z-10">

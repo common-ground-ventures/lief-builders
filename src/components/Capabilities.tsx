@@ -58,7 +58,7 @@ const Capabilities = () => {
                   One team.<br />Every discipline.
                 </h2>
                 <p className="mt-6" style={{ fontSize: "1.1rem", color: "rgba(255,255,255,.7)", lineHeight: 1.7 }}>
-                  Consultants in every modality. Experts across architecture, general construction, trade work, interior design, and legal. Over 100 years of combined expert advice from the first insurance call to the final walkthrough. We specialize in fire damage work. No handoffs. No compromises. No excuses.
+                  Consultants in every modality. Experts across architecture, general construction, trade work, interior design, and legal. Expert advice from the first insurance call to the final walkthrough. We specialize in fire damage work. No handoffs. No compromises. No excuses.
                 </p>
               </motion.div>
 

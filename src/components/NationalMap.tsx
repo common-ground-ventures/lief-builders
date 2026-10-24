@@ -17,7 +17,7 @@ const NationalMap = () => (
   <svg
     viewBox={`0 0 ${MAP_W} ${MAP_H}`}
     role="img"
-    aria-label="Map of the United States with a pin on every state where Lïef has a project on record"
+    aria-label="Map of the United States with a pin on every state where LÏEF has a project on record"
     className="w-full h-auto block"
   >
     <g>

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useInView } from "@/hooks/useInView";
 import { useContactModal } from "@/contexts/ContactModalContext";
 import NationalMap from "@/components/NationalMap";
+import FinePrint from "@/components/FinePrint";
 import { PINS } from "@/data/us-map";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -39,7 +40,7 @@ const steps = [
   {
     num: "2",
     title: "We build the pre-construction team",
-    body: "Design, engineering and permitting, produced under Lïef's direction and sealed by professionals licensed where you are building.",
+    body: "Design, engineering and permitting, produced under LÏEF's direction and sealed by professionals licensed where you are building.",
   },
   {
     num: "3",
@@ -112,7 +113,7 @@ const NationalPage = () => {
           </motion.h1>
 
           <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(2), ease }} className="max-w-[680px]" style={{ fontSize: "clamp(1.1rem, 2.2vw, 1.3rem)", color: "var(--v2-muted)", lineHeight: 1.6 }}>
-            Lïef runs the pre-construction, places the general construction contract, and stays on your project as the owner's representative, across the country. One team from the first sketch to the last draw, with no conflict of interest in the room. We have relationships with architecture and engineering firms licensed in every state.
+            LÏEF runs the pre-construction, places the general construction contract, and stays on your project as the owner's representative, across the country. One team from the first sketch to the last draw. We have relationships with architecture and engineering firms licensed in every state.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(3), ease }} className="mt-6 md:mt-8 flex flex-wrap gap-3 md:gap-4">
@@ -148,7 +149,7 @@ const NationalPage = () => {
               Hiring an owner's representative has always meant a second fee on top of the contractor's price. We built the national offering to remove that trade-off.
             </p>
             <p className="mb-5" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
-              When Lïef places your general construction contract, our fee comes out of the general contractor's side of the deal. You pay what you would pay a traditional contractor. On top of that price you get an owner's representative who reads every bid, every change order and every draw request before you sign it.
+              When LÏEF places your general construction contract, our fee comes out of the general contractor's side of the deal. You pay what you would pay a traditional contractor. On top of that price you get an owner's representative who reads every bid, every change order and every draw request before you sign it.
             </p>
             <p style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
               The oversight most owners have to buy separately comes with the contract. That is the whole idea.
@@ -208,7 +209,7 @@ const NationalPage = () => {
             ACROSS<br /><span style={{ color: "var(--v2-neon)" }}>THE COUNTRY</span><span className="v2-neon-period">.</span>
           </h2>
           <p className="max-w-[720px]" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
-            Every pin is a state where Lïef has a project on record, from a tornado rebuild in Kansas to a hotel in Texas and a custom residence in the Utah mountains. A solid pin marks the city. A hollow pin marks the state.
+            Every pin is a state where LÏEF has a project on record, from a tornado rebuild in Kansas to a hotel in Texas and a custom residence in the Utah mountains. A solid pin marks the city. A hollow pin marks the state.
           </p>
         </Reveal>
         <Reveal delay={0.1}>
@@ -256,7 +257,7 @@ const NationalPage = () => {
             WORK WE HAVE<br /><span style={{ color: "var(--v2-neon)" }}>CARRIED</span><span className="v2-neon-period">.</span>
           </h2>
           <p className="max-w-[720px]" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
-            Projects Lïef has completed or coordinated.
+            Projects LÏEF has completed or coordinated.
           </p>
         </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: "var(--v2-rule)", border: "1px solid var(--v2-rule)" }}>
@@ -299,6 +300,7 @@ const NationalPage = () => {
           </button>
         </Reveal>
       </Section>
+      <FinePrint />
     </div>
   );
 };

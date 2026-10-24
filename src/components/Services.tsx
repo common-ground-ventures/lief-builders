@@ -9,10 +9,10 @@ interface ServiceData {
   label: string;
   title: string;
   body: string;
-  statEnd: number;
+  statEnd?: number;
   statPrefix?: string;
-  statSuffix: string;
-  statLabel: string;
+  statSuffix?: string;
+  statLabel?: string;
 }
 
 const services: ServiceData[] = [
@@ -20,10 +20,7 @@ const services: ServiceData[] = [
     num: "01",
     label: "PROJECT ADVOCACY & PROTECTION",
     title: "Your shield in the build.",
-    body: "You don't know what you don't know, and that's exactly what contractors count on. We put over 100 years of combined expertise on your side. From Greensburg, Kansas tornado rebuilds to Santa Barbara fire damage, we've been the owner's advocate in disaster zones for over two decades. We own and design projects in the Palisades area, giving us a personal stake in the communities we serve. Every engagement is customized to the scope your project demands.",
-    statEnd: 100,
-    statSuffix: "+",
-    statLabel: "YEARS OF EXPERIENCE",
+    body: "You don't know what you don't know, and that's exactly what contractors count on. From Greensburg, Kansas tornado rebuilds to Santa Barbara fire damage, we've been the owner's advocate in disaster zones for over two decades. We own and design projects in the Palisades area, giving us a personal stake in the communities we serve. Every engagement is customized to the scope your project demands.",
   },
   {
     num: "02",
@@ -33,23 +30,23 @@ const services: ServiceData[] = [
     statEnd: 40,
     statPrefix: "$",
     statSuffix: "M+",
-    statLabel: "SAVED FOR CLIENTS",
+    statLabel: "OF THIRD-PARTY WORK UNDER OWNER'S REPRESENTATION",
   },
   {
     num: "03",
     label: "COST CONTROL & SCHEDULE OPTIMIZATION",
     title: "Faster builds. Tighter budgets. Zero surprises.",
     body: "Change order negotiation, site walks, vendor discount verification, value engineering, and red flag identification. We catch the problems before they cost you time and money. Our job is to make your project go faster and come in cheaper than you thought possible.",
-    statEnd: 100,
-    statPrefix: "",
-    statSuffix: "%+",
-    statLabel: "MINIMUM RETURN ON INVESTMENT",
+    statEnd: 4,
+    statPrefix: "$",
+    statSuffix: "M+",
+    statLabel: "IN DELAY COSTS AVOIDED",
   },
 ];
 
 const CountUpStat = ({ service }: { service: ServiceData }) => {
   const { ref, inView } = useInView(0.5);
-  const count = useCountUp(service.statEnd, 2000, 0, inView);
+  const count = useCountUp(service.statEnd ?? 0, 2000, 0, inView);
   return (
     <div ref={ref}>
       <span className="v2-headline" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "var(--v2-white)" }}>
@@ -88,7 +85,7 @@ const Services = () => {
                 initial={{ opacity: 0, y: 35 }}
                 animate={inView ? { opacity: 1, y: 0 } : false}
                 transition={{ duration: 0.75, delay: 0.2 + i * 0.15, ease }}
-                className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:gap-16 py-12"
+                className={`grid grid-cols-1 gap-8 md:gap-16 py-12 ${s.statEnd !== undefined ? "md:grid-cols-[1fr_auto]" : ""}`}
                 style={{ borderTop: "1px solid var(--v2-rule)" }}
               >
                 <div>
@@ -103,12 +100,14 @@ const Services = () => {
                     {s.body}
                   </p>
                 </div>
-                <div className="flex flex-col items-center justify-center text-center md:min-w-[200px]">
-                  <CountUpStat service={s} />
-                  <span style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--v2-muted)", marginTop: "8px" }}>
-                    {s.statLabel}
-                  </span>
-                </div>
+                {s.statEnd !== undefined && (
+                  <div className="flex flex-col items-center justify-center text-center md:min-w-[200px]">
+                    <CountUpStat service={s} />
+                    <span style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--v2-muted)", marginTop: "8px" }}>
+                      {s.statLabel}
+                    </span>
+                  </div>
+                )}
               </motion.div>
             ))}
           </>

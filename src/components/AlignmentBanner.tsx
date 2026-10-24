@@ -34,7 +34,7 @@ const AlignmentBanner = () => {
               transition={{ duration: 0.75, delay: 0.2, ease }}
               style={{ fontSize: "1.1rem", color: "rgba(255,255,255,.7)", lineHeight: 1.7 }}
             >
-              No kickbacks. No vendor deals. No material markups. No hidden incentives. Our only financial reward is making your project cheaper, faster, and better.
+              In owner's representation, you pay us and nobody else. No kickbacks, vendor deals or material markups.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

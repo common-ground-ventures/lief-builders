@@ -17,7 +17,7 @@ const navLinks: NavLink[] = [
   { href: "/national", label: "National", type: "route" },
   { href: "/ai", label: "AI", type: "route" },
   { href: "/projects", label: "Projects", type: "route" },
-  { href: "/sabs", label: "L\u00efef x SABS", type: "route" },
+  { href: "/sabs", label: "LÏEF x SABS", type: "route" },
   { href: "/team", label: "Team", type: "route" },
   { href: "/testimonials", label: "Testimonials", type: "route" },
 ];
@@ -146,7 +146,7 @@ const Nav = () => {
               transition: "opacity 0.5s, transform 0.5s",
             }}
           >
-            <img src={logoConcrete} alt="Lïef" className="h-6 md:h-7 w-auto block" />
+            <img src={logoConcrete} alt="LÏEF" className="h-6 md:h-7 w-auto block" />
           </a>
           <span
             className="v2-headline hidden xl:flex items-center"
