@@ -1,7 +1,5 @@
 const items = [
-  { value: "100+", label: "Years of Expertise" },
   { value: "14%", label: "Average Time Savings" },
-  { value: "2–6×", label: "Average Return on Investment" },
   { value: "", label: "Consultants in Every Modality" },
   { value: "", label: "Fire Damage Specialists" },
   { value: "", label: "AI-Powered Oversight & Analytics" },

@@ -20,14 +20,14 @@ const principals: Member[] = [
   {
     name: "Jesse Fowler",
     title: "Owner's Rep",
-    bio: "25+ years in design, build & development. $500M+ in completed projects. Featured in Architectural Digest, HGTV, and Discovery Channel. Contractor oversight, cost control, and project advocacy across Southern California and the Southwest.",
+    bio: "25 years in design, build and development. $400M+ of built work at Tellus Design + Build. Featured in Architectural Digest, HGTV, and Discovery Channel. Contractor oversight, cost control, and project advocacy across Southern California and the Southwest.",
     img: jesseImg,
     imgStyle: { transform: "scale(1.6) translateY(-2%)", transformOrigin: "center top" },
   },
   {
     name: "Josh Szvoren",
     title: "Development & Construction",
-    bio: "20+ years delivering complex developments — luxury retail, hospitality, multifamily, and mixed-use. Key projects include CityCenter Las Vegas ($7.1B), One Beverly Hills ($1.3B), and flagships for Louis Vuitton, Dior, and Valentino.",
+    bio: "20+ years delivering complex developments: luxury retail, hospitality, multifamily, and mixed-use. Key projects include CityCenter Las Vegas ($7.1B), One Beverly Hills ($1.3B), and flagships for Louis Vuitton, Dior, and Valentino.",
     img: joshImg,
     imgStyle: { transform: "scale(1.0) translateY(0%)", transformOrigin: "center top" },
   },

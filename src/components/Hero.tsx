@@ -38,7 +38,7 @@ const Hero = () => {
           style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center", willChange: "transform, opacity" }}
           className="mb-3 md:mb-4"
         >
-          <img src={logoLight} alt="Lïef" className="h-14 md:h-24 lg:h-32 w-auto" />
+          <img src={logoLight} alt="LÏEF" className="h-14 md:h-24 lg:h-32 w-auto" />
         </motion.div>
 
         <motion.div
@@ -77,7 +77,7 @@ const Hero = () => {
           transition={{ duration: 0.75, ...stagger(2), ease }}
           style={{ fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.1rem, 3vw, 1.4rem)", color: "var(--v2-muted)", lineHeight: 1.5 }}
         >
-          Your advocate. Your protector. Your team, with zero conflicts of interest.
+          Your advocate. Your protector. Your team.
         </motion.p>
 
         <motion.p
@@ -87,7 +87,7 @@ const Hero = () => {
           className="mt-2 max-w-[560px]"
           style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}
         >
-          Over 100 years of combined expertise across architecture, construction, insurance coordination, and legal advocacy, armed with AI-powered oversight tools. Property owners in the Palisades, Southern California, and the Southwest trust us to protect their build.
+          Expertise across architecture, construction, insurance coordination, and legal advocacy, armed with AI-powered oversight tools. Property owners in the Palisades, Southern California, and the Southwest trust us to protect their build.
         </motion.p>
 
         <motion.div
