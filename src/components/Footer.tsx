@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div>
-            <img src={logoConcrete} alt="Lïef" className="h-6 w-auto mb-4" />
+            <img src={logoConcrete} alt="LÏEF" className="h-6 w-auto mb-4" />
             <p className="v2-headline text-sm mb-2" style={{ color: "var(--v2-white)" }}>
               PROJECT ADVOCACY, OVERSIGHT, & REPRESENTATION
             </p>
@@ -101,7 +101,7 @@ const Footer = () => {
                   style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none", display: "inline-block", cursor: "pointer", padding: 0 }}
                   className="hover:text-[#00FF88] transition-colors duration-300"
                 >
-                  L&iuml;ef x SABS
+                  L&Iuml;EF x SABS
                 </a>
               </li>
               <li>
@@ -126,7 +126,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="https://anewlief.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
-                  L&iuml;ef Development
+                  L&Iuml;EF Development
                 </a>
               </li>
             </ul>
@@ -158,7 +158,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderTop: "1px solid var(--v2-rule)" }}>
           <div>
-            <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>&copy; 2026 L&iuml;ef Builders. All rights reserved.</p>
+            <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>&copy; 2026 L&Iuml;EF Builders. All rights reserved.</p>
           </div>
           <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)", opacity: 0.5 }}>
             Created by{" "}
