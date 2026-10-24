@@ -1,1 +1,24 @@
-/*    /404.html   404
+# Vercel vercel.json: permanent redirect is a 308.
+/technology /national 308
+
+# Vercel cleanUrls + trailingSlash:false answers 308; Workers html_handling
+# drop-trailing-slash answers 307. Explicit rules keep the permanent status.
+/index.html / 308
+/index / 308
+
+# On Cloudflare's edge the /*.html splat wins over a /:a/index.html
+# placeholder rule, so /x/index.html landed on /x/index. Exact rules always
+# win, so each prerendered route gets its own line. A NEW route needs a line
+# here too (without one it still ends on the right page, in two hops).
+/ai/index.html /ai 308
+/national/index.html /national 308
+/projects/index.html /projects 308
+/sabs/index.html /sabs 308
+/team/index.html /team 308
+/testimonials/index.html /testimonials 308
+/wiki/index.html /wiki 308
+/wiki/common-ground/index.html /wiki/common-ground 308
+/:a/index /:a 308
+/:a/:b/index /:a/:b 308
+/*.html /:splat 308
+/*/ /:splat 308
