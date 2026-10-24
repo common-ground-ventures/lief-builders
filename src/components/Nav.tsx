@@ -134,9 +134,10 @@ const Nav = () => {
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
         <div className="flex items-center gap-6">
-          <button
+          <a
+            href="/"
             className="flex items-center"
-            onClick={handleLogo}
+            onClick={(e) => { e.preventDefault(); handleLogo(); }}
             style={{
               opacity: scrolled ? 1 : 0,
               transform: scrolled ? "translateY(0)" : "translateY(8px)",
@@ -146,7 +147,7 @@ const Nav = () => {
             }}
           >
             <img src={logoConcrete} alt="Lïef" className="h-6 md:h-7 w-auto block" />
-          </button>
+          </a>
           <span
             className="v2-headline hidden xl:flex items-center"
             style={{
@@ -169,10 +170,11 @@ const Nav = () => {
             const active = isLinkActive(l);
             const hovered = hoveredLink === l.href;
             return (
-              <button
+              <a
                 key={l.href}
+                href={l.type === "scroll" ? "/" + l.href : l.href}
                 className="whitespace-nowrap"
-                onClick={() => handleNav(l)}
+                onClick={(e) => { e.preventDefault(); handleNav(l); }}
                 onMouseEnter={() => setHoveredLink(l.href)}
                 onMouseLeave={() => setHoveredLink(null)}
                 style={{
@@ -184,11 +186,12 @@ const Nav = () => {
                   background: "none",
                   border: "none",
                   cursor: "pointer",
+                  textDecoration: "none",
                   transition: "color 0.3s",
                 }}
               >
                 {l.label}
-              </button>
+              </a>
             );
           })}
           <button
@@ -232,9 +235,10 @@ const Nav = () => {
           >
             <nav className="px-6 py-8 flex flex-col gap-6">
               {navLinks.map((l) => (
-                <button
+                <a
                   key={l.href}
-                  onClick={() => handleNav(l)}
+                  href={l.type === "scroll" ? "/" + l.href : l.href}
+                  onClick={(e) => { e.preventDefault(); handleNav(l); }}
                   style={{
                     fontFamily: "'DM Sans', sans-serif",
                     fontSize: "1rem",
@@ -245,10 +249,11 @@ const Nav = () => {
                     border: "none",
                     cursor: "pointer",
                     textAlign: "left",
+                    textDecoration: "none",
                   }}
                 >
                   {l.label}
-                </button>
+                </a>
               ))}
               <button
                 onClick={handleContact}
