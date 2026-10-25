@@ -18,6 +18,10 @@ const ROUTES = {
     title: "National | LÏEF Builders",
     desc: "Pre-construction, general construction contracts and owner representation across the country. The contractor pays our fee, not you.",
   },
+  "/palisades-fire-rebuild-owners-rep": {
+    title: "Palisades Fire Rebuild Owner's Representation | LÏEF Builders",
+    desc: "Owner's representation for homeowners rebuilding after the Palisades fire. LÏEF advocates for the owner through the contractor, the insurer and the build.",
+  },
   "/ai": {
     title: "Technology and Innovation | LÏEF Builders",
     desc: "How LÏEF Builders applies technology, SABS construction, and intelligent oversight to protect owners on complex builds.",
