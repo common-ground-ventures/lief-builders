@@ -41,7 +41,7 @@ const Footer = () => {
                 <button
                   onClick={() => { navigate("/sabs"); window.scrollTo({ top: 0 }); }}
                   style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
-                  className="hover:text-[#00FF88] transition-colors duration-300"
+                  className="hover:text-[#C2B8A7] transition-colors duration-300"
                 >
                   SABS&#8482; Technology
                 </button>
@@ -57,7 +57,7 @@ const Footer = () => {
                 <button
                   onClick={() => { navigate("/"); window.scrollTo({ top: 0 }); }}
                   style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
-                  className="hover:text-[#00FF88] transition-colors duration-300"
+                  className="hover:text-[#C2B8A7] transition-colors duration-300"
                 >
                   Home
                 </button>
@@ -66,7 +66,7 @@ const Footer = () => {
                 <button
                   onClick={() => { navigate("/national"); window.scrollTo({ top: 0 }); }}
                   style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
-                  className="hover:text-[#00FF88] transition-colors duration-300"
+                  className="hover:text-[#C2B8A7] transition-colors duration-300"
                 >
                   National
                 </button>
@@ -75,7 +75,7 @@ const Footer = () => {
                 <button
                   onClick={() => { navigate("/ai"); window.scrollTo({ top: 0 }); }}
                   style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
-                  className="hover:text-[#00FF88] transition-colors duration-300"
+                  className="hover:text-[#C2B8A7] transition-colors duration-300"
                 >
                   AI
                 </button>
@@ -84,7 +84,7 @@ const Footer = () => {
                 <button
                   onClick={() => { navigate("/projects"); window.scrollTo({ top: 0 }); }}
                   style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
-                  className="hover:text-[#00FF88] transition-colors duration-300"
+                  className="hover:text-[#C2B8A7] transition-colors duration-300"
                 >
                   Projects
                 </button>
@@ -93,7 +93,7 @@ const Footer = () => {
                 <button
                   onClick={() => { navigate("/sabs"); window.scrollTo({ top: 0 }); }}
                   style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
-                  className="hover:text-[#00FF88] transition-colors duration-300"
+                  className="hover:text-[#C2B8A7] transition-colors duration-300"
                 >
                   L&iuml;ef x SABS
                 </button>
@@ -102,7 +102,7 @@ const Footer = () => {
                 <button
                   onClick={() => { navigate("/team"); window.scrollTo({ top: 0 }); }}
                   style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
-                  className="hover:text-[#00FF88] transition-colors duration-300"
+                  className="hover:text-[#C2B8A7] transition-colors duration-300"
                 >
                   Team
                 </button>
@@ -111,13 +111,13 @@ const Footer = () => {
                 <button
                   onClick={() => { navigate("/testimonials"); window.scrollTo({ top: 0 }); }}
                   style={{ fontSize: "1.25rem", color: "var(--v2-dim)", background: "none", border: "none", cursor: "pointer", padding: 0 }}
-                  className="hover:text-[#00FF88] transition-colors duration-300"
+                  className="hover:text-[#C2B8A7] transition-colors duration-300"
                 >
                   Testimonials
                 </button>
               </li>
               <li>
-                <a href="https://anewlief.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
+                <a href="https://anewlief.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#C2B8A7] transition-colors duration-300">
                   L&iuml;ef Development
                 </a>
               </li>
@@ -129,17 +129,17 @@ const Footer = () => {
             <h5 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-neon)" }}>Connect</h5>
             <ul className="space-y-3">
               <li>
-                <a href="tel:8057227598" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
+                <a href="tel:8057227598" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#C2B8A7] transition-colors duration-300">
                   (805) 722-7598
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@liefdev.com" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
+                <a href="mailto:hello@liefdev.com" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#C2B8A7] transition-colors duration-300">
                   hello@liefdev.com
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#00FF88] transition-colors duration-300">
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#C2B8A7] transition-colors duration-300">
                   LinkedIn
                 </a>
               </li>

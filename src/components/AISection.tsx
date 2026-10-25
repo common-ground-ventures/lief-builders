@@ -28,7 +28,7 @@ const AISection = () => {
               transition={{ duration: 0.75, ease }}
               className="relative mb-12"
             >
-              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(0,107,63,.24)" }}>
+              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(1,68,33,.24)" }}>
                 TECH
               </div>
               <div className="v2-label mb-6">The Edge</div>
@@ -80,7 +80,7 @@ const AISection = () => {
                 className="flex flex-col gap-6"
               >
                 {/* Quote Card */}
-                <div className="p-8 md:p-10" style={{ background: "rgba(0,107,63,.15)", border: "1px solid var(--v2-rule)" }}>
+                <div className="p-8 md:p-10" style={{ background: "rgba(1,68,33,.15)", border: "1px solid var(--v2-rule)" }}>
                   <p style={{ fontStyle: "italic", fontSize: "1rem", color: "var(--v2-white)", lineHeight: 1.7 }}>
                     "Think of it like a cop up the road with a radar gun. Are you gonna speed? The answer is no. That's what an owner's rep does. The contractors aren't going to cut corners because they know they'll get caught. That accountability alone saves you multiples of our fee."
                   </p>

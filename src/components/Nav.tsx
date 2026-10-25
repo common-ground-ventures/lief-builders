@@ -127,7 +127,7 @@ const Nav = () => {
       style={{
         background: scrolled ? "rgba(10,10,10,.95)" : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(0,255,136,.06)" : "1px solid transparent",
+        borderBottom: scrolled ? "1px solid rgba(194,184,167,.06)" : "1px solid transparent",
         transition: "background 0.5s, backdrop-filter 0.5s, border-bottom 0.5s",
         willChange: "background, backdrop-filter",
       }}
@@ -182,7 +182,7 @@ const Nav = () => {
                   fontSize: "0.85rem",
                   textTransform: "uppercase",
                   letterSpacing: "0.14em",
-                  color: active || hovered ? "#00FF88" : scrolled ? "#F5F5F3" : "#777",
+                  color: active || hovered ? "#C2B8A7" : scrolled ? "#F5F5F3" : "#777",
                   background: "none",
                   border: "none",
                   cursor: "pointer",
@@ -203,11 +203,11 @@ const Nav = () => {
               fontSize: "0.85rem",
               textTransform: "uppercase",
               letterSpacing: "0.14em",
-              color: contactHovered ? "#0a0a0a" : "#00FF88",
-              border: "1px solid #00FF88",
+              color: contactHovered ? "#0a0a0a" : "#C2B8A7",
+              border: "1px solid #C2B8A7",
               padding: "8px 20px",
               cursor: "pointer",
-              background: contactHovered ? "#00FF88" : "transparent",
+              background: contactHovered ? "#C2B8A7" : "transparent",
               transition: "color 0.3s, background 0.3s",
             }}
           >
@@ -231,7 +231,7 @@ const Nav = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="xl:hidden"
-            style={{ background: "rgba(10,10,10,.98)", borderTop: "1px solid rgba(0,255,136,.06)" }}
+            style={{ background: "rgba(10,10,10,.98)", borderTop: "1px solid rgba(194,184,167,.06)" }}
           >
             <nav className="px-6 py-8 flex flex-col gap-6">
               {navLinks.map((l) => (
@@ -244,7 +244,7 @@ const Nav = () => {
                     fontSize: "1rem",
                     textTransform: "uppercase",
                     letterSpacing: "0.16em",
-                    color: isLinkActive(l) ? "#00FF88" : "#F5F5F3",
+                    color: isLinkActive(l) ? "#C2B8A7" : "#F5F5F3",
                     background: "none",
                     border: "none",
                     cursor: "pointer",
@@ -262,7 +262,7 @@ const Nav = () => {
                   fontSize: "1rem",
                   textTransform: "uppercase",
                   letterSpacing: "0.16em",
-                  color: "#00FF88",
+                  color: "#C2B8A7",
                   background: "none",
                   border: "none",
                   cursor: "pointer",

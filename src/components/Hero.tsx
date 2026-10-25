@@ -26,8 +26,8 @@ const Hero = () => {
     <section ref={ref} className="relative h-screen flex items-center overflow-x-hidden" style={{ background: "var(--v2-deep)" }}>
       {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[60%] h-[60%]" style={{ background: "radial-gradient(ellipse at top right, rgba(0,107,63,.12), transparent 70%)" }} />
-        <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(0,255,136,.04), transparent 70%)" }} />
+        <div className="absolute top-0 right-0 w-[60%] h-[60%]" style={{ background: "radial-gradient(ellipse at top right, rgba(1,68,33,.12), transparent 70%)" }} />
+        <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(194,184,167,.04), transparent 70%)" }} />
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
@@ -101,15 +101,15 @@ const Hero = () => {
             className="transition-all duration-300 hover:brightness-110"
             style={{
               fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
-              letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)",
-              color: "var(--v2-deep)", border: "none", padding: "10px 24px", cursor: "pointer",
+              letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-forest)",
+              color: "var(--v2-villa)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer",
             }}
           >
             Start a Conversation
           </button>
           <button
             onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}
-            className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
+            className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0a0a0a]"
             style={{
               fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
               letterSpacing: "0.14em", fontWeight: 600, background: "transparent",

@@ -44,7 +44,7 @@ const Markets = () => {
                   style={{ background: "rgba(0,0,0,.15)", border: "1px solid rgba(255,255,255,.1)" }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = "var(--v2-neon)";
-                    e.currentTarget.style.boxShadow = "0 0 20px rgba(0,255,136,.25), inset 0 0 20px rgba(0,255,136,.05)";
+                    e.currentTarget.style.boxShadow = "0 0 20px rgba(194,184,167,.25), inset 0 0 20px rgba(194,184,167,.05)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = "rgba(255,255,255,.1)";

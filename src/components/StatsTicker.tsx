@@ -16,7 +16,7 @@ const TickerItem = ({ value, label }: { value: string; label: string }) => (
     <span style={{ fontSize: "1.25rem", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.14em", color: "var(--v2-muted)" }}>
       {label}
     </span>
-    <span style={{ color: "rgba(0,255,136,.15)", margin: "0 24px" }}>◆</span>
+    <span style={{ color: "rgba(194,184,167,.15)", margin: "0 24px" }}>◆</span>
   </span>
 );
 
