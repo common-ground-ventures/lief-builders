@@ -108,14 +108,14 @@ const ContactModal = () => {
             className="relative w-full max-w-[540px] p-8 md:p-10"
             style={{
               background: "#1a1a1a",
-              border: "2px solid #00FF88",
-              boxShadow: "0 0 40px rgba(0,255,136,.15), 0 40px 80px rgba(0,0,0,.5)",
+              border: "2px solid #C2B8A7",
+              boxShadow: "0 0 40px rgba(194,184,167,.15), 0 40px 80px rgba(0,0,0,.5)",
             }}
           >
             {/* Close button */}
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 transition-colors duration-300 hover:text-[#00FF88]"
+              className="absolute top-4 right-4 transition-colors duration-300 hover:text-[#C2B8A7]"
               style={{ background: "none", border: "none", cursor: "pointer", color: "var(--v2-muted)" }}
             >
               <X size={20} />
@@ -141,9 +141,9 @@ const ContactModal = () => {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.14em",
-                    background: "#00FF88",
-                    color: "#1a1a1a",
-                    border: "none",
+                    background: "#014421",
+                    color: "#EFECE3",
+                    border: "1px solid #C2B8A7",
                     padding: "10px 28px",
                     cursor: "pointer",
                   }}
@@ -217,9 +217,9 @@ const ContactModal = () => {
                       fontWeight: 600,
                       textTransform: "uppercase",
                       letterSpacing: "0.14em",
-                      background: "#00FF88",
-                      color: "#1a1a1a",
-                      border: "none",
+                      background: "#014421",
+                      color: "#EFECE3",
+                      border: "1px solid #C2B8A7",
                       padding: "16px 24px",
                       cursor: status === "sending" ? "wait" : "pointer",
                       opacity: status === "sending" ? 0.7 : 1,

@@ -4,7 +4,7 @@ import { MAP_W, MAP_H, NATION_D, STATES, PINS, type MapPin } from "@/data/us-map
 // record. Geometry is precomputed (scripts/gen-usmap.mjs) so this renders at
 // build time with no runtime fetch. Solid pin = known city, hollow = state.
 
-const neon = "#00FF88";
+const neon = "#C2B8A7";
 
 // Default label sits right of the pin. Santa Barbara is tucked against the
 // coast under Las Vegas / above Los Angeles, so its label goes above the pin.
@@ -25,15 +25,15 @@ const NationalMap = () => (
         <path
           key={s.id}
           d={s.d}
-          fill={s.active ? "rgba(0,107,63,.38)" : "#111111"}
-          stroke={s.active ? "rgba(0,255,136,.75)" : "rgba(0,255,136,.18)"}
+          fill={s.active ? "rgba(1,68,33,.38)" : "#111111"}
+          stroke={s.active ? "rgba(194,184,167,.75)" : "rgba(194,184,167,.18)"}
           strokeWidth={s.active ? 0.9 : 0.6}
           strokeLinejoin="round"
         >
           <title>{s.name}</title>
         </path>
       ))}
-      <path d={NATION_D} fill="none" stroke="rgba(0,255,136,.28)" strokeWidth={0.8} strokeLinejoin="round" />
+      <path d={NATION_D} fill="none" stroke="rgba(194,184,167,.28)" strokeWidth={0.8} strokeLinejoin="round" />
     </g>
     <g>
       {PINS.map((p) => {

@@ -46,7 +46,7 @@ const Projects = () => {
               transition={{ duration: 0.75, ease }}
               className="relative mb-12"
             >
-              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(0,107,63,.24)" }}>
+              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(1,68,33,.24)" }}>
                 PROJECTS
               </div>
               <div className="v2-label mb-6">Active Projects</div>

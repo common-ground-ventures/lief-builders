@@ -77,8 +77,8 @@ const PalisadesPage = () => {
       {/* Hero */}
       <section className="relative min-h-[88vh] flex items-center overflow-x-hidden pt-24 md:pt-28 pb-16" style={{ background: "var(--v2-deep)" }}>
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[60%] h-[60%]" style={{ background: "radial-gradient(ellipse at top right, rgba(0,107,63,.12), transparent 70%)" }} />
-          <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(0,255,136,.04), transparent 70%)" }} />
+          <div className="absolute top-0 right-0 w-[60%] h-[60%]" style={{ background: "radial-gradient(ellipse at top right, rgba(1,68,33,.12), transparent 70%)" }} />
+          <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(194,184,167,.04), transparent 70%)" }} />
         </div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(0), ease }} className="mb-3 md:mb-4">
@@ -103,13 +103,13 @@ const PalisadesPage = () => {
             <button
               onClick={openModal}
               className="transition-all duration-300 hover:brightness-110"
-              style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)", color: "var(--v2-deep)", border: "none", padding: "10px 24px", cursor: "pointer" }}
+              style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-forest)", color: "var(--v2-villa)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer" }}
             >
               Start a Conversation
             </button>
             <button
               onClick={() => document.querySelector("#watch")?.scrollIntoView({ behavior: "smooth" })}
-              className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
+              className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0a0a0a]"
               style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "transparent", color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "10px 24px", cursor: "pointer" }}
             >
               What we cover
@@ -153,7 +153,7 @@ const PalisadesPage = () => {
           {watch.map((l, i) => (
             <Reveal key={l.num} delay={0.1 + i * 0.12} className="p-8 md:p-10 relative v2-hover-line">
               <div style={{ background: "var(--v2-deep)", position: "absolute", inset: 0, zIndex: -1 }} />
-              <span className="v2-headline block mb-4" style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", color: "rgba(0,107,63,.24)", lineHeight: 1 }}>{l.num}</span>
+              <span className="v2-headline block mb-4" style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", color: "rgba(1,68,33,.24)", lineHeight: 1 }}>{l.num}</span>
               <h3 className="v2-headline mb-2" style={{ fontSize: "1.35rem", color: "var(--v2-white)" }}>{l.title}</h3>
               <p className="mb-4" style={{ fontFamily: "var(--v2-font-body)", fontSize: "1.15rem", fontWeight: 600, color: "var(--v2-neon)" }}>{l.kicker}</p>
               <p style={{ fontSize: "1.05rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>{l.body}</p>
@@ -173,7 +173,7 @@ const PalisadesPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {steps.map((s, i) => (
             <Reveal key={s.num} delay={0.1 + i * 0.12}>
-              <div className="pt-6" style={{ borderTop: "1px solid rgba(0,255,136,.25)" }}>
+              <div className="pt-6" style={{ borderTop: "1px solid rgba(194,184,167,.25)" }}>
                 <span className="v2-headline block mb-4" style={{ fontSize: "2.5rem", color: "var(--v2-neon)", lineHeight: 1 }}>{s.num}</span>
                 <h3 className="mb-3" style={{ fontFamily: "var(--v2-font-body)", fontSize: "1.35rem", fontWeight: 600, color: "var(--v2-white)", lineHeight: 1.3 }}>{s.title}</h3>
                 <p style={{ fontSize: "1.05rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>{s.body}</p>
@@ -201,7 +201,7 @@ const PalisadesPage = () => {
             </p>
             <button
               onClick={() => { navigate("/sabs"); window.scrollTo({ top: 0 }); }}
-              className="transition-all duration-300 hover:bg-[#00FF88] hover:text-[#0a0a0a]"
+              className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0a0a0a]"
               style={{ fontFamily: "var(--v2-font-body)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "transparent", color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "10px 24px", cursor: "pointer" }}
             >
               About SABS
@@ -223,7 +223,7 @@ const PalisadesPage = () => {
           <button
             onClick={openModal}
             className="transition-all duration-300 hover:brightness-110"
-            style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-neon)", color: "var(--v2-deep)", border: "none", padding: "10px 24px", cursor: "pointer" }}
+            style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-forest)", color: "var(--v2-villa)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer" }}
           >
             Start a Conversation
           </button>

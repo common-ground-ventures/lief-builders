@@ -94,7 +94,7 @@ const Contact = () => {
                   <a href="mailto:hello@liefdev.com" style={{ fontSize: "1.1rem", color: "var(--v2-white)", textDecoration: "none" }}>hello@liefdev.com</a>
                 </div>
 
-                <div className="p-6" style={{ background: "rgba(0,107,63,.06)", border: "1px solid var(--v2-rule)" }}>
+                <div className="p-6" style={{ background: "rgba(1,68,33,.06)", border: "1px solid var(--v2-rule)" }}>
                   <span className="v2-label block mb-4" style={{ fontSize: "1rem" }}>MARKETS SERVED</span>
                   {["Phoenix & Greater Arizona", "Las Vegas, Nevada", "Los Angeles & Southern California"].map((m) => (
                     <div key={m} className="flex items-center gap-3 py-2">
@@ -147,8 +147,8 @@ const Contact = () => {
                     style={{
                       fontFamily: "var(--v2-font-body)", fontSize: "1rem", fontWeight: 600,
                       textTransform: "uppercase", letterSpacing: "0.14em",
-                      background: "var(--v2-neon)", color: "var(--v2-deep)",
-                      border: "none", padding: "14px 24px",
+                      background: "var(--v2-forest)", color: "var(--v2-villa)",
+                      border: "1px solid var(--v2-loggia)", padding: "14px 24px",
                       cursor: status === "sending" ? "wait" : "pointer",
                       opacity: status === "sending" ? 0.7 : 1,
                     }}

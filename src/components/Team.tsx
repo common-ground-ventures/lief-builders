@@ -56,7 +56,7 @@ const Portrait = ({ member }: { member: Member }) => (
     ) : (
       <div
         className="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center mb-4"
-        style={{ border: "1px solid var(--v2-rule)", background: "rgba(0,107,63,.1)" }}
+        style={{ border: "1px solid var(--v2-rule)", background: "rgba(1,68,33,.1)" }}
       >
         <span className="v2-headline" style={{ fontSize: "2rem", color: "var(--v2-neon)" }}>{member.initials}</span>
       </div>
@@ -80,7 +80,7 @@ const Team = () => {
               transition={{ duration: 0.75, ease }}
               className="relative mb-12"
             >
-              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(0,107,63,.24)" }}>
+              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(1,68,33,.24)" }}>
                 TEAM
               </div>
               <div className="v2-label mb-6">The Team</div>

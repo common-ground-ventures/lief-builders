@@ -2,14 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
 
 .v2 {
-  --v2-green: #006B3F;
-  --v2-neon: #00FF88;
+  /* Midtown palette (Jimmy 10/19): Forest Green is the accent fill, Loggia carries accent text on dark.
+     Greek Villa #EFECE3, Succulent #636C64, Hunter #18351D, Brick #894534 are the supporting set. */
+  --v2-forest: #014421;
+  --v2-green: #014421;
+  --v2-villa: #EFECE3;
+  --v2-loggia: #C2B8A7;
+  --v2-neon: #C2B8A7; /* legacy name, now Loggia: accent text, lines and glows on dark */
   --v2-black: #1A1A1A;
   --v2-deep: #0a0a0a;
   --v2-white: #F5F5F3;
   --v2-muted: #aaaaaa;
   --v2-dim: #999999;
-  --v2-rule: rgba(0,255,136,.06);
+  --v2-rule: rgba(194,184,167,.06);
 
   --v2-font-headline: 'Archivo Black', sans-serif;
   --v2-font-body: 'DM Sans', sans-serif;
@@ -39,13 +44,13 @@
 
 .v2-neon-period {
   color: var(--v2-neon);
-  text-shadow: 0 0 60px rgba(0,255,136,.2);
+  text-shadow: 0 0 60px rgba(194,184,167,.2);
 }
 
 .v2-ghost-text {
   font-family: 'Archivo Black', sans-serif;
   text-transform: uppercase;
-  color: rgba(0,107,63,.04);
+  color: rgba(1,68,33,.04);
   pointer-events: none;
   user-select: none;
   position: absolute;
@@ -109,13 +114,13 @@
 }
 
 .v2-hover-line:hover {
-  background: rgba(0,255,136,.015);
+  background: rgba(194,184,167,.015);
 }
 
 /* Footer link hovers */
 footer a:hover,
 footer button:hover {
-  color: #00FF88 !important;
+  color: #C2B8A7 !important;
 }
 
 footer a.hover-gold:hover {
@@ -124,7 +129,7 @@ footer a.hover-gold:hover {
 
 /* Common Ground credit: footer grey at rest, Lïef green on hover */
 footer a.hover-cg:hover {
-  color: #00FF88 !important;
+  color: #C2B8A7 !important;
 }
 
 /* ── Partner & press logos ── */
