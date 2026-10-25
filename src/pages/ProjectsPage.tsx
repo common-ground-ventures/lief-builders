@@ -70,7 +70,7 @@ const ProjectsPage = () => {
     <div className="pt-16 md:pt-20">
       <h1 className="sr-only">Our Projects</h1>
       <section className="relative overflow-hidden py-12 md:py-28" style={{ background: "var(--v2-deep)" }}>
-        <div className="v2-ghost-text hidden lg:block top-8 right-8 text-right" style={{ fontSize: "min(9vw, 110px)", color: "rgba(194,184,167,.12)" }}>PROJECTS</div>
+        <div className="v2-ghost-text hidden lg:block top-8 right-8 text-right" style={{ fontSize: "min(9vw, 110px)", color: "rgba(194,184,167,.16)" }}>PROJECTS</div>
         <div ref={projRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
               <motion.div initial={{ opacity: 0, y: 35 }} animate={projInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
                 Current In Process
