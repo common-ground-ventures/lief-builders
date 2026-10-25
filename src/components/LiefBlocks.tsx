@@ -3,8 +3,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
 import { Flame, Droplets, Bug, Thermometer, Shield, Wind, Recycle, Volume2 } from "lucide-react";
 import { useContactModal } from "@/contexts/ContactModalContext";
-import liefLogoGreen from "@/assets/logos/lief-logo-green.png";
-import dotsNeon from "@/assets/dots/dots-neon.png";
 
 /* ── PARTNER LOGOS ── */
 import logoRitzCarlton from "@/assets/logos/ritz-carlton.png";
@@ -150,7 +148,6 @@ const LiefBlocks = () => {
   const { scrollY } = useScroll();
   const heroGlowY = useTransform(scrollY, [0, 600], [0, -60]);
   const ghostTextY = useTransform(scrollY, [0, 3000], [0, -120]);
-  const dotsScale = useTransform(scrollY, [0, 1500], [1, 1.08]);
 
   // Anti-flicker: always render content, control animation via inView
   const show = (inView: boolean, y = 35) => inView ? { opacity: 1, y: 0 } : { opacity: 0, y };
@@ -254,9 +251,6 @@ const LiefBlocks = () => {
 
       {/* ════════ WHAT ARE LÏEF BLOCKS ════════ */}
       <section id="what-section" className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <motion.img src={dotsNeon} alt="" className="w-[176vw] max-w-[1512px] opacity-[0.01]" style={{ scale: dotsScale }} />
-        </div>
         <div ref={whatRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12 items-center">
               <div>

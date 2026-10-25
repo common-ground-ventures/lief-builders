@@ -153,7 +153,7 @@ const PalisadesPage = () => {
           {watch.map((l, i) => (
             <Reveal key={l.num} delay={0.1 + i * 0.12} className="p-8 md:p-10 relative v2-hover-line">
               <div style={{ background: "var(--v2-deep)", position: "absolute", inset: 0, zIndex: -1 }} />
-              <span className="v2-headline block mb-4" style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", color: "rgba(1,68,33,.24)", lineHeight: 1 }}>{l.num}</span>
+              <span className="v2-headline block mb-4" style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", color: "rgba(194,184,167,.12)", lineHeight: 1 }}>{l.num}</span>
               <h3 className="v2-headline mb-2" style={{ fontSize: "1.35rem", color: "var(--v2-white)" }}>{l.title}</h3>
               <p className="mb-4" style={{ fontFamily: "var(--v2-font-body)", fontSize: "1.15rem", fontWeight: 600, color: "var(--v2-neon)" }}>{l.kicker}</p>
               <p style={{ fontSize: "1.05rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>{l.body}</p>
