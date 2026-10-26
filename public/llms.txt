@@ -99,5 +99,13 @@ Phone: (805) 722-7598
 Email: hello@liefdev.com
 Website: https://liefbuilders.com
 
+## Learn
+- [Owner's Rep for Alternative Building Systems in Arizona](https://www.liefbuilders.com/learn/owners-rep-alternative-building-systems-arizona)
+- [Arizona Owner's Rep Case Files: SABS Project Chronicles](https://www.liefbuilders.com/learn/arizona-owners-rep-sabs-project-case-files)
+
+## Related
+- Lïef Development, the developer of Lïef Midtown at 301 W Osborn: https://www.anewlief.com
+- Kanopi, the design, takeoff and estimating software behind every Lïef Builders budget: https://kanopibuild.com
+
 ## Wiki
 - [LÏEF Builders wiki](https://www.liefbuilders.com/wiki): the record of LÏEF Builders and how Common Ground built it.
