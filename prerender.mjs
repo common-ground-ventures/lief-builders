@@ -15,8 +15,8 @@ const ROUTES = {
     desc: "Owner's representation, project advocacy, and construction oversight across Arizona, Nevada, and Southern California.",
   },
   "/national": {
-    title: "National | LÏEF Builders",
-    desc: "Pre-construction, general construction contracts and owner representation across the country. The contractor pays our fee, not you.",
+    title: "How It Works, Nationwide | Lïef Builders",
+    desc: "A budget from your plans, bids from licensed builders in your market, and someone on your side until the last draw, in any state. The contractor pays our fee, not you.",
   },
   "/palisades-fire-rebuild-owners-rep": {
     title: "Palisades Fire Rebuild Owner's Representation | LÏEF Builders",
