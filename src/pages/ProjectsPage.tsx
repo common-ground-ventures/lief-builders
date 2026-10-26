@@ -25,7 +25,7 @@ const projects: { img: string; name: string; type: string; desc: string; locatio
     img: vailImg,
     name: "The Vail",
     type: "Boutique 55+ Community",
-    desc: "The Southwest\u2019s premier boutique community where discerning adults trade square footage for more time, freedom, and the memories that matter.",
+    desc: "A boutique 55+ community where people trade square footage for more time and freedom.",
     location: "Arizona",
     status: "In Design",
     featured: false,
