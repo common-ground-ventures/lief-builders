@@ -1,3 +1,0 @@
-# Live (Vercel) serves JS as application/javascript; Workers default is text/javascript.
-/assets/*.js
-  Content-Type: application/javascript; charset=utf-8
