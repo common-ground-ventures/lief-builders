@@ -147,6 +147,11 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Partner disclosure (was its own band on three pages; now once, sitewide) */}
+        <p className="mb-6 max-w-[900px]" style={{ fontSize: "0.95rem", color: "var(--v2-dim)", lineHeight: 1.6, opacity: 0.8 }}>
+          Jon Armstrong of Armstrong Construction Group (ACG) is a managing partner of L&Iuml;EF Development. Work is carried out by ACG and/or its trades and network.
+        </p>
+
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderTop: "1px solid var(--v2-rule)" }}>
           <div>

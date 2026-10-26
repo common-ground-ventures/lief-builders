@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useInView } from "@/hooks/useInView";
 import { useContactModal } from "@/contexts/ContactModalContext";
-import FinePrint from "@/components/FinePrint";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const stagger = (i: number) => ({ delay: 0.3 + i * 0.15 });
@@ -75,13 +74,12 @@ const PalisadesPage = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative min-h-[88vh] flex items-center overflow-x-hidden pt-24 md:pt-28 pb-16" style={{ background: "var(--v2-deep)" }}>
+      <section className="relative min-h-[100svh] flex items-center overflow-x-hidden pt-28 pb-28" style={{ background: "var(--v2-deep)" }}>
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[60%] h-[60%]" style={{ background: "radial-gradient(ellipse at top right, rgba(1,68,33,.12), transparent 70%)" }} />
-          <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(194,184,167,.04), transparent 70%)" }} />
+        {/* glows removed 10/25: the section gradients carry the light now */}
         </div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(0), ease }} className="mb-3 md:mb-4">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(0), ease }} className="mb-6 md:mb-8">
             <span className="v2-label hidden md:inline text-[1.25rem]">{eyebrow}</span>
             <span className="md:hidden" style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--v2-neon)" }}>
               <span className="inline-block w-4 h-px mr-2 align-middle" style={{ background: "var(--v2-neon)" }} />
@@ -89,7 +87,7 @@ const PalisadesPage = () => {
             </span>
           </motion.div>
 
-          <motion.h1 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(1), ease }} className="v2-headline leading-[0.95] mb-4 md:mb-6" style={{ fontSize: "clamp(2.2rem, 5.5vw, 5rem)" }}>
+          <motion.h1 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(1), ease }} className="v2-headline leading-[1.02] mb-6 md:mb-8" style={{ fontSize: "clamp(2.2rem, 5.5vw, 5rem)" }}>
             REBUILDING AFTER THE PALISADES FIRE<span className="v2-neon-period">?</span>
             <br />
             <span style={{ color: "var(--v2-neon)" }}>HAVE SOMEONE ON YOUR SIDE</span><span className="v2-neon-period">.</span>
@@ -99,17 +97,17 @@ const PalisadesPage = () => {
             LÏEF Builders provides owner's representation for homeowners rebuilding in Southern California. We advocate for the owner through the contractor, the insurer and the build, from the first review to the last draw.
           </motion.p>
 
-          <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(3), ease }} className="mt-6 md:mt-8 flex flex-wrap gap-3 md:gap-4">
+          <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(3), ease }} className="mt-8 md:mt-12 flex flex-wrap gap-3 md:gap-4">
             <button
               onClick={openModal}
               className="transition-all duration-300 hover:brightness-110"
-              style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-forest)", color: "var(--v2-villa)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer" }}
+              style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-btn-bg)", color: "var(--v2-btn-fg)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer" }}
             >
               Start a Conversation
             </button>
             <button
               onClick={() => document.querySelector("#watch")?.scrollIntoView({ behavior: "smooth" })}
-              className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0a0a0a]"
+              className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0F1A14]"
               style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "transparent", color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "10px 24px", cursor: "pointer" }}
             >
               What we cover
@@ -149,11 +147,11 @@ const PalisadesPage = () => {
             THREE PLACES<span className="v2-neon-period">.</span><br /><span style={{ color: "var(--v2-neon)" }}>ONE ADVOCATE</span><span className="v2-neon-period">.</span>
           </h2>
         </Reveal>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px" style={{ background: "var(--v2-rule)", border: "1px solid var(--v2-rule)" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px overflow-hidden" style={{ background: "var(--v2-rule)", border: "1px solid var(--v2-rule)" }}>
           {watch.map((l, i) => (
             <Reveal key={l.num} delay={0.1 + i * 0.12} className="p-8 md:p-10 relative v2-hover-line">
               <div style={{ background: "var(--v2-deep)", position: "absolute", inset: 0, zIndex: -1 }} />
-              <span className="v2-headline block mb-4" style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", color: "rgba(194,184,167,.16)", lineHeight: 1 }}>{l.num}</span>
+              <span className="v2-headline block mb-4" style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", color: "rgba(194,184,167,.6)", lineHeight: 1 }}>{l.num}</span>
               <h3 className="v2-headline mb-2" style={{ fontSize: "1.35rem", color: "var(--v2-white)" }}>{l.title}</h3>
               <p className="mb-4" style={{ fontFamily: "var(--v2-font-body)", fontSize: "1.15rem", fontWeight: 600, color: "var(--v2-neon)" }}>{l.kicker}</p>
               <p style={{ fontSize: "1.05rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>{l.body}</p>
@@ -196,12 +194,12 @@ const PalisadesPage = () => {
             <p className="mb-5" style={{ fontSize: "1.25rem", color: "var(--v2-white)", lineHeight: 1.6 }}>
               For owners who want the new house built to resist the next fire, we can bring in the Saebi Alternative Building System.
             </p>
-            <p className="mb-8" style={{ fontSize: "1.1rem", color: "rgba(255,255,255,.7)", lineHeight: 1.7 }}>
+            <p className="mb-8" style={{ fontSize: "1.1rem", color: "rgba(239,236,227,.85)", lineHeight: 1.7 }}>
               SABS has 0% flame spread. It is one option to discuss, not a requirement of working with us.
             </p>
             <button
               onClick={() => { navigate("/sabs"); window.scrollTo({ top: 0 }); }}
-              className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0a0a0a]"
+              className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0F1A14]"
               style={{ fontFamily: "var(--v2-font-body)", fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "transparent", color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "10px 24px", cursor: "pointer" }}
             >
               About SABS
@@ -223,13 +221,12 @@ const PalisadesPage = () => {
           <button
             onClick={openModal}
             className="transition-all duration-300 hover:brightness-110"
-            style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-forest)", color: "var(--v2-villa)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer" }}
+            style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-btn-bg)", color: "var(--v2-btn-fg)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer" }}
           >
             Start a Conversation
           </button>
         </Reveal>
       </Section>
-      <FinePrint />
     </div>
   );
 };

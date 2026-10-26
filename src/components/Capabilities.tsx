@@ -42,7 +42,7 @@ const Capabilities = () => {
     <section className="relative py-20 md:py-28" style={{ background: "var(--v2-green)" }}>
       <div className="overflow-hidden absolute inset-0 pointer-events-none" style={{ top: "40%", transform: "translateY(-50%)" }}>
         <div className="v2-ghost-text" style={{ fontSize: "min(10vw, 130px)", lineHeight: 1, color: "rgba(0,0,0,.08)", animation: "v2-ghost-scroll 55s linear infinite", position: "relative", whiteSpace: "nowrap" }}>
-          CAPABILITIES
+          ARCHITECTURE · GENERAL CONSTRUCTION · TRADE WORK · INTERIOR DESIGN · LEGAL · INSURANCE
         </div>
       </div>
 
@@ -57,7 +57,7 @@ const Capabilities = () => {
                 <h2 style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 600, color: "var(--v2-white)", lineHeight: 1.2 }}>
                   One team.<br />Every discipline.
                 </h2>
-                <p className="mt-6" style={{ fontSize: "1.1rem", color: "rgba(255,255,255,.7)", lineHeight: 1.7 }}>
+                <p className="mt-6" style={{ fontSize: "1.1rem", color: "rgba(239,236,227,.85)", lineHeight: 1.7 }}>
                   Consultants in every modality. Experts across architecture, general construction, trade work, interior design, and legal. Expert advice from the first insurance call to the final walkthrough. We specialize in fire damage work. No handoffs. No compromises. No excuses.
                 </p>
               </motion.div>
@@ -70,7 +70,7 @@ const Capabilities = () => {
               >
                 <div className="space-y-0">
                   {capabilitiesLeft.map((item) => (
-                    <div key={item} className="flex items-center gap-3 py-4" style={{ borderBottom: "1px solid rgba(255,255,255,.1)" }}>
+                    <div key={item} className="flex items-center gap-3 py-4" style={{ borderBottom: "1px solid rgba(239,236,227,.1)" }}>
                       <Check size={18} style={{ color: "var(--v2-neon)", flexShrink: 0 }} />
                       <span style={{ fontSize: "1.05rem", color: "var(--v2-white)" }}>{item}</span>
                     </div>
@@ -78,7 +78,7 @@ const Capabilities = () => {
                 </div>
                 <div className="space-y-0">
                   {capabilitiesRight.map((item) => (
-                    <div key={item} className="flex items-center gap-3 py-4" style={{ borderBottom: "1px solid rgba(255,255,255,.1)" }}>
+                    <div key={item} className="flex items-center gap-3 py-4" style={{ borderBottom: "1px solid rgba(239,236,227,.1)" }}>
                       <Check size={18} style={{ color: "var(--v2-neon)", flexShrink: 0 }} />
                       <span style={{ fontSize: "1.05rem", color: "var(--v2-white)" }}>{item}</span>
                     </div>
@@ -93,12 +93,11 @@ const Capabilities = () => {
               animate={inView ? { opacity: 1, y: 0 } : false}
               transition={{ duration: 0.75, delay: 0.3, ease }}
               className="text-center pt-8"
-              style={{ borderTop: "1px solid rgba(255,255,255,.1)" }}
             >
               <div className="flex justify-center gap-16 md:gap-24 mb-6">
                 <CapStat end={14} suffix="%" label="TIME SAVINGS" inView={inView} />
               </div>
-              <p className="max-w-[700px] mx-auto" style={{ fontSize: "1rem", color: "rgba(255,255,255,.6)", lineHeight: 1.6 }}>
+              <p className="max-w-[700px] mx-auto" style={{ fontSize: "1rem", color: "rgba(239,236,227,.85)", lineHeight: 1.6 }}>
                 We handle it from start to finish. Every project requires a consultation because every project is different. Less stress. Less confusion. More money in your pocket.
               </p>
             </motion.div>

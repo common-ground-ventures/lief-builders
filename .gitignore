@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Licensed Japandi, local preview only. Never commit (public repo, no web license yet).
+public/fonts-local/

@@ -55,7 +55,7 @@ const Testimonials = () => {
               transition={{ duration: 0.75, ease }}
               className="relative mb-12"
             >
-              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(194,184,167,.16)" }}>
+              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(194,184,167,.6)" }}>
                 TRUSTED
               </div>
               <div className="v2-label mb-6">Testimonials</div>
@@ -73,7 +73,7 @@ const Testimonials = () => {
               animate={inView ? { opacity: 1, y: 0 } : false}
               transition={{ duration: 0.75, delay: 0.15, ease }}
               className="p-8 md:p-12 mb-8"
-              style={{ background: "var(--v2-green)" }}
+              style={{ background: "rgba(239,236,227,.06)", border: "1px solid rgba(194,184,167,.35)" }}
             >
               <span style={{ fontSize: "3rem", lineHeight: 1, color: "rgba(194,184,167,.3)", fontFamily: "Georgia, serif" }}>&ldquo;</span>
               <p className="mt-2" style={{ fontStyle: "italic", fontSize: "clamp(1.1rem, 2.5vw, 1.4rem)", color: "var(--v2-white)", lineHeight: 1.7 }}>
@@ -93,7 +93,7 @@ const Testimonials = () => {
               className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
             >
               {testimonials.map((t, i) => (
-                <div key={i} className="p-6" style={{ background: "rgba(1,68,33,.04)", border: "1px solid var(--v2-rule)" }}>
+                <div key={i} className="p-6" style={{ background: "rgba(239,236,227,.05)", border: "1px solid var(--v2-rule)" }}>
                   <span style={{ fontSize: "2rem", lineHeight: 1, color: "rgba(194,184,167,.2)", fontFamily: "Georgia, serif" }}>&ldquo;</span>
                   <p className="mt-2" style={{ fontStyle: "italic", fontSize: "1rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>
                     &ldquo;{t.quote}&rdquo;

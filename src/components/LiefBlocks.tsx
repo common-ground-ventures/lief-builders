@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
 import { Flame, Droplets, Bug, Thermometer, Shield, Wind, Recycle, Volume2 } from "lucide-react";
@@ -125,6 +125,47 @@ const projectTypes: Record<string, { traditional: number; liefBlocks: number }> 
 
 /* ── COMPONENT ── */
 
+/* LÏEF Blocks x SABS: twelve blocks start spread apart, slide together and lock
+   flush. Once locked, the seams glow to show one solid structure. Only the wall's
+   outside corners are rounded; joined corners are square. Hover pulls it apart. */
+const CORNER: Record<number, string> = { 0: " c-tl", 2: " c-tr", 9: " c-bl", 11: " c-br" };
+const SabsWall = ({ active }: { active: boolean }) => {
+  const [locked, setLocked] = useState(false);
+  const [glow, setGlow] = useState(false);
+  useEffect(() => {
+    if (!active) return;
+    const t = setTimeout(() => setLocked(true), 900);
+    return () => clearTimeout(t);
+  }, [active]);
+  return (
+    <motion.div
+      className={`v2-wall grid grid-cols-3 mb-5${locked ? " is-locked" : ""}`}
+      initial={false}
+      animate={{ columnGap: locked ? 0 : 14, rowGap: locked ? 0 : 14, opacity: active ? 1 : 0 }}
+      transition={{ type: "spring", stiffness: 180, damping: 22 }}
+      onAnimationComplete={() => setGlow(locked)}
+      onHoverStart={() => { setGlow(false); setLocked(false); }}
+      onHoverEnd={() => setLocked(true)}
+      aria-label="Twelve LÏEF Blocks locking together into one solid SABS wall"
+      role="img"
+    >
+      {Array.from({ length: 12 }).map((_, i) => (
+        <motion.div
+          key={i}
+          className={`v2-flush${CORNER[i] ?? ""}`}
+          initial={false}
+          animate={{
+            borderColor: glow ? "rgba(239,236,227,.95)" : "rgba(194,184,167,.5)",
+            boxShadow: glow ? "0 0 14px rgba(194,184,167,.55), inset 0 0 8px rgba(194,184,167,.3)" : "0 0 0 rgba(0,0,0,0)",
+          }}
+          transition={{ duration: 0.45 }}
+          style={{ aspectRatio: "2/1", border: "1px solid rgba(194,184,167,.5)", background: "rgba(194,184,167,.14)" }}
+        />
+      ))}
+    </motion.div>
+  );
+};
+
 const LiefBlocks = () => {
   const { openModal } = useContactModal();
   const [projectType, setProjectType] = useState("Single Family Residential");
@@ -155,19 +196,18 @@ const LiefBlocks = () => {
   return (
     <>
       {/* ════════ HERO ════════ */}
-      <section ref={heroRef} className="relative h-screen flex items-center overflow-x-hidden" style={{ background: "var(--v2-deep)" }}>
+      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-x-hidden pt-24 pb-36 md:pb-40" style={{ background: "var(--v2-deep)" }}>
         {/* Ambient glows */}
         <motion.div className="absolute inset-0 pointer-events-none" style={{ y: heroGlowY }}>
-          <div className="absolute top-0 right-0 w-[60%] h-[60%]" style={{ background: "radial-gradient(ellipse at top right, rgba(1,68,33,.12), transparent 70%)" }} />
-          <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(194,184,167,.04), transparent 70%)" }} />
+        {/* glows removed 10/25: the section gradients carry the light now */}
         </motion.div>
 
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full -mt-[8vh]">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={show(heroInView, 20)}
                 transition={{ duration: 0.75, delay: 0.3, ease }}
-                className="mb-3 md:mb-4"
+                className="mb-6 md:mb-8"
               >
                 <span className="v2-label hidden md:inline text-[1.25rem]">
                   LÏEF x SABS
@@ -184,7 +224,7 @@ const LiefBlocks = () => {
                 initial={{ opacity: 0, y: 35 }}
                 animate={show(heroInView)}
                 transition={{ duration: 0.75, delay: 0.45, ease }}
-                className="v2-headline leading-[0.95] mb-6 md:mb-8"
+                className="v2-headline leading-[1.02] mb-6 md:mb-8"
                 style={{ fontSize: "clamp(2.2rem, 5.5vw, 5rem)", letterSpacing: "-0.02em" }}
               >
                 SABS&trade; TECHNOLOGY<span className="v2-neon-period">.</span>
@@ -205,7 +245,7 @@ const LiefBlocks = () => {
                 initial={{ opacity: 0, y: 35 }}
                 animate={show(heroInView)}
                 transition={{ duration: 0.75, delay: 0.75, ease }}
-                className="mt-2 max-w-[560px]"
+                className="mt-4 md:mt-5 max-w-[560px]"
                 style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}
               >
                 Fire-proof, mold-proof, termite-proof concrete structures with built-in R-75 to R-100 insulation. We deploy it through our proprietary LÏEF Block&trade; components, engineered to bring this technology from blueprint to build.
@@ -215,22 +255,22 @@ const LiefBlocks = () => {
                 initial={{ opacity: 0, y: 35 }}
                 animate={show(heroInView)}
                 transition={{ duration: 0.75, delay: 0.9, ease }}
-                className="mt-5 md:mt-12 flex flex-wrap gap-3 md:gap-4"
+                className="mt-8 md:mt-12 flex flex-wrap gap-3 md:gap-4"
               >
                 <button
                   onClick={openModal}
                   className="transition-all duration-300 hover:brightness-110"
                   style={{
                     fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
-                    letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-forest)",
-                    color: "var(--v2-villa)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer",
+                    letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-btn-bg)",
+                    color: "var(--v2-btn-fg)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer",
                   }}
                 >
                   Get a Quote
                 </button>
                 <button
                   onClick={() => document.querySelector("#what-section")?.scrollIntoView({ behavior: "smooth" })}
-                  className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0a0a0a]"
+                  className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0F1A14]"
                   style={{
                     fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
                     letterSpacing: "0.14em", fontWeight: 600, background: "transparent",
@@ -274,21 +314,7 @@ const LiefBlocks = () => {
               {/* Visual: block diagram — hidden on mobile */}
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.40, ease }} className="hidden md:flex justify-center items-center">
                 <div className="w-full max-w-[420px]">
-                  <div className="grid grid-cols-3 gap-3 mb-5">
-                    {Array.from({ length: 12 }).map((_, i) => (
-                      <div
-                        key={i}
-                        className="transition-all duration-500"
-                        style={{
-                          aspectRatio: "2/1",
-                          border: `1px solid ${accentColor}`,
-                          background: "rgba(194,184,167,.05)",
-                        }}
-                        onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(194,184,167,.2)"; e.currentTarget.style.boxShadow = `0 0 20px rgba(194,184,167,.15)`; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(194,184,167,.05)"; e.currentTarget.style.boxShadow = "none"; }}
-                      />
-                    ))}
-                  </div>
+                  <SabsWall active={whatInView} />
                   <div className="text-center" style={{ letterSpacing: "0.12em", textTransform: "uppercase", color: accentColor }}>
                     <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>LÏEF EPS Core x SABS Coating</p>
                     <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>= Structural Concrete</p>
@@ -302,7 +328,6 @@ const LiefBlocks = () => {
 
       {/* ════════ ATTRIBUTES + STATS ════════ */}
       <section className="relative py-12 md:py-28" style={{ background: "var(--v2-green)" }}>
-        <div className="absolute inset-x-0 top-0 h-[40%] pointer-events-none" style={{ background: "linear-gradient(180deg, rgba(0,0,0,.12), transparent)" }} />
         <div ref={statsRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, ease }} className="mb-6" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.22em", color: "rgba(194,184,167,.6)" }}>
                 Performance
@@ -312,47 +337,43 @@ const LiefBlocks = () => {
                 WE BUILD<br /><span style={{ color: "var(--v2-neon)" }}>SMARTER<span className="v2-neon-period">.</span></span>
               </motion.h2>
 
-              <motion.p initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[550px] mb-20" style={{ fontWeight: 300, fontSize: "1.25rem", color: "rgba(245,245,243,.7)", lineHeight: 1.8 }}>
+              <motion.p initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[550px] mb-20" style={{ fontWeight: 300, fontSize: "1.25rem", color: "rgba(239,236,227,.85)", lineHeight: 1.8 }}>
                 Arizona's #1 SABS-trained builder. LÏEF Blocks with SABS Technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
               </motion.p>
 
               {/* Attribute cards */}
-              <motion.div initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 sm:grid-cols-2 gap-px mb-px">
+              <motion.div initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 {attributes.map((attr) => {
                   const Icon = attr.icon;
                   return (
                     <div
                       key={attr.title}
                       className="p-6 md:p-8 transition-all duration-500 group"
-                      style={{ border: "1px solid rgba(245,245,243,.08)", background: "rgba(0,0,0,.15)" }}
-                      onMouseEnter={(e) => e.currentTarget.style.boxShadow = `0 0 40px rgba(194,184,167,.12), inset 0 1px 0 ${accentColor}40`}
-                      onMouseLeave={(e) => e.currentTarget.style.boxShadow = "none"}
+                      style={{ border: "1px solid rgba(239,236,227,.08)", background: "rgba(0,0,0,.15)" }}
                     >
                       <div className="w-14 h-14 flex items-center justify-center mb-5" style={{ border: `1px solid ${accentColor}40` }}>
                         <Icon size={32} style={{ color: accentColor }} />
                       </div>
                       <h4 className="mb-3" style={{ fontSize: "1.25rem", fontWeight: 600, color: accentColor, textTransform: "uppercase" }}>{attr.title}</h4>
-                      <p style={{ fontSize: "1.25rem", color: "rgba(245,245,243,.6)", lineHeight: 1.6 }}>{attr.desc}</p>
+                      <p style={{ fontSize: "1.25rem", color: "rgba(239,236,227,.85)", lineHeight: 1.6 }}>{attr.desc}</p>
                     </div>
                   );
                 })}
               </motion.div>
 
               {/* Stat cards */}
-              <motion.div initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.32, ease }} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px">
+              <motion.div initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.32, ease }} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 {stats.map((stat) => (
                   <div
                     key={stat.label}
                     className="p-6 md:p-8 transition-all duration-500"
-                    style={{ border: "1px solid rgba(245,245,243,.08)", background: "rgba(0,0,0,.15)" }}
-                    onMouseEnter={(e) => e.currentTarget.style.boxShadow = `0 0 40px rgba(194,184,167,.12), inset 0 1px 0 ${accentColor}40`}
-                    onMouseLeave={(e) => e.currentTarget.style.boxShadow = "none"}
+                    style={{ border: "1px solid rgba(239,236,227,.08)", background: "rgba(0,0,0,.15)" }}
                   >
                     <div className="v2-headline mb-1" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--v2-white)" }}>
                       {stat.value}<span style={{ fontSize: "0.5em", fontWeight: 400 }}>{stat.suffix}</span>
                     </div>
                     <div className="mb-2" style={{ fontSize: "1rem", textTransform: "uppercase", color: "var(--v2-white)", letterSpacing: "0.1em", fontWeight: 600 }}>{stat.label}</div>
-                    <div style={{ fontSize: "1rem", color: "rgba(245,245,243,.55)", lineHeight: 1.5 }}>{stat.desc}</div>
+                    <div style={{ fontSize: "1rem", color: "rgba(239,236,227,.55)", lineHeight: 1.5 }}>{stat.desc}</div>
                   </div>
                 ))}
               </motion.div>
@@ -373,7 +394,7 @@ const LiefBlocks = () => {
                 Every component of the LÏEF Blocks system is tested, certified, and code-compliant. No shortcuts. No workarounds.
               </motion.p>
 
-              <motion.div initial={{ opacity: 0, y: 35 }} animate={show(techInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-px">
+              <motion.div initial={{ opacity: 0, y: 35 }} animate={show(techInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {technicals.map((tech, i) => {
                   const Icon = technicalIcons[i];
                   return (
@@ -381,8 +402,6 @@ const LiefBlocks = () => {
                       key={tech.title}
                       className="flex items-start gap-5 p-6 md:p-8 transition-all duration-500"
                       style={{ border: "1px solid var(--v2-rule)", background: "rgba(194,184,167,.01)" }}
-                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = `${accentColor}40`; e.currentTarget.style.background = "rgba(194,184,167,.03)"; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--v2-rule)"; e.currentTarget.style.background = "rgba(194,184,167,.01)"; }}
                     >
                       <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center mt-1" style={{ border: `1px solid ${accentColor}30` }}>
                         <Icon size={20} style={{ color: accentColor }} />
@@ -407,13 +426,17 @@ const LiefBlocks = () => {
               <motion.h2 initial={{ opacity: 0, y: 35 }} animate={show(vidInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-headline text-4xl md:text-5xl mb-12" style={{ color: "var(--v2-white)" }}>
                 HOW IT WORKS<span className="v2-neon-period">.</span>
               </motion.h2>
+              <motion.p initial={{ opacity: 0, y: 35 }} animate={show(vidInView)} transition={{ duration: 0.75, delay: 0.12, ease }} className="max-w-[760px] -mt-6 mb-12" style={{ fontSize: "1.3rem", color: "rgba(239,236,227,.85)", lineHeight: 1.6 }}>
+                SABS radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
+              </motion.p>
 
-              <motion.div initial={{ opacity: 0, y: 35 }} animate={show(vidInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div initial={{ opacity: 0, y: 35 }} animate={show(vidInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
                 {[
-                  { id: "aQFVqs_XrEY", title: "SABS Start to Finish Process", scale: "1" },
-                  { id: "vXAN6usiCGg", title: "Timelapse of SABS Texas Project", scale: "1.35" },
+                  { id: "aQFVqs_XrEY", title: "SABS Start to Finish Process", desc: "The completed process of the SABS Building System, start to finish.", scale: "1" },
+                  { id: "vXAN6usiCGg", title: "Timelapse of SABS Texas Project", desc: "A SABS project near Austin, Texas, going up in timelapse.", scale: "1.35" },
                 ].map((vid) => (
-                  <div key={vid.id} className="relative w-full" style={{ aspectRatio: "16/9", border: "1px solid var(--v2-rule)", overflow: "hidden" }}>
+                  <figure key={vid.id} className="flex flex-col gap-5">
+                  <div className="relative w-full" style={{ aspectRatio: "16/9", border: "1px solid var(--v2-rule)", overflow: "hidden" }}>
                     {playingVideo === vid.id ? (
                       <iframe
                         src={`https://www.youtube.com/embed/${vid.id}?autoplay=1&rel=0`}
@@ -475,6 +498,12 @@ const LiefBlocks = () => {
                       </div>
                     )}
                   </div>
+                    <figcaption>
+                      <h3 className="v2-headline mb-2" style={{ fontSize: "1.5rem", color: "var(--v2-white)" }}>{vid.title}</h3>
+                      <p style={{ fontSize: "1.15rem", color: "rgba(239,236,227,.85)", lineHeight: 1.6 }}>{vid.desc}</p>
+                      <p className="mt-2" style={{ fontSize: "0.95rem", color: "var(--v2-dim)" }}>Video: Strata International Group</p>
+                    </figcaption>
+                  </figure>
                 ))}
               </motion.div>
         </div>
@@ -483,31 +512,31 @@ const LiefBlocks = () => {
       {/* ════════ COST CALCULATOR ════════ */}
       <section className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
         <div ref={calcRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 md:gap-16 items-center">
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(calcInView)} transition={{ duration: 0.75, ease }}>
                 <div className="v2-label mb-6">Savings Calculator</div>
                 <h2 className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-6" style={{ color: "var(--v2-white)" }}>
                   SEE THE<br /><span style={{ color: "var(--v2-neon)" }}>DIFFERENCE</span><span className="v2-neon-period">.</span>
                 </h2>
                 <p className="max-w-md" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                  Estimate your project savings with LÏEF Blocks compared to traditional construction.
+                  Estimate your project savings with SABS compared to traditional construction.
                 </p>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, y: 35 }} animate={show(calcInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="p-8 md:p-10" style={{ border: "1px solid var(--v2-rule)", background: "rgba(194,184,167,.01)" }}>
-                <label className="block mb-2" style={{ fontSize: "1rem", color: "var(--v2-dim)", letterSpacing: "0.05em" }}>Project Type</label>
+              <motion.div initial={{ opacity: 0, y: 35 }} animate={show(calcInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="v2-calc p-8 md:p-12" style={{ border: "1px solid var(--v2-rule)", background: "rgba(194,184,167,.01)" }}>
+                <label className="block mb-3" style={{ fontSize: "1.15rem", color: "var(--v2-dim)", letterSpacing: "0.05em" }}>Project Type</label>
                 <select
                   value={projectType}
                   onChange={(e) => setProjectType(e.target.value)}
-                  className="w-full mb-6 p-3 outline-none transition-colors duration-300 focus:border-[#C2B8A7]"
-                  style={{ background: "var(--v2-deep)", border: "1px solid rgba(255,255,255,.15)", color: "var(--v2-white)", fontFamily: "var(--v2-font-body)", fontSize: "1rem" }}
+                  className="w-full mb-8 p-4 outline-none transition-colors duration-300 focus:border-[#C2B8A7]"
+                  style={{ background: "var(--v2-deep)", border: "1px solid rgba(239,236,227,.15)", color: "var(--v2-white)", fontFamily: "var(--v2-font-body)", fontSize: "1.15rem" }}
                 >
                   {Object.keys(projectTypes).map((t) => (
                     <option key={t} value={t}>{t}</option>
                   ))}
                 </select>
 
-                <label className="block mb-2" style={{ fontSize: "1rem", color: "var(--v2-dim)", letterSpacing: "0.05em" }}>
+                <label className="block mb-4" style={{ fontSize: "1.15rem", color: "var(--v2-dim)", letterSpacing: "0.05em" }}>
                   Square Footage: <span style={{ color: accentColor, fontWeight: 600 }}>{sqft.toLocaleString()} sq ft</span>
                 </label>
                 <input
@@ -517,19 +546,19 @@ const LiefBlocks = () => {
                   step={500}
                   value={sqft}
                   onChange={(e) => setSqft(Number(e.target.value))}
-                  className="w-full mb-8"
+                  className="v2-range w-full mb-10"
                   style={{ accentColor }}
                 />
 
-                <div className="grid grid-cols-2 gap-6 pt-6" style={{ borderTop: "1px solid rgba(255,255,255,.1)" }}>
+                <div className="grid grid-cols-2 gap-6 pt-6" style={{ borderTop: "1px solid rgba(239,236,227,.1)" }}>
                   <div>
-                    <div className="v2-headline mb-1" style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: accentColor }}>
+                    <div className="v2-headline mb-1" style={{ fontSize: "clamp(2rem, 3.6vw, 3.2rem)", color: accentColor }}>
                       ${totalSavings.toLocaleString()}
                     </div>
                     <div style={{ fontSize: "1rem", color: "var(--v2-dim)" }}>Estimated Savings</div>
                   </div>
                   <div>
-                    <div className="v2-headline mb-1" style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", color: accentColor }}>
+                    <div className="v2-headline mb-1" style={{ fontSize: "clamp(2rem, 3.6vw, 3.2rem)", color: accentColor }}>
                       {savingsPercent}%
                     </div>
                     <div style={{ fontSize: "1rem", color: "var(--v2-dim)" }}>Cost Reduction</div>
@@ -549,26 +578,20 @@ const LiefBlocks = () => {
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, ease }} className="v2-label mb-12">As Featured In</motion.div>
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-20">
                 {pressOutlets.map((outlet) => (
-                  <img
-                    key={outlet.name}
-                    src={outlet.src}
-                    alt={outlet.name}
-                    className="v2-press-logo"
-                    style={{ height: "48px", width: "auto", objectFit: "contain" }}
-                  />
+                  <span key={outlet.name} role="img" aria-label={outlet.name} className="v2-logo-mask relative inline-block">
+                    <img src={outlet.src} alt="" aria-hidden="true" style={{ height: "48px", width: "auto", objectFit: "contain", visibility: "hidden" }} />
+                    <span className="v2-logo-fill absolute inset-0" style={{ WebkitMaskImage: `url(${outlet.src})`, maskImage: `url(${outlet.src})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat", WebkitMaskPosition: "center", maskPosition: "center" }} />
+                  </span>
                 ))}
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="v2-label mb-10">Trusted By Industry Leaders</motion.div>
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
                 {trustLogos.map((logo) => (
-                  <img
-                    key={logo.name}
-                    src={logo.src}
-                    alt={logo.name}
-                    className="v2-partner-logo"
-                    style={{ height: "60px", width: "auto", objectFit: "contain" }}
-                  />
+                  <span key={logo.name} role="img" aria-label={logo.name} className="v2-logo-mask relative inline-block">
+                    <img src={logo.src} alt="" aria-hidden="true" style={{ height: "60px", width: "auto", objectFit: "contain", visibility: "hidden" }} />
+                    <span className="v2-logo-fill absolute inset-0" style={{ WebkitMaskImage: `url(${logo.src})`, maskImage: `url(${logo.src})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat", WebkitMaskPosition: "center", maskPosition: "center" }} />
+                  </span>
                 ))}
               </motion.div>
         </div>
@@ -590,15 +613,15 @@ const LiefBlocks = () => {
                   className="inline-block transition-all duration-300 hover:brightness-110"
                   style={{
                     fontFamily: "var(--v2-font-body)", fontSize: "1.1rem", textTransform: "uppercase",
-                    letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-forest)",
-                    color: "var(--v2-villa)", padding: "16px 40px", border: "1px solid var(--v2-loggia)", cursor: "pointer",
+                    letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-btn-bg)",
+                    color: "var(--v2-btn-fg)", padding: "16px 40px", border: "1px solid var(--v2-loggia)", cursor: "pointer",
                   }}
                 >
                   Start a Conversation
                 </button>
                 <button
                   onClick={openModal}
-                  className="inline-block transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0a0a0a]"
+                  className="inline-block transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0F1A14]"
                   style={{
                     fontFamily: "var(--v2-font-body)", fontSize: "1.1rem", textTransform: "uppercase",
                     letterSpacing: "0.14em", color: accentColor, border: `1px solid ${accentColor}`,
