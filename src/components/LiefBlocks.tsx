@@ -406,7 +406,7 @@ const LiefBlocks = () => {
                       <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center mt-1" style={{ border: `1px solid ${accentColor}30` }}>
                         <Icon size={20} style={{ color: accentColor }} />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <h4 className="mb-2" style={{ fontWeight: 600, fontSize: "1.1rem", color: "var(--v2-white)" }}>{tech.title}</h4>
                         <p style={{ fontSize: "1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}>{tech.detail}</p>
                       </div>
@@ -550,7 +550,7 @@ const LiefBlocks = () => {
                   style={{ accentColor }}
                 />
 
-                <div className="grid grid-cols-2 gap-6 pt-6" style={{ borderTop: "1px solid rgba(239,236,227,.1)" }}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6" style={{ borderTop: "1px solid rgba(239,236,227,.1)" }}>
                   <div>
                     <div className="v2-headline mb-1" style={{ fontSize: "clamp(2rem, 3.6vw, 3.2rem)", color: accentColor }}>
                       ${totalSavings.toLocaleString()}
