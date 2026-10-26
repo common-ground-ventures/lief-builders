@@ -332,7 +332,8 @@ html {
 .v2 main section:not(.v2-light) .v2-ghost-text { color: #5E5345 !important; }
 .v2 main section:not(.v2-light) .v2-ghost-text[style*="v2-ghost-scroll"] { color: rgba(94,83,69,.55) !important; }
 .v2 .v2-light .v2-ghost-text { color: rgba(94,83,69,.18) !important; }
-.v2 main .v2-headline[style*="rgba(194,184,167,.6)"] { color: #5E5345 !important; }
+/* Browsers store inline colours normalised ("rgba(194, 184, 167, 0.6)"), so match that form. */
+.v2 main .v2-headline[style*="rgba(194, 184, 167, 0.6)"] { color: #5E5345 !important; }
 
 /* Nav Contact button hover follows the button rule: Bronze fill, Villa type. */
 .v2 header nav button:hover { background: #5E5345 !important; color: var(--v2-villa) !important; border-color: #5E5345 !important; }
@@ -353,7 +354,7 @@ html {
 /* Background texture (Jimmy 10/26): a fine, even grain over the section gradients.
    256px seamless tile; barely visible, and it smooths gradient banding. */
 .v2 { --v2-tex: url(/tex/fine-grain.png); }
-.v2 main > div[style*="linear-gradient(to right, #1B3427"] { background: var(--v2-tex, none), linear-gradient(to right, #1B3427, #15271D) !important; }
+.v2 main > div[style*="linear-gradient(to right, rgb(27, 52, 39)"] { background: var(--v2-tex, none), linear-gradient(to right, #1B3427, #15271D) !important; }
 
 
 /* Partners headline matches "One team. Every discipline." (clamp 2-3rem), so the faded
