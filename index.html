@@ -28,7 +28,9 @@
       // GA4 runs on the production hosts only, so preview and staging visits never count as traffic.
       if (/^(www\.)?liefbuilders\.com$/.test(location.hostname)) {
         var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-EQFMFY0NEK'; document.head.appendChild(s);
-        window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EQFMFY0NEK');</script>
+        window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-EQFMFY0NEK');
+      }
+    </script>
 
     <!-- JSON-LD Organization Schema -->
     <script type="application/ld+json">
