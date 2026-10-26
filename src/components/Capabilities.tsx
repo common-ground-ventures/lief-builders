@@ -13,6 +13,7 @@ const capabilitiesLeft = [
   "Contractor Communication",
   "Insurance Coordination",
   "Architectural Review",
+  "Budgets From Your Plans",
 ];
 
 const capabilitiesRight = [
@@ -22,7 +23,8 @@ const capabilitiesRight = [
   "Red Flag Identification",
   "Legal Review",
   "Budget & Schedule Management",
-  "SABS\u2122 Material Supply",
+  "Bid Leveling Against Our Takeoff",
+  "SABS\u2122 Construction",
 ];
 
 const CapStat = ({ end, suffix, label, inView }: { end: number; suffix: string; label: string; inView: boolean }) => {
@@ -58,7 +60,7 @@ const Capabilities = () => {
                   One team.<br />Every discipline.
                 </h2>
                 <p className="mt-6" style={{ fontSize: "1.1rem", color: "rgba(239,236,227,.85)", lineHeight: 1.7 }}>
-                  Consultants in every modality. Experts across architecture, general construction, trade work, interior design, and legal. Expert advice from the first insurance call to the final walkthrough. We specialize in fire damage work. No handoffs. No compromises. No excuses.
+                  Architects, engineers, estimators, builders and counsel, licensed where you build. We bring the ones your project needs and keep every one of them pointed at your budget. No handoffs. No compromises. No excuses.
                 </p>
               </motion.div>
 

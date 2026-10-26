@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
+import { KanopiLink } from "@/components/Kanopi";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 interface FAQItem {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 const faqs: FAQItem[] = [
@@ -21,19 +22,40 @@ const faqs: FAQItem[] = [
       "Because the people building your project are not paid to protect your interests. They are paid to finish the job. An owner\u2019s rep sits on your side of the table, reviewing bids, catching red flags, negotiating change orders, and making sure every dollar goes where it should. It is the difference between hoping the build goes well and knowing someone is watching every line item.",
   },
   {
-    question: "What areas does LÏEF Builders serve?",
+    question: "What areas does Lïef Builders serve?",
     answer:
-      "LÏEF Builders serves property owners in Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California. The team has completed projects across these markets, ranging from luxury residential builds to large-scale commercial developments and disaster recovery rebuilds.",
+      "Anywhere in the United States, from our base in Phoenix. We bid the work to builders licensed in the state where you are building, and the design team is licensed there too. Our home markets are Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California, where the team has completed projects ranging from luxury residential builds to large-scale commercial developments and disaster recovery rebuilds.",
   },
   {
-    question: "How does LÏEF Builders save clients money on construction projects?",
-    answer:
-      "Three ways. First, contract negotiation: the team reviews every scope, bid, and vendor agreement before you sign anything. Second, ongoing site oversight: regular inspections catch problems when they are cheap to fix, not after they have become six-figure change orders. Third, vendor and material verification: confirming that pricing, quantities, and specs match what was agreed to.",
+    question: "Why does Lïef Builders cost less than a traditional owner's rep?",
+    answer: (
+      <>
+        A traditional rep bills you for the hours spent counting: quantities off the drawings, line items across bids, change orders against the scope. <KanopiLink />, the software we built, does the counting. A person on our team reads what it flags and makes the call. You stop paying for counting and pay for judgment.
+        <br /><br />
+        It also saves you money three ways. First, contract negotiation: the team reviews every scope, bid, and vendor agreement before you sign anything. Second, ongoing site oversight: regular inspections catch problems when they are cheap to fix, not after they have become six-figure change orders. Third, vendor and material verification: confirming that pricing, quantities, and specs match what was agreed to.
+      </>
+    ),
   },
   {
     question: "What is SABS construction technology?",
     answer:
-      "SABS stands for Saebi Alternative Building System. Think of it as the next generation of how buildings get built. EPS foam panels, which LÏEF calls LÏEF Blocks, are coated with SABSCRETE, a high-strength cementitious composite, to form a single monolithic structure. The result: 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity. It builds faster and costs 15-20% less than traditional methods. LÏEF is the leading SABS builder in Arizona and offers it alongside conventional framing so clients get the right system for their project.",
+      "SABS stands for Saebi Alternative Building System. Think of it as the next generation of how buildings get built. EPS foam panels, which LÏEF calls LÏEF Blocks, are coated with SABSCRETE, a high-strength cementitious composite, to form a single monolithic structure. The result: 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity. It builds faster and costs 15-20% less than traditional methods. LÏEF is the leading SABS builder in Arizona and offers it alongside conventional framing so clients get the right system for their project. We build with SABS in Arizona and bid it anywhere.",
+  },
+  {
+    question: "I'm a builder or an architect. How do we work together?",
+    answer: (
+      <>
+        Builders: we bring you into bids we run in your market, and every bid is leveled against our takeoff, so you are judged on price and scope. Architects: send a schematic set and we return a budget before your client ever sees a bid. Want a takeoff for your own bid? That is Kanopi, at <KanopiLink>kanopibuild.com</KanopiLink>.
+      </>
+    ),
+  },
+  {
+    question: "What is Kanopi?",
+    answer: (
+      <>
+        The design, takeoff and estimating software we built. Every Lïef Builders budget runs through it. <KanopiLink>kanopibuild.com</KanopiLink>
+      </>
+    ),
   },
 ];
 

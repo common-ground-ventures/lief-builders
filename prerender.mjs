@@ -11,8 +11,8 @@ const BASE = "https://www.liefbuilders.com";
 // Descriptions are auto-generated from existing site facts and can be refined.
 const ROUTES = {
   "/": {
-    title: "LÏEF Builders | Project Advocacy & Oversight",
-    desc: "Owner's representation, project advocacy, and construction oversight across Arizona, Nevada, and Southern California.",
+    title: "Lïef Builders | Budgets, Bidding and Owner's Representation, Nationwide",
+    desc: "Send us the plans from any state. We tell you what it should cost, bid it to licensed builders in your market and stay on your side until the last draw.",
   },
   "/national": {
     title: "National | LÏEF Builders",
