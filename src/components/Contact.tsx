@@ -38,9 +38,9 @@ const Contact = () => {
   const inputStyle = {
     width: "100%",
     padding: "12px 16px",
-    background: "transparent",
-    border: "1px solid var(--v2-rule)",
-    color: "var(--v2-white)",
+    background: "var(--v2-villa)",
+    border: "1px solid var(--v2-villa)",
+    color: "var(--v2-deep)",
     fontFamily: "var(--v2-font-body)",
     fontSize: "1rem",
     outline: "none",
@@ -68,7 +68,7 @@ const Contact = () => {
               <h2 className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-4" style={{ color: "var(--v2-white)" }}>
                 LET'S<br /><span style={{ color: "var(--v2-neon)" }}>BUILD</span><span className="v2-neon-period">.</span>
               </h2>
-              <p className="max-w-[600px] mx-auto" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}>
+              <p className="max-w-[920px] mx-auto" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}>
                 Whether you're a property owner or a developer, we'd like to hear from you. We also work closely with insurance adjusters and legal teams.
               </p>
             </motion.div>
@@ -79,8 +79,8 @@ const Contact = () => {
               transition={{ duration: 0.75, delay: 0.15, ease }}
               className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16"
             >
-              {/* Left - Contact info */}
-              <div>
+              {/* Left - Contact info; Markets Served sits at the bottom so it lines up with the form */}
+              <div className="flex flex-col">
                 <div className="mb-8">
                   <span style={labelStyle}>VISIT US</span>
                   <p style={{ fontSize: "1.1rem", color: "var(--v2-white)" }}>8271 E Gelding Dr.<br />Scottsdale, AZ 85260</p>
@@ -94,7 +94,7 @@ const Contact = () => {
                   <a href="mailto:hello@liefdev.com" style={{ fontSize: "1.1rem", color: "var(--v2-white)", textDecoration: "none" }}>hello@liefdev.com</a>
                 </div>
 
-                <div className="p-6" style={{ background: "rgba(0,107,63,.06)", border: "1px solid var(--v2-rule)" }}>
+                <div className="p-6 md:mt-auto" style={{ background: "rgba(239,236,227,.05)", border: "1px solid var(--v2-rule)" }}>
                   <span className="v2-label block mb-4" style={{ fontSize: "1rem" }}>MARKETS SERVED</span>
                   {["Phoenix & Greater Arizona", "Las Vegas, Nevada", "Los Angeles & Southern California"].map((m) => (
                     <div key={m} className="flex items-center gap-3 py-2">
@@ -106,7 +106,7 @@ const Contact = () => {
               </div>
 
               {/* Right - Form */}
-              <div className="p-6 md:p-8" style={{ border: "1px solid var(--v2-rule)" }}>
+              <div className="v2-form-card p-6 md:p-8" style={{ border: "1px solid var(--v2-rule)" }}>
                 <h3 className="v2-headline mb-6" style={{ fontSize: "1.1rem", letterSpacing: "0.1em" }}>START YOUR PROJECT</h3>
                 {status === "sent" ? (
                   <div className="text-center py-8">
@@ -143,12 +143,12 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="w-full transition-all duration-300 hover:brightness-110"
+                    className="v2-send w-full transition-all duration-300"
                     style={{
                       fontFamily: "var(--v2-font-body)", fontSize: "1rem", fontWeight: 600,
                       textTransform: "uppercase", letterSpacing: "0.14em",
-                      background: "var(--v2-neon)", color: "var(--v2-deep)",
-                      border: "none", padding: "14px 24px",
+                      background: "var(--v2-loggia)", color: "var(--v2-deep)",
+                      border: "1px solid var(--v2-loggia)", padding: "14px 24px",
                       cursor: status === "sending" ? "wait" : "pointer",
                       opacity: status === "sending" ? 0.7 : 1,
                     }}

@@ -1,18 +1,31 @@
-/* V2 Design System — Dark Cinematic Editorial */
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+/* V2 Design System — Midtown family, Forest-led (Jimmy 10/25, local preview) */
+/* Metric overrides on each face centre capitals vertically in every box (10/25).
+   Japandi is licensed (Web Font license) and served from liefmidtownphx.com, whose repo is
+   private, so the font files never sit in this public repo. Do not add them here. */
+@font-face { font-family: 'Japandi'; src: url('https://liefmidtownphx.com/assets/fonts/Japandi-Light.otf') format('opentype'); font-weight: 1 199; font-display: swap; ascent-override: 83.1%; descent-override: 13.1%; line-gap-override: 0%; }
+@font-face { font-family: 'Japandi'; src: url('https://liefmidtownphx.com/assets/fonts/Japandi-Regular.otf') format('opentype'); font-weight: 200 499; font-display: swap; ascent-override: 83.1%; descent-override: 13.1%; line-gap-override: 0%; }
+@font-face { font-family: 'Japandi'; src: url('https://liefmidtownphx.com/assets/fonts/Japandi-Bold.otf') format('opentype'); font-weight: 500 900; font-display: swap; ascent-override: 89.7%; descent-override: 20.5%; line-gap-override: 0%; }
 
 .v2 {
-  --v2-green: #006B3F;
-  --v2-neon: #00FF88;
-  --v2-black: #1A1A1A;
-  --v2-deep: #0a0a0a;
-  --v2-white: #F5F5F3;
-  --v2-muted: #aaaaaa;
-  --v2-dim: #999999;
-  --v2-rule: rgba(0,255,136,.06);
+  /* Forest Green #014421 is the lead ground. Tricorn Black carries the feature bands.
+     Greek Villa is text and buttons; Loggia is accent text, labels and lines. */
+  --v2-cardin: #1B3427;   /* Cardin Green: light end of the section gradients */
+  --v2-forest: #014421;
+  --v2-green: #0F1A14;   /* feature bands share the ground; the gradients separate sections */
+  --v2-villa: #EFECE3;
+  --v2-loggia: #C2B8A7;
+  --v2-neon: #C2B8A7; /* legacy name, Loggia: accent text, labels and lines */
+  --v2-black: #0F1A14;
+  --v2-deep: #0F1A14;   /* Juniper: the ground */
+  --v2-white: #EFECE3;
+  --v2-muted: rgba(239,236,227,.85);
+  --v2-dim: #C2B8A7;
+  --v2-rule: rgba(194,184,167,.18);
+  --v2-btn-bg: #EFECE3;
+  --v2-btn-fg: #0F1A14;
 
-  --v2-font-headline: 'Archivo Black', sans-serif;
-  --v2-font-body: 'DM Sans', sans-serif;
+  --v2-font-headline: 'Japandi', sans-serif;
+  --v2-font-body: 'Japandi', sans-serif;
 
   background: var(--v2-deep);
   color: var(--v2-white);
@@ -26,8 +39,9 @@
 }
 
 .v2-headline {
-  font-family: 'Archivo Black', sans-serif;
-  text-transform: uppercase;
+  font-family: 'Japandi', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .v2-label {
@@ -39,13 +53,14 @@
 
 .v2-neon-period {
   color: var(--v2-neon);
-  text-shadow: 0 0 60px rgba(0,255,136,.2);
+  text-shadow: 0 0 60px rgba(194,184,167,.2);
 }
 
 .v2-ghost-text {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Japandi', sans-serif;
+  font-weight: 700;
   text-transform: uppercase;
-  color: rgba(0,107,63,.04);
+  color: rgba(194,184,167,.06);
   pointer-events: none;
   user-select: none;
   position: absolute;
@@ -109,13 +124,13 @@
 }
 
 .v2-hover-line:hover {
-  background: rgba(0,255,136,.015);
+  background: rgba(194,184,167,.015);
 }
 
 /* Footer link hovers */
 footer a:hover,
 footer button:hover {
-  color: #00FF88 !important;
+  color: #C2B8A7 !important;
 }
 
 footer a.hover-gold:hover {
@@ -124,7 +139,7 @@ footer a.hover-gold:hover {
 
 /* Common Ground credit: footer grey at rest, Lïef green on hover */
 footer a.hover-cg:hover {
-  color: #00FF88 !important;
+  color: #C2B8A7 !important;
 }
 
 /* ── Partner & press logos ── */
@@ -167,3 +182,185 @@ footer a.hover-cg:hover {
 html {
   scroll-behavior: smooth;
 }
+
+/* ---- 10/25 Midtown pass (Jimmy) ---------------------------------------- */
+
+/* Alternating section gradients, no hard breaks. Odd sections run light at the
+   bottom-left to dark at the top-right; even sections light at the top-left to
+   dark at the bottom-right, so every seam lines up. Light end Cardin Green #1B3427, dark end Juniper #0F1A14 (the ground). */
+.v2 section:not(.v2-light):nth-of-type(odd)  { background: var(--v2-tex, none), linear-gradient(to top right, #1B3427, #0F1A14) !important; border-top: 0 !important; }
+.v2 section:not(.v2-light):nth-of-type(even) { background: var(--v2-tex, none), linear-gradient(to bottom right, #1B3427, #0F1A14) !important; border-top: 0 !important; }
+
+/* Soft 10px corners on cards, tiles, fields and buttons; everything else stays square. */
+.v2 [style*="border: 1px solid"]:not(.v2-flush), .v2 input, .v2 textarea, .v2 button[style*="background"] { border-radius: 10px !important; }
+
+/* Small tracked caps (labels, nav, marquee, buttons) take Japandi Bold, as on Midtown. */
+.v2 [style*="uppercase"], .v2 .v2-label { font-weight: 500 !important; }
+
+
+/* Nav on the Loggia bar: periods and menu hovers in the hunter green. */
+.v2 .v2-on-loggia .v2-neon-period { color: var(--v2-deep); text-shadow: none; }
+.v2 .v2-menu-link:hover { text-decoration-color: var(--v2-deep) !important; }
+
+/* Footer continues the gradient chain from whichever section ends the page. */
+.v2:has(> main section:last-of-type:nth-of-type(odd)) > footer { background: var(--v2-tex, none), linear-gradient(to bottom right, #1B3427, #0F1A14) !important; border-top: 0 !important; }
+.v2:has(> main section:last-of-type:nth-of-type(even)) > footer { background: var(--v2-tex, none), linear-gradient(to top right, #1B3427, #0F1A14) !important; border-top: 0 !important; }
+
+/* Partners & Press on Greek Villa: logos rest in a soft grey, pop to Forest Green on hover. */
+.v2 .v2-partner-fill { background: #303030; opacity: .38; transition: background .3s, opacity .3s; }
+.v2 .v2-partner:hover .v2-partner-fill { background: var(--v2-forest); opacity: 1; }
+
+/* Send Message: hover flips to the hunter green with Greek Villa type. */
+.v2 .v2-send:hover:not(:disabled) { background: var(--v2-deep) !important; color: var(--v2-villa) !important; border-color: var(--v2-villa) !important; }
+
+/* Footer links, all the same: Loggia at rest; Greek Villa with a Villa underline on hover. */
+.v2 footer a, .v2 footer button { color: var(--v2-loggia) !important; text-decoration: underline !important; text-decoration-color: transparent !important; text-decoration-thickness: 1px; text-underline-offset: 5px; transition: color .25s, text-decoration-color .25s; }
+.v2 footer a:hover, .v2 footer button:hover { color: var(--v2-villa) !important; text-decoration-color: var(--v2-villa) !important; }
+
+/* Body copy: 18px floor (Midtown sets 18.5px), roomier leading. Japandi has no
+   medium weight, so size is the lever that keeps Regular from reading thin. */
+.v2 main p, .v2 main li, .v2 footer p { font-size: 1.125rem; line-height: 1.65; }
+.v2 main p[style*="font-size: 1rem"], .v2 main p[style*="font-size: 1.05rem"], .v2 main p[style*="font-size: 1.1rem"],
+.v2 main li[style*="font-size: 1rem"], .v2 main li[style*="font-size: 1.05rem"], .v2 main li[style*="font-size: 1.1rem"],
+.v2 main li span[style*="font-size: 1rem"] { font-size: 1.125rem !important; line-height: 1.65 !important; }
+
+/* Repeating cards and tiles: a slightly lifted interior and a firmer Loggia outline. */
+.v2 main div[style*="border: 1px solid"]:not(.v2-form-card):not(.v2-flush) { background-color: rgba(239,236,227,.06) !important; border-color: rgba(194,184,167,.35) !important; }
+
+/* Start Your Project: the one solid Loggia box, hunter-green type, Villa fields. */
+.v2 .v2-form-card { background: var(--v2-loggia) !important; border-color: var(--v2-loggia) !important; color: var(--v2-deep); }
+.v2 .v2-form-card h3, .v2 .v2-form-card h4, .v2 .v2-form-card p, .v2 .v2-form-card label { color: var(--v2-deep) !important; }
+.v2 .v2-form-card input, .v2 .v2-form-card textarea { border-color: rgba(15,26,20,.25) !important; }
+.v2 .v2-form-card .v2-send { background: var(--v2-villa) !important; color: var(--v2-deep) !important; border-color: var(--v2-deep) !important; }
+.v2 .v2-form-card .v2-send:hover:not(:disabled) { background: var(--v2-deep) !important; color: var(--v2-villa) !important; border-color: var(--v2-deep) !important; }
+
+
+/* ---- 10/25 pass 3 ------------------------------------------------------- */
+
+/* One hover system for cards and tiles, sitewide: the fill lifts and the outline
+   firms to full Loggia. No glows or shadows anywhere. */
+.v2 main [style*="border: 1px solid"]:not(.v2-flush), .v2 main .v2-tile { box-shadow: none !important; }
+.v2 main div[style*="border: 1px solid"]:not(.v2-form-card):not(.v2-map-frame):not(.grid):not(.v2-flush) { transition: background-color .3s, border-color .3s; }
+.v2 main div[style*="border: 1px solid"]:not(.v2-form-card):not(.v2-map-frame):not(.grid):not(.v2-flush):hover { background-color: rgba(239,236,227,.13) !important; border-color: var(--v2-loggia) !important; }
+
+/* Every box has a soft corner: project tiles and status badges included. */
+.v2 .v2-tile { border-radius: 10px !important; }
+.v2 .v2-badge { border-radius: 6px !important; }
+
+/* Buttons: the Greek Villa button and the outline buttons both fill Loggia with
+   Juniper type on hover, a clear change from either resting state. */
+.v2 [style*="--v2-btn-bg"]:hover:not(:disabled),
+.v2 [class*="hover:bg-[#C2B8A7]"]:hover { background: #5E5345 !important; color: var(--v2-villa) !important; border-color: #5E5345 !important; }
+
+/* Form fields inside any Loggia form box (page form and the pop-up). */
+.v2 .v2-form-card input, .v2 .v2-form-card textarea { background: var(--v2-villa) !important; color: var(--v2-deep) !important; }
+
+/* SABS wall: the blocks control their own corners and glow (see LiefBlocks). */
+
+/* As Featured In / Trusted By (SABS page): logos rest in dim Greek Villa and turn
+   solid Loggia on hover. No neon. */
+.v2 .v2-logo-fill { background: var(--v2-villa); opacity: .38; transition: background .3s, opacity .3s; }
+.v2 .v2-logo-mask:hover .v2-logo-fill { background: var(--v2-loggia); opacity: 1; }
+
+/* State buttons on the National map: one row-pair spanning the map, hover and
+   map-hover both fill Loggia with Juniper type. */
+.v2 .v2-chip { font-family: 'Japandi', sans-serif; font-size: .9rem; letter-spacing: .05em; color: var(--v2-villa); background: transparent; border: 1px solid rgba(194,184,167,.45); border-radius: 8px; padding: 9px 6px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: background .25s, color .25s, border-color .25s; }
+.v2 .v2-chip:hover, .v2 .v2-chip.is-on, .v2 .v2-chip:focus-visible { background: var(--v2-loggia); color: var(--v2-deep); border-color: var(--v2-loggia); outline: none; }
+@media (max-width: 767px) { .v2 .v2-chips { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; } }
+
+/* Safety net: if any script rewrites a border into longhand, the box keeps its corner. */
+.v2 [style*="border-width: 1px"]:not(.v2-flush) { border-radius: 10px !important; }
+/* State buttons are boxes too: soft corners (beats the global square reset). */
+.v2 .v2-chip { border-radius: 8px !important; }
+
+/* Every section fills at least one screen, content centred in it, so
+   no section ends mid-screen. Taller sections are untouched. (10/25) */
+/* Applies at every width, phones included. */
+.v2 main section { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; }
+.v2 main section > *:not(.absolute):not(.v2-ghost-text) { width: 100%; }
+
+/* Sections with little content scale their type up to hold a full screen instead of
+   floating in it: larger headline, larger copy, roomier spacing. (10/25) */
+@media (min-width: 1024px) {
+  .v2 main section:is(.v2-sparse, #national-contact, #why, #fire-rated, #palisades-contact) p { font-size: 1.45rem !important; line-height: 1.6 !important; }
+  .v2 main section:is(.v2-sparse, #national-contact, #why, #fire-rated, #palisades-contact) .v2-label { margin-bottom: 2rem !important; font-size: 1.15rem !important; }
+  .v2 main section:is(.v2-sparse, #national-contact, #why, #fire-rated, #palisades-contact) p[class*="max-w-["] { max-width: 1040px; }
+}
+
+
+/* SABS wall corners. The global square-corner reset is !important, so the wall's corners
+   are set here by class: spread = every block soft; locked = only the four outside corners. */
+.v2 .v2-wall .v2-flush { border-radius: 8px !important; transition: border-radius .35s; }
+.v2 .v2-wall.is-locked .v2-flush { border-radius: 0 !important; }
+.v2 .v2-wall.is-locked .v2-flush.c-tl { border-top-left-radius: 10px !important; }
+.v2 .v2-wall.is-locked .v2-flush.c-tr { border-top-right-radius: 10px !important; }
+.v2 .v2-wall.is-locked .v2-flush.c-bl { border-bottom-left-radius: 10px !important; }
+.v2 .v2-wall.is-locked .v2-flush.c-br { border-bottom-right-radius: 10px !important; }
+
+/* Headline accent lines are Urbane Bronze (#5E5345), Jimmy's ruling 10/25 (Goldenrod and
+   Loggia tried and rejected). Labels and body copy stay Loggia. */
+.v2 .v2-headline span[style*="--v2-neon"],
+.v2 .v2-headline span[style*="--v2-neon"] .v2-neon-period,
+.v2 .v2-headline span[style*="--v2-neon"] + .v2-neon-period { color: #5E5345 !important; text-shadow: none; }
+
+/* Savings calculator slider: a larger track and thumb. */
+.v2 .v2-range { -webkit-appearance: none; appearance: none; height: 8px; border-radius: 4px !important; background: rgba(239,236,227,.18); }
+.v2 .v2-range::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; border-radius: 50%; background: var(--v2-loggia); border: 3px solid var(--v2-deep); cursor: pointer; }
+.v2 .v2-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--v2-loggia); border: 3px solid var(--v2-deep); cursor: pointer; }
+.v2 .v2-calc select { border-radius: 10px !important; }
+
+/* Fee and Our Own Tools: between the oversized pass and the default, so the headline
+   carries the screen without becoming a wall of words. */
+@media (min-width: 1024px) {
+  .v2 main section:is(#fee, #tools) .v2-label { margin-bottom: 1.75rem !important; }
+  .v2 main section:is(#fee, #tools) p { font-size: 1.3rem !important; line-height: 1.65 !important; }
+  .v2 main section:is(#fee, #tools) p:first-child { font-size: 1.5rem !important; }
+}
+
+
+/* ---- 10/25 pass 7: body copy, Bronze placements ------------------------------ */
+
+/* Body paragraphs on the dark sections: Greek Villa 85% at 19px. Loggia stays for labels,
+   captions and small meta (the 0.7-0.95rem lines), and the light sections keep their own. */
+.v2 main section:not(.v2-light) p:not([style*="font-size: 0.7"]):not([style*="font-size: 0.8"]):not([style*="font-size: 0.9"]):not(.v2-form-card p):not(.v2-calc p) { color: rgba(239,236,227,.85) !important; }
+.v2 main p, .v2 main li { font-size: 1.1875rem; }
+.v2 main p[style*="font-size: 1rem"], .v2 main p[style*="font-size: 1.05rem"], .v2 main p[style*="font-size: 1.1rem"], .v2 main p[style*="font-size: 1.15rem"],
+.v2 main li[style*="font-size: 1rem"], .v2 main li[style*="font-size: 1.05rem"], .v2 main li[style*="font-size: 1.1rem"],
+.v2 main li span[style*="font-size: 1rem"] { font-size: 1.1875rem !important; }
+
+/* Urbane Bronze where type is large: ghost words and the big section numbers. */
+.v2 main section:not(.v2-light) .v2-ghost-text { color: #5E5345 !important; }
+.v2 main section:not(.v2-light) .v2-ghost-text[style*="v2-ghost-scroll"] { color: rgba(94,83,69,.55) !important; }
+.v2 .v2-light .v2-ghost-text { color: rgba(94,83,69,.18) !important; }
+/* Browsers store inline colours normalised ("rgba(194, 184, 167, 0.6)"), so match that form. */
+.v2 main .v2-headline[style*="rgba(194, 184, 167, 0.6)"] { color: #5E5345 !important; }
+
+/* Nav Contact button hover follows the button rule: Bronze fill, Villa type. */
+.v2 header nav button:hover { background: #5E5345 !important; color: var(--v2-villa) !important; border-color: #5E5345 !important; }
+
+
+/* One headline size for every section h2 on every page (heroes keep their h1). */
+.v2 main section h2.v2-headline { font-size: clamp(2.6rem, 4.6vw, 4.4rem) !important; line-height: 1.04 !important; }
+
+/* Outlines read as deliberate: boxes, tiles, the map frame and state buttons at 2px,
+   outlined buttons at 1.5px. (Grid lines inside the project chart stay 1px.) */
+.v2 main div[style*="border: 1px solid"]:not(.v2-flush), .v2 main .v2-tile, .v2 main .v2-map-frame, .v2 .v2-chip { border-width: 2px !important; }
+.v2 main button[style*="border: 1px solid"], .v2 header nav button { border-width: 1.5px !important; }
+
+/* Team titles: same block height (three lines) on desktop so all four bios line up. */
+@media (min-width: 768px) { .v2 .v2-team-title { min-height: 4.8em; line-height: 1.6; } }
+
+
+/* Background texture (Jimmy 10/26): a fine, even grain over the section gradients.
+   256px seamless tile; barely visible, and it smooths gradient banding. */
+.v2 { --v2-tex: url(/tex/fine-grain.png); }
+.v2 main > div[style*="linear-gradient(to right, rgb(27, 52, 39)"] { background: var(--v2-tex, none), linear-gradient(to right, #1B3427, #15271D) !important; }
+
+
+/* Partners headline matches "One team. Every discipline." (clamp 2-3rem), so the faded
+   PARTNERS & PRESS word stays in the background instead of competing. */
+.v2 main section h2.v2-headline.v2-h2-match { font-size: clamp(2rem, 4vw, 3rem) !important; line-height: 1.2 !important; }
+
+/* No orphans: body text wraps so the last line carries real substance, and short
+   centred copy (cards, intros) and headlines balance their lines. (10/26) */
+.v2 p, .v2 li, .v2 figcaption, .v2 h1, .v2 h2, .v2 h3, .v2 h4 { text-wrap: balance; }

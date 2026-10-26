@@ -54,48 +54,45 @@ const partners: Partner[] = [
   { name: "Los Angeles Times", logo: laTimes },
 ];
 
-const PartnerItem = ({ partner }: { partner: Partner }) => {
-  const base = partner.opacity ?? 0.4;
-  const baseFilter = `grayscale(100%)${partner.invert ? " invert(1) brightness(0.55)" : ""}`;
-  return (
-  <div
-    className="flex items-center justify-center transition-all duration-300"
-    style={{ opacity: base }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.opacity = "1";
-      const img = e.currentTarget.querySelector("img") as HTMLImageElement;
-      if (img) img.style.filter = partner.invert ? "invert(1) brightness(0)" : "grayscale(100%) brightness(0)";
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.opacity = String(base);
-      const img = e.currentTarget.querySelector("img") as HTMLImageElement;
-      if (img) img.style.filter = baseFilter;
-    }}
-  >
-    <img
-      src={partner.logo}
-      alt={partner.name}
-      style={{ height: "60px", maxWidth: "160px", width: "auto", objectFit: "contain", filter: baseFilter, transition: "filter 0.3s" }}
+const PartnerItem = ({ partner }: { partner: Partner }) => (
+  <div role="img" aria-label={partner.name} className="v2-partner relative flex items-center justify-center w-full max-w-[200px]">
+    {/* invisible image keeps each logo's natural proportions */}
+    <img src={partner.logo} alt="" aria-hidden="true" style={{ height: "76px", maxWidth: "100%", width: "auto", objectFit: "contain", visibility: "hidden" }} />
+    {/* logo shape as a solid fill: soft grey at rest, Forest Green on hover */}
+    <span
+      className="v2-partner-fill absolute inset-0"
+      style={{
+        WebkitMaskImage: `url(${partner.logo})`, maskImage: `url(${partner.logo})`,
+        WebkitMaskSize: "contain", maskSize: "contain",
+        WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat",
+        WebkitMaskPosition: "center", maskPosition: "center",
+      }}
     />
   </div>
-  );
-};
+);
 
 const PartnersPress = () => {
   const { ref, inView } = useInView(0.1);
 
   return (
-    <section ref={ref} className="py-16 md:py-24" style={{ background: "var(--v2-white)" }}>
+    <section ref={ref} className="v2-light pt-16 pb-12 md:pt-20 md:pb-10" style={{ background: "var(--v2-villa)" }}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={inView ? { opacity: 1, y: 0 } : false}
             transition={{ duration: 0.75, ease }}
           >
-            <h2 className="v2-headline text-center mb-12" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--v2-deep)" }}>
-              PARTNERS <span style={{ fontFamily: "var(--v2-font-body)", fontWeight: 300 }}>&</span> PRESS
-            </h2>
-            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
+            {/* Same header treatment as Services: label + headline left, ghost word right. */}
+            {/* Headline left, faded PARTNERS & PRESS right, sharing one bottom line. */}
+            <div className="relative mb-16 md:mb-[144px] md:flex md:justify-between md:gap-10" style={{ alignItems: "last baseline" }}>
+              <h2 className="v2-headline v2-h2-match relative" style={{ color: "var(--v2-deep)" }}>
+                WHO WE HAVE<br /><span style={{ color: "#5E5345" }}>WORKED WITH</span><span className="v2-neon-period" style={{ color: "#5E5345" }}>.</span>
+              </h2>
+              <div className="v2-ghost-text text-right hidden md:block md:-mr-6" style={{ position: "static", fontSize: "min(4.4vw, 78px)", lineHeight: 1, color: "rgba(15,26,20,.08)" }}>
+                PARTNERS<br />&amp; PRESS
+              </div>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 items-center justify-items-center gap-x-8 gap-y-12 md:gap-x-16 md:gap-y-16">
               {partners.map((p) => <PartnerItem key={p.name} partner={p} />)}
             </div>
           </motion.div>

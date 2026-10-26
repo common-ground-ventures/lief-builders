@@ -1,5 +1,5 @@
 
-:root{--bg:#0a0a0a;--surface:#1A1A1A;--ink:#F5F5F3;--muted:#aaaaaa;--accent:#00FF88;--accent-ink:#00FF88;--rule:rgba(0,255,136,.16);--bar:linear-gradient(90deg,#006B3F,#00FF88);--radius:2px;--f-display:Archivo Black;--f-body:DM Sans;--f-label:DM Sans;--label-track:.18em;--h-weight:400}
+:root{--bg:#0a0a0a;--surface:#1A1A1A;--ink:#F5F5F3;--muted:#aaaaaa;--accent:#C2B8A7;--accent-ink:#C2B8A7;--rule:rgba(194,184,167,.16);--bar:linear-gradient(90deg,#014421,#C2B8A7);--radius:2px;--f-display:Archivo Black;--f-body:DM Sans;--f-label:DM Sans;--label-track:.18em;--h-weight:400}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body.wk{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--f-body),system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -99,6 +99,6 @@ body.wk{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--
    the page sideways (measured 448px scroll width at 375px before this rule) */
 .wk-body li,.wk-body p,.wk-body dd,.wk-facts dd,.wk-foot p{overflow-wrap:anywhere}
 
-/* Lïef company brand (System A): neon is a signal, never a fill. The credit
-   hover is Neon Signal Green, the same value as the site footer. */
-:root{--credit-hover:#00FF88}
+/* Lïef company brand (System A): Loggia is the signal, never a fill. The credit
+   hover is Loggia, the same value as the site footer. */
+:root{--credit-hover:#C2B8A7}

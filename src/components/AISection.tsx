@@ -28,7 +28,7 @@ const AISection = () => {
               transition={{ duration: 0.75, ease }}
               className="relative mb-12"
             >
-              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(0,107,63,.24)" }}>
+              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(194,184,167,.6)" }}>
                 TECH
               </div>
               <div className="v2-label mb-6">The Edge</div>
@@ -79,21 +79,8 @@ const AISection = () => {
                 transition={{ duration: 0.75, delay: 0.25, ease }}
                 className="flex flex-col gap-6"
               >
-                {/* ROI Card */}
-                <div className="p-8 md:p-10" style={{ background: "var(--v2-green)", border: "1px solid rgba(0,255,136,.1)" }}>
-                  <span className="v2-headline block text-center" style={{ fontSize: "clamp(3rem, 6vw, 5rem)", color: "var(--v2-white)" }}>
-                    2–6×
-                  </span>
-                  <span className="v2-label block text-center mt-2" style={{ fontSize: "1rem" }}>
-                    AVERAGE RETURN ON INVESTMENT
-                  </span>
-                  <p className="mt-4 text-center" style={{ fontSize: "1rem", color: "rgba(255,255,255,.7)", lineHeight: 1.6 }}>
-                    There is no better return on your money than hiring an owner's rep. Our clients see an average of 2–6× their investment returned, with accountability and oversight that pays for itself many times over.
-                  </p>
-                </div>
-
                 {/* Quote Card */}
-                <div className="p-8 md:p-10" style={{ background: "rgba(0,107,63,.15)", border: "1px solid var(--v2-rule)" }}>
+                <div className="p-8 md:p-10" style={{ background: "rgba(239,236,227,.05)", border: "1px solid var(--v2-rule)" }}>
                   <p style={{ fontStyle: "italic", fontSize: "1rem", color: "var(--v2-white)", lineHeight: 1.7 }}>
                     "Think of it like a cop up the road with a radar gun. Are you gonna speed? The answer is no. That's what an owner's rep does. The contractors aren't going to cut corners because they know they'll get caught. That accountability alone saves you multiples of our fee."
                   </p>

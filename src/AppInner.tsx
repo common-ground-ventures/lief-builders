@@ -7,6 +7,8 @@ import ProjectsPage from "@/pages/ProjectsPage";
 import TeamPage from "@/pages/TeamPage";
 import TestimonialsPage from "@/pages/TestimonialsPage";
 import NationalPage from "@/pages/NationalPage";
+import PalisadesPage from "@/pages/PalisadesPage";
+import NotFoundPage from "@/pages/NotFoundPage";
 
 // Router-agnostic app tree. Wrapped by BrowserRouter on the client (App.tsx)
 // and by StaticRouter during prerender (entry-server.tsx). Keep the two in sync.
@@ -15,11 +17,13 @@ const AppInner = () => (
     <Route element={<MainLayout />}>
       <Route path="/" element={<Home />} />
       <Route path="/national" element={<NationalPage />} />
+      <Route path="/palisades-fire-rebuild-owners-rep" element={<PalisadesPage />} />
       <Route path="/ai" element={<TechnologyPage />} />
       <Route path="/sabs" element={<SabsPage />} />
       <Route path="/projects" element={<ProjectsPage />} />
       <Route path="/team" element={<TeamPage />} />
       <Route path="/testimonials" element={<TestimonialsPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Route>
   </Routes>
 );

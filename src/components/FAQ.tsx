@@ -18,22 +18,22 @@ const faqs: FAQItem[] = [
   {
     question: "Why do I need an owner's rep for my construction project?",
     answer:
-      "Because the people building your project are not paid to protect your interests. They are paid to finish the job. An owner\u2019s rep sits on your side of the table \u2014 reviewing bids, catching red flags, negotiating change orders, and making sure every dollar goes where it should. It is the difference between hoping the build goes well and knowing someone is watching every line item. L\u00efef Builders delivers a minimum 100% ROI on every engagement.",
+      "Because the people building your project are not paid to protect your interests. They are paid to finish the job. An owner\u2019s rep sits on your side of the table, reviewing bids, catching red flags, negotiating change orders, and making sure every dollar goes where it should. It is the difference between hoping the build goes well and knowing someone is watching every line item.",
   },
   {
-    question: "What areas does Lïef Builders serve?",
+    question: "What areas does LÏEF Builders serve?",
     answer:
-      "Lïef Builders serves property owners in Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California. The team has completed over $500M in projects across these markets, ranging from luxury residential builds to large-scale commercial developments and disaster recovery rebuilds.",
+      "LÏEF Builders serves property owners in Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California. The team has completed projects across these markets, ranging from luxury residential builds to large-scale commercial developments and disaster recovery rebuilds.",
   },
   {
-    question: "How does Lïef Builders save clients money on construction projects?",
+    question: "How does LÏEF Builders save clients money on construction projects?",
     answer:
-      "Three ways. First, contract negotiation \u2014 the team reviews every scope, bid, and vendor agreement before you sign anything. Second, ongoing site oversight \u2014 regular inspections catch problems when they are cheap to fix, not after they have become six-figure change orders. Third, vendor and material verification \u2014 confirming that pricing, quantities, and specs match what was agreed to. Over $40M saved across the portfolio. The investment in owner\u2019s representation has never failed to pay for itself.",
+      "Three ways. First, contract negotiation: the team reviews every scope, bid, and vendor agreement before you sign anything. Second, ongoing site oversight: regular inspections catch problems when they are cheap to fix, not after they have become six-figure change orders. Third, vendor and material verification: confirming that pricing, quantities, and specs match what was agreed to.",
   },
   {
     question: "What is SABS construction technology?",
     answer:
-      "SABS stands for Saebi Alternative Building System. Think of it as the next generation of how buildings get built. EPS foam panels \u2014 L\u00efef calls them L\u00efef Blocks \u2014 are coated with SABSCRETE, a high-strength cementitious composite, to form a single monolithic structure. The result: 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity. It builds faster and costs 15-20% less than traditional methods. L\u00efef is the leading SABS builder in Arizona and offers it alongside conventional framing so clients get the right system for their project.",
+      "SABS stands for Saebi Alternative Building System. Think of it as the next generation of how buildings get built. EPS foam panels, which LÏEF calls LÏEF Blocks, are coated with SABSCRETE, a high-strength cementitious composite, to form a single monolithic structure. The result: 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity. It builds faster and costs 15-20% less than traditional methods. LÏEF is the leading SABS builder in Arizona and offers it alongside conventional framing so clients get the right system for their project.",
   },
 ];
 
@@ -112,7 +112,7 @@ const FAQ = () => {
           transition={{ duration: 0.75, ease }}
           className="relative mb-12"
         >
-          <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(7vw, 120px)", lineHeight: 1, color: "rgba(0,107,63,.24)" }}>
+          <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(7vw, 120px)", lineHeight: 1, color: "rgba(194,184,167,.6)" }}>
             FAQ
           </div>
           <div className="v2-label mb-6">Common Questions</div>

@@ -26,3 +26,6 @@ dist-ssr
 
 # Cloudflare wrangler local state
 .wrangler/
+
+# Licensed Japandi, local preview only. Never commit (public repo, no web license yet).
+public/fonts-local/

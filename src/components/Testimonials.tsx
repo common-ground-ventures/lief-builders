@@ -4,14 +4,14 @@ import { useInView } from "@/hooks/useInView";
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const featured = {
-  quote: "They handled our VIP event space build from start to finish. What started as a small mural project turned into a complete facility build-out. That's what trust looks like \u2014 you earn it, then you deliver.",
+  quote: "They handled our VIP event space build from start to finish. What started as a small mural project turned into a complete facility build-out. That's what trust looks like: you earn it, then you deliver.",
   name: "Gary Cummings",
   title: "VP Operations, Carroll Shelby International",
 };
 
 const testimonials = [
   {
-    quote: "We hired Lïef for a complete home remodel and they exceeded every expectation. Hands-on throughout the entire process. The attention to detail was unmatched and the project came in on time.",
+    quote: "We hired LÏEF for a complete home remodel and they exceeded every expectation. Hands-on throughout the entire process. The attention to detail was unmatched and the project came in on time.",
     name: "Michael R.",
     title: "Homeowner, Orange County",
   },
@@ -31,12 +31,12 @@ const testimonials = [
     title: "Keller Williams, Los Angeles",
   },
   {
-    quote: "We were overwhelmed after the fire and had no idea where to start. Lïef came in, took over the insurance coordination, vetted every contractor, and saved us nearly 10% on the total rebuild. Worth every penny.",
+    quote: "We were overwhelmed after the fire and had no idea where to start. LÏEF came in, took over the insurance coordination, vetted every contractor, and saved us nearly 10% on the total rebuild. Worth every penny.",
     name: "Patricia & Mark D.",
     title: "Homeowners, Santa Barbara Fire Rebuild",
   },
   {
-    quote: "We built from the ground up and thought we could manage it ourselves. Within two months we were drowning in change orders and missed deadlines. Lïef stepped in, renegotiated three major contracts, and got us back on track. We would have lost six figures without them.",
+    quote: "We built from the ground up and thought we could manage it ourselves. Within two months we were drowning in change orders and missed deadlines. LÏEF stepped in, renegotiated three major contracts, and got us back on track. We would have lost six figures without them.",
     name: "Daniel & Christine W.",
     title: "Custom Home Build, Scottsdale",
   },
@@ -55,7 +55,7 @@ const Testimonials = () => {
               transition={{ duration: 0.75, ease }}
               className="relative mb-12"
             >
-              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(0,107,63,.24)" }}>
+              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6 hidden sm:block" style={{ fontSize: "min(9.6vw, 120px)", lineHeight: 1, color: "rgba(194,184,167,.6)" }}>
                 TRUSTED
               </div>
               <div className="v2-label mb-6">Testimonials</div>
@@ -73,9 +73,9 @@ const Testimonials = () => {
               animate={inView ? { opacity: 1, y: 0 } : false}
               transition={{ duration: 0.75, delay: 0.15, ease }}
               className="p-8 md:p-12 mb-8"
-              style={{ background: "var(--v2-green)" }}
+              style={{ background: "rgba(239,236,227,.06)", border: "1px solid rgba(194,184,167,.35)" }}
             >
-              <span style={{ fontSize: "3rem", lineHeight: 1, color: "rgba(0,255,136,.3)", fontFamily: "Georgia, serif" }}>&ldquo;</span>
+              <span style={{ fontSize: "3rem", lineHeight: 1, color: "rgba(194,184,167,.3)", fontFamily: "Georgia, serif" }}>&ldquo;</span>
               <p className="mt-2" style={{ fontStyle: "italic", fontSize: "clamp(1.1rem, 2.5vw, 1.4rem)", color: "var(--v2-white)", lineHeight: 1.7 }}>
                 &ldquo;{featured.quote}&rdquo;
               </p>
@@ -93,8 +93,8 @@ const Testimonials = () => {
               className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
             >
               {testimonials.map((t, i) => (
-                <div key={i} className="p-6" style={{ background: "rgba(0,107,63,.04)", border: "1px solid var(--v2-rule)" }}>
-                  <span style={{ fontSize: "2rem", lineHeight: 1, color: "rgba(0,255,136,.2)", fontFamily: "Georgia, serif" }}>&ldquo;</span>
+                <div key={i} className="p-6" style={{ background: "rgba(239,236,227,.05)", border: "1px solid var(--v2-rule)" }}>
+                  <span style={{ fontSize: "2rem", lineHeight: 1, color: "rgba(194,184,167,.2)", fontFamily: "Georgia, serif" }}>&ldquo;</span>
                   <p className="mt-2" style={{ fontStyle: "italic", fontSize: "1rem", color: "var(--v2-muted)", lineHeight: 1.6 }}>
                     &ldquo;{t.quote}&rdquo;
                   </p>
@@ -104,18 +104,6 @@ const Testimonials = () => {
                   </div>
                 </div>
               ))}
-            </motion.div>
-
-            {/* Ratings */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={inView ? { opacity: 1 } : false}
-              transition={{ duration: 0.75, delay: 0.35, ease }}
-              className="text-center"
-            >
-              <span style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.2em", color: "var(--v2-dim)" }}>
-                YELP &middot; HOUZZ &middot; 5/5 RATING &middot; A+ BBB
-              </span>
             </motion.div>
           </>
       </div>

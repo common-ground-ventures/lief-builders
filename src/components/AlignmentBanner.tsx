@@ -8,7 +8,7 @@ const AlignmentBanner = () => {
   const { ref, inView } = useInView(0.2);
 
   return (
-    <section ref={ref} className="relative py-16 md:py-24" style={{ background: "var(--v2-green)" }}>
+    <section ref={ref} className="v2-sparse relative py-16 md:py-24" style={{ background: "var(--v2-green)" }}>
       <div className="max-w-[900px] mx-auto px-6 md:px-12 text-center">
         <>
             <motion.div
@@ -32,9 +32,9 @@ const AlignmentBanner = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={inView ? { opacity: 1, y: 0 } : false}
               transition={{ duration: 0.75, delay: 0.2, ease }}
-              style={{ fontSize: "1.1rem", color: "rgba(255,255,255,.7)", lineHeight: 1.7 }}
+              style={{ fontSize: "1.1rem", color: "rgba(239,236,227,.85)", lineHeight: 1.7 }}
             >
-              No kickbacks. No vendor deals. No material markups. No hidden incentives. Our only financial reward is making your project cheaper, faster, and better.
+              In owner's representation, you pay us and nobody else. No kickbacks, vendor deals or material markups.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,6 @@ const AlignmentBanner = () => {
             </motion.p>
           </>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: "rgba(255,255,255,.1)" }} />
     </section>
   );
 };

@@ -11,32 +11,36 @@ const BASE = "https://www.liefbuilders.com";
 // Descriptions are auto-generated from existing site facts and can be refined.
 const ROUTES = {
   "/": {
-    title: "Lïef Builders | Project Advocacy & Oversight",
-    desc: "Owner's representation, project advocacy, and construction oversight. Over 100 years of combined expertise and $500M+ in completed projects across Arizona, Nevada, and Southern California.",
+    title: "LÏEF Builders | Project Advocacy & Oversight",
+    desc: "Owner's representation, project advocacy, and construction oversight across Arizona, Nevada, and Southern California.",
   },
   "/national": {
-    title: "National | Lïef Builders",
+    title: "National | LÏEF Builders",
     desc: "Pre-construction, general construction contracts and owner representation across the country. The contractor pays our fee, not you.",
   },
+  "/palisades-fire-rebuild-owners-rep": {
+    title: "Palisades Fire Rebuild Owner's Representation | LÏEF Builders",
+    desc: "Owner's representation for homeowners rebuilding after the Palisades fire. LÏEF advocates for the owner through the contractor, the insurer and the build.",
+  },
   "/ai": {
-    title: "Technology and Innovation | Lïef Builders",
-    desc: "How Lïef Builders applies technology, SABS construction, and intelligent oversight to protect owners on complex builds.",
+    title: "Technology and Innovation | LÏEF Builders",
+    desc: "How LÏEF Builders applies technology, SABS construction, and intelligent oversight to protect owners on complex builds.",
   },
   "/sabs": {
-    title: "SABS Construction Technology | Lïef Builders",
+    title: "SABS Construction Technology | LÏEF Builders",
     desc: "The Saebi Alternative Building System. 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation. Faster and 15-20% less than traditional methods.",
   },
   "/projects": {
-    title: "Projects | Lïef Builders",
-    desc: "Luxury residential, commercial, and disaster-recovery projects. $500M+ delivered across Phoenix, Las Vegas, and Los Angeles.",
+    title: "Projects | LÏEF Builders",
+    desc: "Luxury residential, commercial, and disaster-recovery projects across Phoenix, Las Vegas, and Los Angeles.",
   },
   "/team": {
-    title: "Our Team | Lïef Builders",
-    desc: "Owner's reps, development veterans, architectural review, and general counsel. Over 100 years of combined construction expertise on the owner's side of the table.",
+    title: "Our Team | LÏEF Builders",
+    desc: "Owner's reps, development veterans, architectural review, and general counsel, on the owner's side of the table.",
   },
   "/testimonials": {
-    title: "Testimonials | Lïef Builders",
-    desc: "What property owners say about working with Lïef Builders across Arizona, Nevada, and Southern California.",
+    title: "Testimonials | LÏEF Builders",
+    desc: "What property owners say about working with LÏEF Builders across Arizona, Nevada, and Southern California.",
   },
 };
 
@@ -106,7 +110,7 @@ let html404 = template.replace(
   `<div id="root">${notFoundHtml}</div>`
 );
 html404 = patchHead(html404, "/404", {
-  title: "Page Not Found | Lïef Builders",
+  title: "Page Not Found | LÏEF Builders",
   desc: "The page you are looking for could not be found.",
 });
 html404 = html404.replace(
