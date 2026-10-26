@@ -1,9 +1,12 @@
 const items = [
   { value: "14%", label: "Average Time Savings" },
-  { value: "", label: "Consultants in Every Modality" },
-  { value: "", label: "Fire Damage Specialists" },
-  { value: "", label: "AI-Powered Oversight & Analytics" },
-  { value: "", label: "Palisades · Santa Barbara · Greensburg · Phoenix" },
+  { value: "", label: "Budgets From Your Plans" },
+  { value: "", label: "Bids Held to Our Takeoff" },
+  { value: "", label: "Owner's Representation" },
+  { value: "", label: "Builders in Your Market" },
+  { value: "", label: "Powered by Kanopi" },
+  { value: "", label: "Fire Rebuilds" },
+  { value: "", label: "Phoenix · Las Vegas · Los Angeles · Any State" },
 ];
 
 const TickerItem = ({ value, label }: { value: string; label: string }) => (

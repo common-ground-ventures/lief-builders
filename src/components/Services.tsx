@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
+import { KanopiLink } from "@/components/Kanopi";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -7,27 +8,33 @@ interface ServiceData {
   num: string;
   label: string;
   title: string;
-  body: string;
+  body: React.ReactNode;
 }
 
 const services: ServiceData[] = [
   {
     num: "01",
-    label: "PROJECT ADVOCACY & PROTECTION",
-    title: "Your shield in the build.",
-    body: "You don't know what you don't know, and that's exactly what contractors count on. From Greensburg, Kansas tornado rebuilds to Santa Barbara fire damage, we've been the owner's advocate in disaster zones for over two decades. We own and design projects in the Palisades area, giving us a personal stake in the communities we serve. Every engagement is customized to the scope your project demands.",
+    label: "BUDGET FROM YOUR PLANS",
+    title: "Know the number before you sign.",
+    body: <>We measure your plan set three times, start to finish, in <KanopiLink />, the takeoff and estimating software we built, and price every trade against it. You get a budget you can hold every bid against, before you pay for construction drawings.</>,
   },
   {
     num: "02",
-    label: "INSURANCE & LEGAL COORDINATION",
-    title: "Navigate the claim. Maximize the recovery.",
-    body: "We coordinate directly with insurance adjusters, prepare detailed draw requests, negotiate claim settlements, and partner with legal counsel to protect your position. From documentation to dispute resolution, we handle it so you don't have to.",
+    label: "BIDDING AND PLACEMENT",
+    title: "The right builder, in your market.",
+    body: "We run the bid with licensed builders where you are building, level every bid against our takeoff so you compare price and scope instead of guesses, and place the contract with the one we would hire for our own projects. In Arizona that is often Armstrong Construction Group, a Lïef partner.",
   },
   {
     num: "03",
-    label: "COST CONTROL & SCHEDULE OPTIMIZATION",
-    title: "Faster builds. Tighter budgets. Zero surprises.",
-    body: "Change order negotiation, site walks, vendor discount verification, value engineering, and red flag identification. We catch the problems before they cost you time and money. Our job is to make your project go faster and come in cheaper than you thought possible.",
+    label: "OWNER'S REPRESENTATION",
+    title: "Someone on your side until the last draw.",
+    body: "We read every bid, change order and draw request before you sign it, and check each change order against quantities, not a guess. Site walks, vendor and material checks, insurance and legal coordination. After a fire, we work the claim with you and the adjuster from the first call.",
+  },
+  {
+    num: "04",
+    label: "PROJECT ADVOCACY & PROTECTION",
+    title: "Your shield in the build.",
+    body: "You don't know what you don't know, and that's exactly what contractors count on. From Greensburg, Kansas tornado rebuilds to Santa Barbara fire damage, we've been the owner's advocate in disaster zones for over two decades. We own and design projects in the Palisades area, giving us a personal stake in the communities we serve. Every engagement is customized to the scope your project demands.",
   },
 ];
 
@@ -50,7 +57,7 @@ const Services = () => {
               </div>
               <div className="v2-label mb-6">What We Do</div>
               <h2 className="v2-headline text-4xl md:text-6xl lg:text-7xl mb-4" style={{ color: "var(--v2-white)" }}>
-                FULL-SCOPE<span className="v2-neon-period">.</span><br /><span style={{ color: "var(--v2-neon)" }}>PROTECTION</span><span className="v2-neon-period">.</span>
+                PRICED<span className="v2-neon-period">.</span><br />PLACED<span className="v2-neon-period">.</span><br /><span style={{ color: "var(--v2-neon)" }}>PROTECTED</span><span className="v2-neon-period">.</span>
               </h2>
             </motion.div>
 
