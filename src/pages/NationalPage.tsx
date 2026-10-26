@@ -104,9 +104,9 @@ const NationalPage = () => {
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(0), ease }} className="mb-6 md:mb-8">
             <span className="v2-label hidden md:inline text-[1.25rem]">{eyebrow}</span>
-            <span className="md:hidden" style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--v2-neon)" }}>
-              <span className="inline-block w-4 h-px mr-2 align-middle" style={{ background: "var(--v2-neon)" }} />
-              {eyebrow}
+            {/* Phone: whole items wrap, so no line starts or ends on a stray dot. */}
+            <span className="md:hidden flex flex-wrap gap-x-4 gap-y-1" style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--v2-neon)" }}>
+              {eyebrow.split(" · ").map((w) => <span key={w}>{w}</span>)}
             </span>
           </motion.div>
 

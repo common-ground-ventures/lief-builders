@@ -40,7 +40,7 @@ const Capabilities = () => {
 
   return (
     <section className="relative py-20 md:py-28" style={{ background: "var(--v2-green)" }}>
-      <div className="overflow-hidden absolute inset-0 pointer-events-none" style={{ top: "40%", transform: "translateY(-50%)" }}>
+      <div className="hidden md:block overflow-hidden absolute inset-0 pointer-events-none" style={{ top: "40%", transform: "translateY(-50%)" }}>
         <div className="v2-ghost-text" style={{ fontSize: "min(10vw, 130px)", lineHeight: 1, color: "rgba(0,0,0,.08)", animation: "v2-ghost-scroll 55s linear infinite", position: "relative", whiteSpace: "nowrap" }}>
           ARCHITECTURE · GENERAL CONSTRUCTION · TRADE WORK · INTERIOR DESIGN · LEGAL · INSURANCE
         </div>

@@ -49,12 +49,12 @@ const Hero = () => {
           <span className="v2-label hidden md:inline text-[1.25rem]">
             Project Advocacy · Protection · Oversight · Representation
           </span>
+          {/* Phone: the four words wrap as whole items, so no line starts or ends on a stray dot. */}
           <span
-            className="md:hidden"
+            className="md:hidden flex flex-wrap gap-x-4 gap-y-1"
             style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--v2-neon)" }}
           >
-            <span className="inline-block w-4 h-px mr-2 align-middle" style={{ background: "var(--v2-neon)" }} />
-            Project Advocacy · Protection · Oversight · Representation
+            {["Project Advocacy", "Protection", "Oversight", "Representation"].map((w) => <span key={w}>{w}</span>)}
           </span>
         </motion.div>
 
