@@ -7,7 +7,6 @@ import PartnersPress from "@/components/PartnersPress";
 import Markets from "@/components/Markets";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
-import FinePrint from "@/components/FinePrint";
 
 const Home = () => (
   <>
@@ -20,7 +19,6 @@ const Home = () => (
     <Markets />
     <FAQ />
     <Contact />
-    <FinePrint />
   </>
 );
 

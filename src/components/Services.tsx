@@ -45,7 +45,7 @@ const Services = () => {
               className="relative mb-16"
             >
               {/* Ghost text - vertically centered with heading */}
-              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(7vw, 120px)", lineHeight: 1, color: "rgba(194,184,167,.16)" }}>
+              <div className="v2-ghost-text absolute top-0 right-0 md:-right-6" style={{ fontSize: "min(7vw, 120px)", lineHeight: 1, color: "rgba(194,184,167,.6)" }}>
                 SERVICES
               </div>
               <div className="v2-label mb-6">What We Do</div>
@@ -64,7 +64,7 @@ const Services = () => {
                 style={{ borderTop: "1px solid var(--v2-rule)" }}
               >
                 <div>
-                  <span className="v2-headline block mb-4" style={{ fontSize: "clamp(4rem, 8vw, 6rem)", color: "rgba(194,184,167,.16)", lineHeight: 1 }}>
+                  <span className="v2-headline block mb-4" style={{ fontSize: "clamp(4rem, 8vw, 6rem)", color: "rgba(194,184,167,.6)", lineHeight: 1 }}>
                     {s.num}
                   </span>
                   <div className="v2-label mb-3" style={{ fontSize: "1rem" }}>{s.label}</div>

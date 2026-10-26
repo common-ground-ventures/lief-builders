@@ -13,7 +13,7 @@ const inputStyle: React.CSSProperties = {
   padding: "14px 16px",
   background: "#ffffff",
   border: "none",
-  color: "#1a1a1a",
+  color: "#303030",
   fontFamily: "var(--v2-font-body)",
   fontSize: "1rem",
   outline: "none",
@@ -105,18 +105,18 @@ const ContactModal = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
             transition={{ duration: 0.4, ease }}
-            className="relative w-full max-w-[540px] p-8 md:p-10"
+            className="v2-form-card relative w-full max-w-[540px] p-8 md:p-10"
             style={{
-              background: "#1a1a1a",
-              border: "2px solid #C2B8A7",
-              boxShadow: "0 0 40px rgba(194,184,167,.15), 0 40px 80px rgba(0,0,0,.5)",
+              background: "#C2B8A7",
+              border: "1px solid #C2B8A7",
+              boxShadow: "0 40px 80px rgba(0,0,0,.45)",
             }}
           >
             {/* Close button */}
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 transition-colors duration-300 hover:text-[#C2B8A7]"
-              style={{ background: "none", border: "none", cursor: "pointer", color: "var(--v2-muted)" }}
+              className="absolute top-4 right-4 transition-opacity duration-300 hover:opacity-60"
+              style={{ background: "none", border: "none", cursor: "pointer", color: "#0F1A14" }}
             >
               <X size={20} />
             </button>
@@ -134,14 +134,14 @@ const ContactModal = () => {
                 </p>
                 <button
                   onClick={handleClose}
-                  className="mt-6 transition-all duration-300 hover:brightness-110"
+                  className="v2-send mt-6 transition-all duration-300"
                   style={{
                     fontFamily: "var(--v2-font-body)",
                     fontSize: "1rem",
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.14em",
-                    background: "#014421",
+                    background: "#0F1A14",
                     color: "#EFECE3",
                     border: "1px solid #C2B8A7",
                     padding: "10px 28px",
@@ -210,14 +210,14 @@ const ContactModal = () => {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="w-full transition-all duration-300 hover:brightness-110"
+                    className="v2-send w-full transition-all duration-300"
                     style={{
                       fontFamily: "var(--v2-font-body)",
                       fontSize: "1rem",
                       fontWeight: 600,
                       textTransform: "uppercase",
                       letterSpacing: "0.14em",
-                      background: "#014421",
+                      background: "#0F1A14",
                       color: "#EFECE3",
                       border: "1px solid #C2B8A7",
                       padding: "16px 24px",

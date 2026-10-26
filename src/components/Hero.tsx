@@ -23,11 +23,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={ref} className="relative h-screen flex items-center overflow-x-hidden" style={{ background: "var(--v2-deep)" }}>
+    <section ref={ref} className="relative min-h-screen flex items-center overflow-x-hidden pt-24 pb-36 md:pb-40" style={{ background: "var(--v2-deep)" }}>
       {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[60%] h-[60%]" style={{ background: "radial-gradient(ellipse at top right, rgba(1,68,33,.12), transparent 70%)" }} />
-        <div className="absolute bottom-0 left-0 w-[50%] h-[50%]" style={{ background: "radial-gradient(ellipse at bottom left, rgba(194,184,167,.04), transparent 70%)" }} />
+        {/* glows removed 10/25: the section gradients carry the light now */}
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12 w-full">
@@ -36,7 +35,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(0), ease }}
           style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center", willChange: "transform, opacity" }}
-          className="mb-3 md:mb-4"
+          className="mb-5 md:mb-8"
         >
           <img src={logoLight} alt="LÏEF" className="h-14 md:h-24 lg:h-32 w-auto" />
         </motion.div>
@@ -45,7 +44,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease }}
-          className="mb-3 md:mb-4"
+          className="mb-6 md:mb-8"
         >
           <span className="v2-label hidden md:inline text-[1.25rem]">
             Project Advocacy · Protection · Oversight · Representation
@@ -63,7 +62,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(1), ease }}
-          className="v2-headline leading-[0.95] mb-3 md:mb-4"
+          className="v2-headline leading-[1.02] mb-6 md:mb-8"
           style={{ fontSize: "clamp(2.2rem, 5.5vw, 5rem)" }}
         >
           YOUR PROJECT<span className="v2-neon-period">.</span>
@@ -84,7 +83,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(3), ease }}
-          className="mt-2 max-w-[560px]"
+          className="mt-4 md:mt-5 max-w-[560px]"
           style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}
         >
           Expertise across architecture, construction, insurance coordination, and legal advocacy, armed with AI-powered oversight tools. Property owners in the Palisades, Southern California, and the Southwest trust us to protect their build.
@@ -94,22 +93,22 @@ const Hero = () => {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ...stagger(4), ease }}
-          className="mt-4 md:mt-6 flex flex-wrap gap-3 md:gap-4"
+          className="mt-8 md:mt-12 flex flex-wrap gap-3 md:gap-4"
         >
           <button
             onClick={openModal}
             className="transition-all duration-300 hover:brightness-110"
             style={{
               fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
-              letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-forest)",
-              color: "var(--v2-villa)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer",
+              letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-btn-bg)",
+              color: "var(--v2-btn-fg)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer",
             }}
           >
             Start a Conversation
           </button>
           <button
             onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}
-            className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0a0a0a]"
+            className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0F1A14]"
             style={{
               fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
               letterSpacing: "0.14em", fontWeight: 600, background: "transparent",

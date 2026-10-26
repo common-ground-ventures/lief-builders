@@ -9,7 +9,7 @@ const items = [
 const TickerItem = ({ value, label }: { value: string; label: string }) => (
   <span className="flex items-center gap-3 whitespace-nowrap">
     {value && (
-      <span style={{ fontFamily: "'Archivo Black', sans-serif", fontSize: "1.25rem", color: "var(--v2-neon)" }}>
+      <span style={{ fontFamily: "'Japandi', sans-serif", fontSize: "1.25rem", color: "var(--v2-neon)" }}>
         {value}
       </span>
     )}
@@ -27,10 +27,8 @@ const StatsTicker = () => {
     <div
       className="overflow-hidden"
       style={{
-        borderTop: "1px solid var(--v2-rule)",
-        borderBottom: "1px solid var(--v2-rule)",
         padding: "0.9rem 0",
-        background: "var(--v2-deep)",
+        background: "linear-gradient(to right, #1B3427, #15271D)",
       }}
     >
       <div className="v2-ticker-track flex items-center" style={{ width: "max-content" }}>

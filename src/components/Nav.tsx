@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -31,6 +31,7 @@ const Nav = () => {
   const [activeSection, setActiveSection] = useState("");
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [contactHovered, setContactHovered] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     let ticking = false;
@@ -75,6 +76,18 @@ const Nav = () => {
     return () => observer.disconnect();
   }, [location.pathname]);
 
+  /* Escape, or a tap anywhere outside the bar and card, closes the phone menu. */
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setMobileOpen(false); };
+    const onDown = (e: PointerEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    document.addEventListener("pointerdown", onDown);
+    return () => { window.removeEventListener("keydown", onKey); document.removeEventListener("pointerdown", onDown); };
+  }, [mobileOpen]);
+
   const handleNav = (link: NavLink) => {
     setMobileOpen(false);
 
@@ -100,9 +113,13 @@ const Nav = () => {
     openModal();
   };
 
+  /* The logo always lands at the very top of the home page. Navigating alone kept the
+     previous scroll position, which dropped visitors at Services. */
   const handleLogo = () => {
+    setMobileOpen(false);
     if (location.pathname !== "/") {
       navigate("/");
+      requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "auto" }));
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -118,46 +135,56 @@ const Nav = () => {
     return location.pathname === "/" && activeSection === link.href;
   };
 
+  /* Solid bar = Loggia with hunter-green type, whenever scrolled or the menu is open. */
+  const solid = scrolled || mobileOpen;
+  const ink = "var(--v2-deep)";
+
   return (
     <motion.header
+      ref={headerRef}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.3 }}
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: scrolled ? "rgba(10,10,10,.95)" : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(194,184,167,.06)" : "1px solid transparent",
+        background: solid ? "rgba(194,184,167,.97)" : "transparent",
+        backdropFilter: solid ? "blur(20px)" : "none",
+        borderBottom: "1px solid transparent",
         transition: "background 0.5s, backdrop-filter 0.5s, border-bottom 0.5s",
         willChange: "background, backdrop-filter",
       }}
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20">
+      <div className={`max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20 ${solid ? "v2-on-loggia" : ""}`}>
         <div className="flex items-center gap-6">
           <a
             href="/"
             className="flex items-center"
             onClick={(e) => { e.preventDefault(); handleLogo(); }}
             style={{
-              opacity: scrolled ? 1 : 0,
-              transform: scrolled ? "translateY(0)" : "translateY(8px)",
-              pointerEvents: scrolled ? "auto" : "none",
+              opacity: solid ? 1 : 0,
+              transform: solid ? "translateY(0)" : "translateY(8px)",
+              pointerEvents: solid ? "auto" : "none",
               background: "none", border: "none", cursor: "pointer",
               transition: "opacity 0.5s, transform 0.5s",
             }}
+            aria-label="LÏEF"
           >
-            <img src={logoConcrete} alt="LÏEF" className="h-6 md:h-7 w-auto block" />
+            {/* logo shape filled with the hunter green so it reads on the Loggia bar */}
+            <span className="relative block">
+              <img src={logoConcrete} alt="" aria-hidden="true" className="h-6 md:h-7 w-auto block" style={{ visibility: "hidden" }} />
+              <span className="absolute inset-0" style={{ background: ink, WebkitMaskImage: `url(${logoConcrete})`, maskImage: `url(${logoConcrete})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat" }} />
+            </span>
           </a>
           <span
             className="v2-headline hidden xl:flex items-center"
             style={{
               fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)",
-              color: "var(--v2-neon)",
+              color: ink,
               lineHeight: 1,
               letterSpacing: "0.02em",
               height: "28px",
-              opacity: scrolled ? 1 : 0,
-              transform: scrolled ? "translateY(0)" : "translateY(8px)",
+              opacity: solid ? 1 : 0,
+              transform: solid ? "translateY(0)" : "translateY(8px)",
               transition: "opacity 0.5s, transform 0.5s",
             }}
           >
@@ -178,16 +205,19 @@ const Nav = () => {
                 onMouseEnter={() => setHoveredLink(l.href)}
                 onMouseLeave={() => setHoveredLink(null)}
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "0.85rem",
+                  fontFamily: "'Japandi', sans-serif",
+                  fontSize: "0.95rem",
+                  fontWeight: 700,
                   textTransform: "uppercase",
-                  letterSpacing: "0.14em",
-                  color: active || hovered ? "#C2B8A7" : scrolled ? "#F5F5F3" : "#777",
+                  letterSpacing: "0.12em",
+                  color: solid ? ink : active || hovered ? "#C2B8A7" : "#EFECE3",
                   background: "none",
                   border: "none",
                   cursor: "pointer",
-                  textDecoration: "none",
-                  transition: "color 0.3s",
+                  textDecoration: "underline",
+                  textDecorationColor: active || hovered ? (solid ? ink : "#C2B8A7") : "transparent",
+                  textUnderlineOffset: "6px",
+                  transition: "color 0.3s, text-decoration-color 0.3s",
                 }}
               >
                 {l.label}
@@ -199,15 +229,16 @@ const Nav = () => {
             onMouseEnter={() => setContactHovered(true)}
             onMouseLeave={() => setContactHovered(false)}
             style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "0.85rem",
+              fontFamily: "'Japandi', sans-serif",
+              fontSize: "0.95rem",
+              fontWeight: 700,
               textTransform: "uppercase",
-              letterSpacing: "0.14em",
-              color: contactHovered ? "#0a0a0a" : "#C2B8A7",
-              border: "1px solid #C2B8A7",
+              letterSpacing: "0.12em",
+              color: solid ? (contactHovered ? "#C2B8A7" : ink) : (contactHovered ? ink : "#C2B8A7"),
+              border: `1px solid ${solid ? "#0F1A14" : "#C2B8A7"}`,
               padding: "8px 20px",
               cursor: "pointer",
-              background: contactHovered ? "#C2B8A7" : "transparent",
+              background: contactHovered ? (solid ? ink : "#C2B8A7") : "transparent",
               transition: "color 0.3s, background 0.3s",
             }}
           >
@@ -218,7 +249,8 @@ const Nav = () => {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="xl:hidden"
-          style={{ color: "#F5F5F3", background: "none", border: "none", cursor: "pointer" }}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          style={{ color: solid ? "#0F1A14" : "#EFECE3", background: "none", border: "none", cursor: "pointer" }}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -227,50 +259,36 @@ const Nav = () => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="xl:hidden"
-            style={{ background: "rgba(10,10,10,.98)", borderTop: "1px solid rgba(194,184,167,.06)" }}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.2 }}
+            className="xl:hidden absolute right-4 md:right-10 top-full mt-2 w-[260px] max-w-[calc(100vw-2rem)]"
+            style={{ background: "#C2B8A7", border: "1px solid rgba(15,26,20,.12)", boxShadow: "0 18px 40px rgba(0,0,0,.28)" }}
           >
-            <nav className="px-6 py-8 flex flex-col gap-6">
-              {navLinks.map((l) => (
+            <nav className="px-6 py-6 flex flex-col items-end gap-5">
+              {[...navLinks.map((l) => ({ l, contact: false })), { l: null as NavLink | null, contact: true }].map(({ l, contact }) => (
                 <a
-                  key={l.href}
-                  href={l.type === "scroll" ? "/" + l.href : l.href}
-                  onClick={(e) => { e.preventDefault(); handleNav(l); }}
+                  key={contact ? "contact" : l!.href}
+                  href={contact ? "#contact" : l!.type === "scroll" ? "/" + l!.href : l!.href}
+                  onClick={(e) => { e.preventDefault(); contact ? handleContact() : handleNav(l!); }}
                   style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: "1rem",
+                    fontFamily: "'Japandi', sans-serif",
+                    fontSize: "1.15rem",
+                    fontWeight: 700,
                     textTransform: "uppercase",
-                    letterSpacing: "0.16em",
-                    color: isLinkActive(l) ? "#C2B8A7" : "#F5F5F3",
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                    textAlign: "left",
-                    textDecoration: "none",
+                    letterSpacing: "0.12em",
+                    color: "#0F1A14",
+                    textAlign: "right",
+                    textDecoration: "underline",
+                    textDecorationColor: !contact && isLinkActive(l!) ? "#0F1A14" : "transparent",
+                    textUnderlineOffset: "6px",
                   }}
+                  className="v2-menu-link"
                 >
-                  {l.label}
+                  {contact ? "Contact" : l!.label}
                 </a>
               ))}
-              <button
-                onClick={handleContact}
-                style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "1rem",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.16em",
-                  color: "#C2B8A7",
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  textAlign: "left",
-                }}
-              >
-                Contact
-              </button>
             </nav>
           </motion.div>
         )}

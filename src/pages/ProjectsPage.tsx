@@ -70,7 +70,7 @@ const ProjectsPage = () => {
     <div className="pt-16 md:pt-20">
       <h1 className="sr-only">Our Projects</h1>
       <section className="relative overflow-hidden py-12 md:py-28" style={{ background: "var(--v2-deep)" }}>
-        <div className="v2-ghost-text hidden lg:block top-8 right-8 text-right" style={{ fontSize: "min(9vw, 110px)", color: "rgba(194,184,167,.16)" }}>PROJECTS</div>
+        <div className="v2-ghost-text hidden lg:block top-8 right-8 text-right" style={{ fontSize: "min(9vw, 110px)", color: "rgba(194,184,167,.6)" }}>PROJECTS</div>
         <div ref={projRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
               <motion.div initial={{ opacity: 0, y: 35 }} animate={projInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }} transition={{ duration: 0.75, ease }} className="v2-label mb-6">
                 Current In Process
@@ -81,12 +81,12 @@ const ProjectsPage = () => {
 
               {/* Featured project - 301 W Osborn */}
               {projects.filter(p => p.featured).map((proj) => (
-                <motion.div key={proj.name} initial={{ opacity: 0, y: 35 }} animate={projInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="relative overflow-hidden group mb-px" style={{ minHeight: "520px", border: `2px solid ${accentColor}` }}>
+                <motion.div key={proj.name} initial={{ opacity: 0, y: 35 }} animate={projInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="v2-tile relative overflow-hidden group mb-px" style={{ minHeight: "520px", border: `2px solid ${accentColor}` }}>
                   <img src={proj.img} alt={proj.name} className="absolute inset-0 w-full h-full object-cover brightness-[.5] transition-all duration-700 group-hover:brightness-[.65]" />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.95) 0%, rgba(10,10,10,.2) 50%, transparent 100%)" }} />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(15,26,20,.95) 0%, rgba(15,26,20,.2) 50%, transparent 100%)" }} />
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="inline-flex items-center gap-2 px-4 py-2" style={{ background: accentColor, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#0a0a0a", fontWeight: 700 }}>
-                      <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#0a0a0a", display: "inline-block" }} />
+                    <span className="v2-badge inline-flex items-center gap-2 px-4 py-2" style={{ background: accentColor, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#0F1A14", fontWeight: 700 }}>
+                      <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#0F1A14", display: "inline-block" }} />
                       Featured: {proj.status}
                     </span>
                   </div>
@@ -100,13 +100,13 @@ const ProjectsPage = () => {
               ))}
 
               {/* Other projects */}
-              <motion.div initial={{ opacity: 0, y: 35 }} animate={projInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-px">
+              <motion.div initial={{ opacity: 0, y: 35 }} animate={projInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
                 {projects.filter(p => !p.featured).map((proj) => (
-                  <div key={proj.name} className="relative overflow-hidden group" style={{ minHeight: "380px", border: "1px solid var(--v2-rule)" }}>
+                  <div key={proj.name} className="v2-tile relative overflow-hidden group" style={{ minHeight: "380px", border: "1px solid var(--v2-rule)" }}>
                     <img src={proj.img} alt={proj.name} className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.6]" style={proj.zoom ? { transform: `scale(${proj.zoom})` } : undefined} />
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(10,10,10,.95) 0%, rgba(10,10,10,.3) 60%, transparent 100%)" }} />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(15,26,20,.95) 0%, rgba(15,26,20,.3) 60%, transparent 100%)" }} />
                     <div className="absolute top-4 left-4 z-10">
-                      <span className="inline-flex items-center gap-2 px-3 py-1.5" style={{ background: "rgba(0,0,0,.8)", border: `1px solid ${accentColor}`, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: accentColor }}>
+                      <span className="v2-badge inline-flex items-center gap-2 px-3 py-1.5" style={{ background: "rgba(0,0,0,.8)", border: `1px solid ${accentColor}`, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: accentColor }}>
                         <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: accentColor, display: "inline-block" }} />
                         {proj.status}
                       </span>
