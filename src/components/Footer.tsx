@@ -24,7 +24,7 @@ const Footer = () => {
           <div>
             <img src={logoConcrete} alt="Lïef" className="h-6 w-auto mb-4" />
             <p className="v2-headline text-sm mb-2" style={{ color: "var(--v2-white)" }}>
-              PROJECT ADVOCACY, OVERSIGHT, & REPRESENTATION
+              BUDGETS, BIDDING AND OWNER'S REPRESENTATION
             </p>
             <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)" }}>Built. Different.</p>
             <p className="mt-2" style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Phoenix, Arizona</p>
@@ -34,9 +34,10 @@ const Footer = () => {
           <div>
             <h5 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-neon)" }}>Services</h5>
             <ul className="space-y-3">
-              <li><span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Project Advocacy</span></li>
-              <li><span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Insurance Coordination</span></li>
-              <li><span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Cost Control</span></li>
+              <li><span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Budgets From Your Plans</span></li>
+              <li><span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Bidding and Placement</span></li>
+              <li><span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Owner's Representation</span></li>
+              <li><span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Fire Rebuilds</span></li>
               <li>
                 <button
                   onClick={() => { navigate("/sabs"); window.scrollTo({ top: 0 }); }}
