@@ -322,7 +322,7 @@ const NationalPage = () => {
             WORK WE HAVE<br /><span style={{ color: "var(--v2-neon)" }}>CARRIED</span><span className="v2-neon-period">.</span>
           </h2>
           <p className="max-w-[720px]" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
-            Projects LÏEF has completed or coordinated.
+            Projects Lïef is developing or has coordinated.
           </p>
         </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px overflow-hidden" style={{ background: "var(--v2-rule)", border: "1px solid var(--v2-rule)" }}>
