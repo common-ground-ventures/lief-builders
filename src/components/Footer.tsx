@@ -28,6 +28,11 @@ const Footer = () => {
             </p>
             <p style={{ fontSize: "1.25rem", color: "var(--v2-neon)" }}>Built. Different.</p>
             <p className="mt-2" style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Phoenix, Arizona</p>
+            <p className="mt-4">
+              <a href="https://kanopibuild.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.14em", color: "var(--v2-neon)", textDecoration: "none", borderBottom: "1px solid var(--v2-neon)", paddingBottom: "2px" }} className="hover:brightness-110 transition-all duration-300">
+                Powered by Kanopi &#8599;
+              </a>
+            </p>
           </div>
 
           {/* Services */}
