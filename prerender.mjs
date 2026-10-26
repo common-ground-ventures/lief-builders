@@ -31,8 +31,8 @@ const ROUTES = {
     desc: "The Saebi Alternative Building System. 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation. Faster and 15-20% less than traditional methods.",
   },
   "/projects": {
-    title: "Projects | LÏEF Builders",
-    desc: "Luxury residential, commercial, and disaster-recovery projects across Phoenix, Las Vegas, and Los Angeles.",
+    title: "Projects | Lïef Builders",
+    desc: "Lïef developments we price and coordinate, from Midtown Phoenix to Nevada.",
   },
   "/team": {
     title: "Our Team | LÏEF Builders",
