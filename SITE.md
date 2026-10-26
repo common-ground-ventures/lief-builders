@@ -23,3 +23,9 @@ Before any cutover, `receipts/http_parity_v2.py` compares live www.liefbuilders.
 - Part D: apex liefbuilders.com (live only). A host redirect cannot live in `_redirects`, so cutover needs a Cloudflare Redirect Rule: 307 to https://www.liefbuilders.com keeping path and query.
 - Rerun against the custom domain before and after the nameserver change: `python3 receipts/http_parity_v2.py https://www.liefbuilders.com <new base> receipts/parity-paths-v2.txt`.
 - Known, accepted differences: Vercel puts content-type text/plain and cache-control on its 308 responses; Workers sends none. Workers sends ETag but no Last-Modified; refresh still answers 304.
+
+## Contact form (changed 10/26)
+- The form no longer posts to LeadConnector (Jimmy 10/26: not used, waiting on Robby's CRM). It posts JSON to same-origin `/api/lead`, handled by `worker/index.ts` (only that path runs the Worker; every other path is served straight from the static assets).
+- The Worker logs the lead (Workers Logs, `LIEF_LEAD`) and emails it to `LEAD_EMAIL_TO` (default jesse@jfowler.io) through Resend, reply-to the visitor. Secret `RESEND_API_KEY` is set on the Worker in the Cloudflare dashboard, never in the repo. No key set: the visitor sees the form's error state, not a false "sent".
+- Bot guard: hidden `website` field (any content = silently dropped), Origin allowlist (the two live hosts and this Worker's preview URLs).
+- When Robby's CRM exists, change the delivery in `worker/index.ts` (or point `LEAD_URL` at the CRM) and drop Resend.
