@@ -26,7 +26,7 @@ const AlignmentBanner = () => {
               className="v2-headline mb-6"
               style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", color: "var(--v2-white)" }}
             >
-              100% ALIGNED WITH <span style={{ color: "var(--v2-neon)" }}>YOU</span><span className="v2-neon-period">.</span>
+              TWO WAYS TO WORK<span className="v2-neon-period">.</span> ONE SIDE OF THE <span style={{ color: "var(--v2-neon)" }}>TABLE</span><span className="v2-neon-period">.</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 25 }}
@@ -34,7 +34,7 @@ const AlignmentBanner = () => {
               transition={{ duration: 0.75, delay: 0.2, ease }}
               style={{ fontSize: "1.1rem", color: "rgba(239,236,227,.85)", lineHeight: 1.7 }}
             >
-              In owner's representation, you pay us and nobody else. No kickbacks, vendor deals or material markups.
+              Hire us as your owner's rep and you pay us and nobody else: no kickbacks, vendor deals or material markups. Let us bid and place your contract and our fee is its own line in the contract price, written down before you sign.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

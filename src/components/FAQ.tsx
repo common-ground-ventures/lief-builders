@@ -27,6 +27,11 @@ const faqs: FAQItem[] = [
       "Anywhere in the United States, from our base in Phoenix. We bid the work to builders licensed in the state where you are building, and the design team is licensed there too. Our home markets are Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California, where the team has completed projects ranging from luxury residential builds to large-scale commercial developments and disaster recovery rebuilds.",
   },
   {
+    question: "Do you build the project yourselves?",
+    answer:
+      "No. We are not your general contractor. We run the pre-construction, place the contract with a builder licensed in your state, from Armstrong Construction Group in Arizona or our network elsewhere, and stay on your side until it is done.",
+  },
+  {
     question: "Why does Lïef Builders cost less than a traditional owner's rep?",
     answer: (
       <>
@@ -45,7 +50,7 @@ const faqs: FAQItem[] = [
     question: "I'm a builder or an architect. How do we work together?",
     answer: (
       <>
-        Builders: we bring you into bids we run in your market, and every bid is leveled against our takeoff, so you are judged on price and scope. Architects: send a schematic set and we return a budget before your client ever sees a bid. Want a takeoff for your own bid? That is Kanopi, at <KanopiLink>kanopibuild.com</KanopiLink>.
+        Builders: we bring you into bids we run in your market, and every bid is leveled against our takeoff, so you are judged on price and scope. Join our builder list from the <a href="/national#builders-architects" style={{ color: "var(--v2-neon)" }}>national page</a>. Architects: send a schematic set and we return a budget before your client ever sees a bid. Want a takeoff for your own bid? That is Kanopi, at <KanopiLink>kanopibuild.com</KanopiLink>.
       </>
     ),
   },

@@ -101,6 +101,9 @@ A: Because the people building your project are not paid to protect your interes
 Q: What areas does Lïef Builders serve?
 A: Anywhere in the United States, from our base in Phoenix. We bid the work to builders licensed in the state where you are building. Home markets are Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California.
 
+Q: Do you build the project yourselves?
+A: No. We are not your general contractor. We run the pre-construction, place the contract with a builder licensed in your state, from Armstrong Construction Group in Arizona or our network elsewhere, and stay on your side until it is done.
+
 Q: Why does Lïef Builders cost less than a traditional owner's rep?
 A: A traditional rep bills you for the hours spent counting: quantities off the drawings, line items across bids, change orders against the scope. Kanopi, the software we built, does the counting. A person on our team reads what it flags and makes the call. You stop paying for counting and pay for judgment.
 

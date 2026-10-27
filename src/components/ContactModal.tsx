@@ -29,8 +29,10 @@ const labelStyle: React.CSSProperties = {
 };
 
 const ContactModal = () => {
-  const { isOpen, closeModal } = useContactModal();
+  const { isOpen, mode, closeModal } = useContactModal();
+  const isBuilder = mode === "builder";
   const [form, setForm] = useState({ firstName: "", lastName: "", email: "", message: "" });
+  const [builder, setBuilder] = useState({ company: "", markets: "", license: "", trades: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [honeypot, setHoneypot] = useState("");
   const backdropRef = useRef<HTMLDivElement>(null);
@@ -66,14 +68,25 @@ const ContactModal = () => {
           first_name: form.firstName,
           last_name: form.lastName,
           email: form.email,
-          message: form.message,
-          page: window.location.pathname,
+          message: isBuilder
+            ? [
+                "BUILDER SIGN-UP",
+                `Company: ${builder.company}`,
+                `Markets: ${builder.markets}`,
+                `License: ${builder.license}`,
+                `Work they bid: ${builder.trades}`,
+                "",
+                form.message,
+              ].join("\n")
+            : form.message,
+          page: window.location.pathname + (isBuilder ? " (builder sign-up)" : ""),
           website: honeypot,
         }),
       });
       if (!res.ok) throw new Error("lead " + res.status);
       setStatus("sent");
       setForm({ firstName: "", lastName: "", email: "", message: "" });
+      setBuilder({ company: "", markets: "", license: "", trades: "" });
     } catch {
       setStatus("error");
     }
@@ -114,6 +127,9 @@ const ContactModal = () => {
               background: "#C2B8A7",
               border: "1px solid #C2B8A7",
               boxShadow: "0 40px 80px rgba(0,0,0,.45)",
+              // The builder version is taller than a phone screen: scroll inside the card.
+              maxHeight: "calc(100dvh - 32px)",
+              overflowY: "auto",
             }}
           >
             {/* Close button */}
@@ -134,7 +150,7 @@ const ContactModal = () => {
                   MESSAGE SENT
                 </h3>
                 <p style={{ fontSize: "1.05rem", color: "var(--v2-dim)", lineHeight: 1.6 }}>
-                  We'll be in touch shortly.
+                  {isBuilder ? "You're on the list. We'll reach out when we run a bid in your market." : "We'll be in touch shortly."}
                 </p>
                 <button
                   onClick={handleClose}
@@ -161,7 +177,7 @@ const ContactModal = () => {
                   className="v2-headline mb-6"
                   style={{ fontSize: "1.4rem", letterSpacing: "0.1em", color: "var(--v2-white)" }}
                 >
-                  START YOUR PROJECT
+                  {isBuilder ? "JOIN OUR BUILDER LIST" : "START YOUR PROJECT"}
                 </h3>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -195,8 +211,46 @@ const ContactModal = () => {
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                     />
                   </div>
+                  {isBuilder && (
+                    <>
+                      <div>
+                        <label style={labelStyle}>Company</label>
+                        <input
+                          required
+                          style={inputStyle}
+                          value={builder.company}
+                          onChange={(e) => setBuilder({ ...builder, company: e.target.value })}
+                        />
+                      </div>
+                      <div>
+                        <label style={labelStyle}>States or markets you build in</label>
+                        <input
+                          required
+                          style={inputStyle}
+                          value={builder.markets}
+                          onChange={(e) => setBuilder({ ...builder, markets: e.target.value })}
+                        />
+                      </div>
+                      <div>
+                        <label style={labelStyle}>License number</label>
+                        <input
+                          style={inputStyle}
+                          value={builder.license}
+                          onChange={(e) => setBuilder({ ...builder, license: e.target.value })}
+                        />
+                      </div>
+                      <div>
+                        <label style={labelStyle}>Work you bid (GC, framing, concrete...)</label>
+                        <input
+                          style={inputStyle}
+                          value={builder.trades}
+                          onChange={(e) => setBuilder({ ...builder, trades: e.target.value })}
+                        />
+                      </div>
+                    </>
+                  )}
                   <div>
-                    <label style={labelStyle}>Message</label>
+                    <label style={labelStyle}>{isBuilder ? "Anything else" : "Message"}</label>
                     <textarea
                       rows={4}
                       style={inputStyle}
@@ -229,7 +283,7 @@ const ContactModal = () => {
                       opacity: status === "sending" ? 0.7 : 1,
                     }}
                   >
-                    {status === "sending" ? "Sending..." : "SEND MESSAGE"}
+                    {status === "sending" ? "Sending..." : isBuilder ? "JOIN THE LIST" : "SEND MESSAGE"}
                   </button>
                   <input
                     type="text"
