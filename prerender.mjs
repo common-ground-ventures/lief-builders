@@ -23,8 +23,8 @@ const ROUTES = {
     desc: "Owner's representation for homeowners rebuilding after the Palisades fire. LÏEF advocates for the owner through the contractor, the insurer and the build.",
   },
   "/ai": {
-    title: "Technology and Innovation | LÏEF Builders",
-    desc: "How LÏEF Builders applies technology, SABS construction, and intelligent oversight to protect owners on complex builds.",
+    title: "Technology and Innovation | Lïef Builders",
+    desc: "Kanopi, the takeoff and estimating software we built, and why it lets the people on your job spend their hours on judgment instead of counting.",
   },
   "/sabs": {
     title: "SABS Construction Technology | LÏEF Builders",
