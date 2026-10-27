@@ -10,21 +10,22 @@ import vailImg from "@/assets/projects/the-vail.png";
 const ease = [0.16, 1, 0.3, 1] as const;
 const accentColor = "#C2B8A7";
 
-const projects = [
+const projects: { img: string; name: string; type: string; desc: string; location: string; status: string; featured: boolean; zoom?: number; link?: { href: string; label: string } }[] = [
   {
     img: osbornImg,
     name: "301 W Osborn",
     type: "Adaptive Reuse",
-    desc: "Commercial to residential conversion. 23 luxury urban units with secure parking & conditioned storage. Full SABS build.",
+    desc: "Our own development. A 1971 concrete office tower in Midtown Phoenix, becoming private residences with secure parking and conditioned storage. Commercial to residential conversion, 23 luxury urban units. Full SABS build.",
     location: "Midtown, Phoenix AZ",
-    status: "SABS Showcase",
+    status: "Lïef Development · SABS Showcase",
+    link: { href: "https://www.anewlief.com", label: "Lïef Development" },
     featured: true,
   },
   {
     img: vailImg,
     name: "The Vail",
     type: "Boutique 55+ Community",
-    desc: "The Southwest\u2019s premier boutique community where discerning adults trade square footage for more time, freedom, and the memories that matter.",
+    desc: "A boutique 55+ community where people trade square footage for more time and freedom.",
     location: "Arizona",
     status: "In Design",
     featured: false,
@@ -81,7 +82,7 @@ const ProjectsPage = () => {
 
               {/* Featured project - 301 W Osborn */}
               {projects.filter(p => p.featured).map((proj) => (
-                <motion.div key={proj.name} initial={{ opacity: 0, y: 35 }} animate={projInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="v2-tile relative overflow-hidden group mb-px" style={{ minHeight: "520px", border: `2px solid ${accentColor}` }}>
+                <motion.div key={proj.name} initial={{ opacity: 0, y: 35 }} animate={projInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="v2-tile relative overflow-hidden group mb-px flex flex-col justify-end" style={{ minHeight: "520px", border: `2px solid ${accentColor}` }}>
                   <img src={proj.img} alt={proj.name} className="absolute inset-0 w-full h-full object-cover brightness-[.5] transition-all duration-700 group-hover:brightness-[.65]" />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(15,26,20,.95) 0%, rgba(15,26,20,.2) 50%, transparent 100%)" }} />
                   <div className="absolute top-4 left-4 z-10">
@@ -90,10 +91,16 @@ const ProjectsPage = () => {
                       Featured: {proj.status}
                     </span>
                   </div>
-                  <div className="absolute bottom-0 left-0 p-10 z-10">
+                  {/* In flow, not absolute: the longer 301 copy grows the card instead of running under the badge on a phone. */}
+                  <div className="relative p-10 pt-24 z-10">
                     <h3 className="v2-headline text-3xl md:text-4xl mb-2" style={{ color: "var(--v2-white)" }}>{proj.name}</h3>
                     <p className="mb-3" style={{ fontSize: "1rem", color: accentColor, letterSpacing: "0.05em", fontWeight: 600 }}>{proj.type}</p>
                     <p className="max-w-2xl mb-4" style={{ fontSize: "1.1rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>{proj.desc}</p>
+                    {proj.link && (
+                      <a href={proj.link.href} target="_blank" rel="noopener noreferrer" className="inline-block mb-4" style={{ fontSize: "1rem", color: "var(--v2-neon)", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                        {proj.link.label}
+                      </a>
+                    )}
                     <p style={{ fontSize: "0.85rem", color: "var(--v2-dim)" }}>{proj.location}</p>
                   </div>
                 </motion.div>
