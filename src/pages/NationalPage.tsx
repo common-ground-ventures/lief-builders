@@ -1,31 +1,33 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useInView } from "@/hooks/useInView";
 import { useContactModal } from "@/contexts/ContactModalContext";
 import NationalMap from "@/components/NationalMap";
 import logoConcrete from "@/assets/logos/logo-concrete.png";
 import { PINS } from "@/data/us-map";
+import { KanopiLink, PoweredByKanopiMark, KANOPI_URL } from "@/components/Kanopi";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const stagger = (i: number) => ({ delay: 0.3 + i * 0.15 });
 
-const lanes = [
+const lanes: { num: string; title: string; kicker: string; body: React.ReactNode }[] = [
   {
     num: "01",
     title: "Pre-construction",
     kicker: "Everything before the first shovel.",
-    body: "Architectural design and production, structural, mechanical, electrical and plumbing engineering, estimating, value engineering and permitting, sealed by licensed professionals registered in your state. Our own rendering and estimating software runs beside the drawings from the first sketch, so the design never drifts away from what it costs to build.",
+    body: <>Architectural design and production, structural, mechanical, electrical and plumbing engineering, estimating, value engineering and permitting, sealed by licensed professionals registered in your state. <KanopiLink />, the design and estimating software we built, runs beside the drawings from the first sketch, so the design never drifts away from what it costs to build.</>,
   },
   {
     num: "02",
-    title: "General Construction",
+    title: "Bidding and Placement",
     kicker: "Contracts placed in your market.",
-    body: "We run the bid, hold every number against our own takeoff, and place the contract with a general contractor from our network that we would hire for our own projects. Our fee sits on the contractor's side. Your price is the contractor's price.",
+    body: "We run the bid with licensed builders in your market, hold every number against our own takeoff, and place the contract with the one we would hire for our own projects. Our fee sits on the contractor's side. Your price is the contractor's price.",
   },
   {
     num: "03",
-    title: "Owner Representation",
+    title: "Owner's Representation",
     kicker: "On top, wherever you build.",
     body: "Site walks, change order review, draw requests, insurance and legal coordination, vendor and material verification. Someone on your side of the table for the whole build.",
   },
@@ -45,7 +47,7 @@ const steps = [
   {
     num: "3",
     title: "We place the contract and stay",
-    body: "We bid the work to general contractors in your market, place the contract, and remain your owner's representative until the last draw.",
+    body: "We bid the work to licensed general contractors in your market, place the contract, and stay on your side until the last draw.",
   },
 ];
 
@@ -92,7 +94,7 @@ const NationalPage = () => {
     window.scrollTo({ top: 0 });
   }, []);
 
-  const eyebrow = "Pre-construction · General Construction · Owner Representation · Nationwide";
+  const eyebrow = "Pre-construction · Bidding and Placement · Owner's Representation · Nationwide";
 
   return (
     <div>
@@ -117,7 +119,7 @@ const NationalPage = () => {
           </motion.h1>
 
           <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(2), ease }} className="max-w-[680px]" style={{ fontSize: "clamp(1.1rem, 2.2vw, 1.3rem)", color: "var(--v2-muted)", lineHeight: 1.6 }}>
-            LÏEF runs the pre-construction, places the general construction contract, and stays on your project as the owner's representative, across the country. One team from the first sketch to the last draw. We have relationships with architecture and engineering firms licensed in every state.
+            Lïef runs the pre-construction, bids the work to licensed builders in your market, places the contract and stays on your side, across the country. One team from the first sketch to the last draw, with architects and engineers licensed where you build. We have relationships with architecture and engineering firms licensed in every state.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(3), ease }} className="mt-8 md:mt-12 flex flex-wrap gap-3 md:gap-4">
@@ -135,6 +137,9 @@ const NationalPage = () => {
             >
               How it works
             </button>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(4), ease }} className="mt-8">
+            <PoweredByKanopiMark />
           </motion.div>
         </div>
       </section>
@@ -215,7 +220,7 @@ const NationalPage = () => {
               ACROSS<br /><span style={{ color: "var(--v2-neon)" }}>THE COUNTRY</span><span className="v2-neon-period">.</span>
             </h2>
             <p className="max-w-[720px]" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
-              Every pin is a state where LÏEF has a project on record, from a tornado rebuild in Kansas to a hotel in Texas and a custom residence in the Utah mountains.
+              Every pin is a state where our team has a project on record, from a tornado rebuild in Kansas to a hotel in Texas and a custom residence in the Utah mountains.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -245,11 +250,11 @@ const NationalPage = () => {
 
       {/* Our own tools */}
       <Section id="tools" bg="var(--v2-green)" full>
-        <div className="v2-label mb-6">Our own tools</div>
+        <div className="v2-label mb-6">Powered by Kanopi</div>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-24 items-start">
           <Reveal className="lg:sticky lg:top-32">
             <h2 className="v2-headline text-3xl md:text-4xl lg:text-5xl" style={{ color: "var(--v2-white)" }}>
-              RENDERING AND ESTIMATING SOFTWARE<br /><span style={{ color: "var(--v2-neon)" }}>WE BUILT OURSELVES</span><span className="v2-neon-period">.</span>
+              KANOPI<span className="v2-neon-period">.</span><br /><span style={{ color: "var(--v2-neon)" }}>THE SOFTWARE WE BUILT TO PRICE ANY PLAN SET</span><span className="v2-neon-period">.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
@@ -257,11 +262,54 @@ const NationalPage = () => {
               This is how we bid a project in a state we have never set foot in and hold the number.
             </p>
             <p className="mb-5" style={{ fontSize: "1.1rem", color: "rgba(239,236,227,.85)", lineHeight: 1.7 }}>
-              Every plan set we touch runs through our own estimating engine. It measures the drawings, prices every trade from our own record of bids, and keeps the estimate tied to the model as the design changes. Renderings come from the same model, so what you see is what was priced.
+              Every plan set we touch runs through Kanopi. It measures the drawings three times, start to finish, prices every trade from our own record of bids, and keeps the estimate tied to the model as the design changes. A person on our team checks what it flags before any number leaves us. Renderings come from the same model, so what you see is what was priced.
             </p>
-            <p style={{ fontSize: "1.1rem", color: "rgba(239,236,227,.85)", lineHeight: 1.7 }}>
+            <p className="mb-8" style={{ fontSize: "1.1rem", color: "rgba(239,236,227,.85)", lineHeight: 1.7 }}>
               Send us a plan set from anywhere in the country. We return a measured takeoff and a bid built on quantities, not a guess.
             </p>
+            <a
+              href={KANOPI_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 transition-all duration-300 hover:brightness-110"
+              style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "var(--v2-btn-bg)", color: "var(--v2-btn-fg)", border: "1px solid var(--v2-loggia)", padding: "10px 24px" }}
+            >
+              See Kanopi
+              <ArrowUpRight size={18} strokeWidth={1.5} />
+            </a>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* Builders and architects */}
+      <Section id="builders-architects">
+        <div className="v2-label mb-6">For builders and architects</div>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-24 items-start">
+          <Reveal>
+            <h2 className="v2-headline text-4xl md:text-5xl lg:text-6xl" style={{ color: "var(--v2-white)" }}>
+              BUILDERS AND<br />ARCHITECTS<span className="v2-neon-period">.</span><br /><span style={{ color: "var(--v2-neon)" }}>WORK WITH US</span><span className="v2-neon-period">.</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mb-5" style={{ fontSize: "1.25rem", color: "var(--v2-white)", lineHeight: 1.6 }}>
+              We run bids in markets across the country and we need builders who price honestly and show up.
+            </p>
+            <p className="mb-5" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
+              Every bid is leveled against our own takeoff, so you are compared on price and scope, not on who counted wrong.
+            </p>
+            <p className="mb-5" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
+              Architects: send us a schematic set and we return a budget before your client sees a bid, so the project does not die on bid day.
+            </p>
+            <p className="mb-8" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
+              Want a takeoff for your own bid? That is <KanopiLink />.
+            </p>
+            <button
+              onClick={openModal}
+              className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0F1A14]"
+              style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "transparent", color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "10px 24px", cursor: "pointer" }}
+            >
+              Tell us your market
+            </button>
           </Reveal>
         </div>
       </Section>
@@ -274,7 +322,7 @@ const NationalPage = () => {
             WORK WE HAVE<br /><span style={{ color: "var(--v2-neon)" }}>CARRIED</span><span className="v2-neon-period">.</span>
           </h2>
           <p className="max-w-[720px]" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
-            Projects LÏEF has completed or coordinated.
+            Projects Lïef is developing or has coordinated.
           </p>
         </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px overflow-hidden" style={{ background: "var(--v2-rule)", border: "1px solid var(--v2-rule)" }}>
