@@ -23,13 +23,13 @@ const lanes: { num: string; title: string; kicker: string; body: React.ReactNode
     num: "02",
     title: "Bidding and Placement",
     kicker: "Contracts placed in your market.",
-    body: "We run the bid with licensed builders in your market, hold every number against our own takeoff, and place the contract with the one we would hire for our own projects. Our fee sits on the contractor's side. Your price is the contractor's price.",
+    body: "We run the bid with licensed builders in your market, hold every number against our own takeoff, and place the contract with the one we would hire for our own projects. Our fee is a line in that contract, in writing. Your price is the contractor's price.",
   },
   {
     num: "03",
     title: "Owner's Representation",
     kicker: "On top, wherever you build.",
-    body: "Site walks, change order review, draw requests, insurance and legal coordination, vendor and material verification. Someone on your side of the table for the whole build.",
+    body: "Change order review, draw requests, insurance and legal coordination, vendor and material verification, read from here wherever you build. Site walks by our team or a partner in your market, and we tell you which before you sign. Someone on your side of the table for the whole build.",
   },
 ];
 
@@ -150,7 +150,7 @@ const NationalPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-24 items-start">
           <Reveal className="lg:sticky lg:top-32">
             <h2 className="v2-headline text-4xl md:text-5xl lg:text-6xl" style={{ color: "var(--v2-white)" }}>
-              THE CONTRACTOR<br />PAYS US<span className="v2-neon-period">.</span><br /><span style={{ color: "var(--v2-neon)" }}>NOT YOU</span><span className="v2-neon-period">.</span>
+              NO SECOND FEE<span className="v2-neon-period">.</span><br /><span style={{ color: "var(--v2-neon)" }}>NOTHING HIDDEN</span><span className="v2-neon-period">.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
@@ -158,10 +158,10 @@ const NationalPage = () => {
               Hiring an owner's representative has always meant a second fee on top of the contractor's price. We built the national offering to remove that trade-off.
             </p>
             <p className="mb-5" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
-              When LÏEF places your general construction contract, our fee comes out of the general contractor's side of the deal. You pay what you would pay a traditional contractor. On top of that price you get an owner's representative who reads every bid, every change order and every draw request before you sign it.
+              When Lïef places your construction contract, our fee is its own line inside the contract price, written down before you sign. You pay what you would pay a traditional contractor, and someone reads every bid, change order and draw request before you sign it.
             </p>
             <p style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
-              The oversight most owners have to buy separately comes with the contract. That is the whole idea.
+              The oversight comes with the contract. Already have a builder and want us only on your side? Then you pay us directly and nobody else.
             </p>
           </Reveal>
         </div>
@@ -304,11 +304,11 @@ const NationalPage = () => {
               Want a takeoff for your own bid? That is <KanopiLink />.
             </p>
             <button
-              onClick={openModal}
+              onClick={() => openModal("builder")}
               className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0F1A14]"
               style={{ fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase", letterSpacing: "0.14em", fontWeight: 600, background: "transparent", color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "10px 24px", cursor: "pointer" }}
             >
-              Tell us your market
+              Builders: join our list
             </button>
           </Reveal>
         </div>

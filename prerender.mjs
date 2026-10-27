@@ -16,7 +16,7 @@ const ROUTES = {
   },
   "/national": {
     title: "How It Works, Nationwide | Lïef Builders",
-    desc: "A budget from your plans, bids from licensed builders in your market, and someone on your side until the last draw, in any state. The contractor pays our fee, not you.",
+    desc: "A budget from your plans, bids from licensed builders in your market, and someone on your side until the last draw, in any state. Our fee is written down before you sign.",
   },
   "/palisades-fire-rebuild-owners-rep": {
     title: "Palisades Fire Rebuild Owner's Representation | Lïef Builders",
