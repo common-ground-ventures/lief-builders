@@ -42,6 +42,15 @@ const ROUTES = {
     title: "Testimonials | LÏEF Builders",
     desc: "What property owners say about working with LÏEF Builders across Arizona, Nevada, and Southern California.",
   },
+  // Moved from anewlief.com/learn on 10/26 (narrative v4); the old addresses 301 here.
+  "/learn/owners-rep-alternative-building-systems-arizona": {
+    title: "Owner's Rep for Alternative Building Systems in Arizona | Lïef Builders",
+    desc: "Owner's representation for SABS, ICCF, SCIP, and SIPs projects in Arizona. Firsthand take from Lïef Builders on what the role covers, where conventional reps miss, and how to evaluate the alt-system case for your project.",
+  },
+  "/learn/arizona-owners-rep-sabs-project-case-files": {
+    title: "Arizona Owner's Rep Case Files: SABS Project Chronicles | Lïef Builders",
+    desc: "Named-project case files from the Arizona owner's rep for SABS construction. 301 W Osborn (Phoenix), Canyon Corporate Plaza (Phoenix), Silver Mountain Ranches (Scottsdale), 440 Basin Avenue (Pahrump NV). AHJ, EOR, GC, and finance partner attribution by project. Written by Lïef Builders.",
+  },
 };
 
 const distDir = path.resolve("dist");
