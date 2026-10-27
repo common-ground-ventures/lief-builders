@@ -1,10 +1,9 @@
+import { postLead } from "@/lib/postLead";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useContactModal } from "@/contexts/ContactModalContext";
 
-// Same-origin lead intake (worker/index.ts): emails the owner. Replaced the LeadConnector webhook 10/26.
-const LEAD_URL = "/api/lead";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -61,10 +60,7 @@ const ContactModal = () => {
     setStatus("sending");
 
     try {
-      const res = await fetch(LEAD_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      await postLead({
           first_name: form.firstName,
           last_name: form.lastName,
           email: form.email,
@@ -81,9 +77,7 @@ const ContactModal = () => {
             : form.message,
           page: window.location.pathname + (isBuilder ? " (builder sign-up)" : ""),
           website: honeypot,
-        }),
-      });
-      if (!res.ok) throw new Error("lead " + res.status);
+        });
       setStatus("sent");
       setForm({ firstName: "", lastName: "", email: "", message: "" });
       setBuilder({ company: "", markets: "", license: "", trades: "" });
