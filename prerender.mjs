@@ -19,7 +19,7 @@ const ROUTES = {
     desc: "A budget from your plans, bids from licensed builders in your market, and someone on your side until the last draw, in any state. The contractor pays our fee, not you.",
   },
   "/palisades-fire-rebuild-owners-rep": {
-    title: "Palisades Fire Rebuild Owner's Representation | LÏEF Builders",
+    title: "Palisades Fire Rebuild Owner's Representation | Lïef Builders",
     desc: "Owner's representation for homeowners rebuilding after the Palisades fire. LÏEF advocates for the owner through the contractor, the insurer and the build.",
   },
   "/ai": {
@@ -27,7 +27,7 @@ const ROUTES = {
     desc: "Kanopi, the takeoff and estimating software we built, and why it lets the people on your job spend their hours on judgment instead of counting.",
   },
   "/sabs": {
-    title: "SABS Construction Technology | LÏEF Builders",
+    title: "SABS Construction Technology | Lïef Builders",
     desc: "The Saebi Alternative Building System. 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation. Faster and 15-20% less than traditional methods.",
   },
   "/projects": {
@@ -35,12 +35,12 @@ const ROUTES = {
     desc: "Lïef developments we price and coordinate, from Midtown Phoenix to Nevada.",
   },
   "/team": {
-    title: "Our Team | LÏEF Builders",
-    desc: "Owner's reps, development veterans, architectural review, and general counsel, on the owner's side of the table.",
+    title: "Our Team | Lïef Builders",
+    desc: "The builders, developers, architects and counsel behind Lïef Builders, on the owner's side of the table.",
   },
   "/testimonials": {
-    title: "Testimonials | LÏEF Builders",
-    desc: "What property owners say about working with LÏEF Builders across Arizona, Nevada, and Southern California.",
+    title: "Testimonials | Lïef Builders",
+    desc: "What owners say about working with Lïef Builders.",
   },
   // Moved from anewlief.com/learn on 10/26 (narrative v4); the old addresses 301 here.
   "/learn/owners-rep-alternative-building-systems-arizona": {
@@ -119,7 +119,7 @@ let html404 = template.replace(
   `<div id="root">${notFoundHtml}</div>`
 );
 html404 = patchHead(html404, "/404", {
-  title: "Page Not Found | LÏEF Builders",
+  title: "Page Not Found | Lïef Builders",
   desc: "The page you are looking for could not be found.",
 });
 html404 = html404.replace(
