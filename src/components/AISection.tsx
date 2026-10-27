@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
+import { KanopiLink, PoweredByKanopiMark } from "@/components/Kanopi";
+import { STOPLIGHT_QUOTE } from "@/components/StoplightQuote";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -46,7 +48,7 @@ const AISection = () => {
                   className="mb-4"
                   style={{ fontSize: "1.1rem", color: "var(--v2-muted)", lineHeight: 1.7 }}
                 >
-                  Our team is heavily trained in the latest artificial intelligence and machine learning tools. You're not just getting human expertise. You're armed with an AI agent team that accelerates every phase of your project.
+                  Most of what an estimator or owner's rep bills you for is counting: quantities off the drawings, line items across bids, change orders against the original scope. We built <KanopiLink /> to do the counting. It runs a triple-pass takeoff on every plan set, checks every bid line and change order against it, and flags what does not match.
                 </motion.p>
                 <motion.p
                   initial={{ opacity: 0, y: 25 }}
@@ -55,7 +57,7 @@ const AISection = () => {
                   className="mb-8"
                   style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}
                 >
-                  From automated change order analysis to real-time budget tracking, our AI tools catch discrepancies that manual review misses, faster and with greater precision.
+                  Then a person on our team reads what it flagged and makes the call. That is what an agentic team means here: the software works the hours, and the people own the judgment.
                 </motion.p>
 
                 <motion.div
@@ -71,6 +73,9 @@ const AISection = () => {
                     </div>
                   ))}
                 </motion.div>
+                <div className="mt-8">
+                  <PoweredByKanopiMark />
+                </div>
               </div>
 
               <motion.div
@@ -79,7 +84,15 @@ const AISection = () => {
                 transition={{ duration: 0.75, delay: 0.25, ease }}
                 className="flex flex-col gap-6"
               >
-                {/* Quote Card */}
+                {/* Quote cards */}
+                <div className="p-8 md:p-10" style={{ background: "rgba(239,236,227,.05)", border: "1px solid var(--v2-rule)" }}>
+                  <p style={{ fontStyle: "italic", fontSize: "1rem", color: "var(--v2-white)", lineHeight: 1.7 }}>
+                    "{STOPLIGHT_QUOTE}"
+                  </p>
+                  <p className="mt-4" style={{ fontSize: "1rem", color: "var(--v2-neon)", textTransform: "uppercase", letterSpacing: "0.12em" }}>
+                    Jesse Fowler
+                  </p>
+                </div>
                 <div className="p-8 md:p-10" style={{ background: "rgba(239,236,227,.05)", border: "1px solid var(--v2-rule)" }}>
                   <p style={{ fontStyle: "italic", fontSize: "1rem", color: "var(--v2-white)", lineHeight: 1.7 }}>
                     "Think of it like a cop up the road with a radar gun. Are you gonna speed? The answer is no. That's what an owner's rep does. The contractors aren't going to cut corners because they know they'll get caught. That accountability alone saves you multiples of our fee."

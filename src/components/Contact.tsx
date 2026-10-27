@@ -73,7 +73,7 @@ const Contact = () => {
                 LET'S<br /><span style={{ color: "var(--v2-neon)" }}>BUILD</span><span className="v2-neon-period">.</span>
               </h2>
               <p className="max-w-[920px] mx-auto" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}>
-                Whether you're a property owner or a developer, we'd like to hear from you. We also work closely with insurance adjusters and legal teams.
+                Owners, developers, builders and architects, anywhere in the country: tell us where the project is. We also work closely with insurance adjusters and legal teams.
               </p>
             </motion.div>
 

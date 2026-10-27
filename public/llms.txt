@@ -1,17 +1,31 @@
-# LÏEF Builders
+# Lïef Builders
 
-> Owner's Rep, Project Advocacy and Oversight. Built. Different.
+> Budgets, bidding and owner's representation, in any state. Powered by Kanopi. Built. Different.
 
 ## URL
 https://liefbuilders.com
 
 ## What We Are
-LÏEF Builders is an owner's representation and project advocacy firm based in Scottsdale, Arizona. An owner's representative is a professional who advocates exclusively for the property owner during a construction project, protecting their financial and legal interests from start to finish. LÏEF Builders puts experienced professionals on the owner's side so contractors and insurers cannot take advantage of what property owners do not know.
+Lïef Builders is the national services company of Lïef. Send us the plans from any state: we tell you what the project should cost, bid it to licensed builders in your market, place the contract and stay on your side until the last draw. Home base is Phoenix, with work in Las Vegas and Los Angeles and projects on record from Kansas to Texas to Utah. In Arizona the builder is often Armstrong Construction Group, a Lïef partner.
+
+Lïef Builders is also an owner's representation and project advocacy firm based in Scottsdale, Arizona. An owner's representative is a professional who advocates exclusively for the property owner during a construction project, protecting their financial and legal interests from start to finish. Lïef Builders puts experienced professionals on the owner's side so contractors and insurers cannot take advantage of what property owners do not know.
+
+## How We Price: Kanopi
+Every Lïef Builders budget runs through Kanopi, the design, takeoff and estimating software we built (https://kanopibuild.com). It measures the plan set three times, start to finish, checks every bid line and change order against that takeoff, and flags what does not match. A person on our team reads what it flags and makes the call before any number leaves us. Builders and contractors who want a takeoff for their own bids use Kanopi directly at kanopibuild.com.
 
 ## Services
 
+### Budget From Your Plans
+Know the number before you sign. We measure the plan set three times in Kanopi and price every trade against it, so the owner has a budget to hold every bid against before paying for construction drawings.
+
+### Bidding and Placement
+We run the bid with licensed builders where you are building, level every bid against our takeoff so you compare price and scope instead of guesses, and place the contract with the one we would hire for our own projects. How it works nationwide: https://www.liefbuilders.com/national
+
 ### Owner's Representation and Project Advocacy
-Construction oversight and advocacy for property owners. Experience includes disaster recovery rebuilds (Greensburg, Kansas tornado and Santa Barbara fire damage) and luxury residential projects. Over 20 years as the owner's advocate. Every engagement is customized to the scope the project demands.
+Someone on your side until the last draw. We read every bid, change order and draw request before you sign it, and check each change order against quantities. Construction oversight and advocacy for property owners. Experience includes disaster recovery rebuilds (Greensburg, Kansas tornado and Santa Barbara fire damage) and luxury residential projects. Over 20 years as the owner's advocate. Every engagement is customized to the scope the project demands.
+
+### For Builders and Architects
+Builders: we bring you into bids we run in your market, and every bid is leveled against our takeoff, so you are judged on price and scope. Architects: send a schematic set and we return a budget before your client ever sees a bid.
 
 ### Cost Control and Schedule Optimization
 Faster builds, tighter budgets, and zero surprises. Full-scope project management including change order negotiation, site walks and inspections, vendor discount verification, value engineering, and red flag identification.
@@ -27,16 +41,18 @@ Owner's representation for homeowners rebuilding after the Palisades fire, in So
 - Contractor Communication
 - Insurance Coordination
 - Architectural Review
+- Budgets From Your Plans
 - Third-Party Contract Negotiation
 - Change Order Negotiation and Review
 - Vendor and Material Discount Verification
 - Red Flag Identification
 - Legal Review
 - Budget and Schedule Management
-- SABS Material Supply
+- Bid Leveling Against Our Takeoff
+- SABS Construction
 
 ## SABS Technology
-SABS (Saebi Alternative Building System) is a patented building technology available through LÏEF Builders. It uses EPS foam panels with a high-strength cementitious composite coating called SABSCRETE to create a monolithic structural system. Key specifications: 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and 100% mold and termite immunity. SABS delivers 15-20% cost savings and 15-20% faster build times compared to traditional construction. LÏEF is the leading SABS builder in Arizona and offers SABS alongside traditional stick framing, giving clients the right building method for their project.
+SABS (Saebi Alternative Building System) is a patented building technology available through Lïef Builders. It uses EPS foam panels with a high-strength cementitious composite coating called SABSCRETE to create a monolithic structural system. Key specifications: 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and 100% mold and termite immunity. SABS delivers 15-20% cost savings and 15-20% faster build times compared to traditional construction. LÏEF is the leading SABS builder in Arizona and offers SABS alongside traditional stick framing, giving clients the right building method for their project.
 
 ## Key Stats
 - Principals' collective: $500M+ across 400+ projects
@@ -59,19 +75,20 @@ Website: https://jfowler.io
 Website: https://nickscavio.com
 
 ## Active Projects
-- 301 W Osborn. Adaptive reuse, commercial-to-residential conversion. 23 luxury units in Phoenix. SABS Showcase.
+- 301 W Osborn. Our own development (Lïef Development, https://www.anewlief.com): a 1971 concrete office tower in Midtown Phoenix becoming private residences. Adaptive reuse, commercial-to-residential conversion. 23 luxury units in Phoenix. SABS Showcase.
 - The Vail. Boutique 55+ community in Arizona. In Design.
 - Canyon Corporate Plaza. 14-story office-to-residential conversion in Phoenix. In Development.
 - Silver Mountain Ranches. 100+ acre equestrian community in Scottsdale. In Development.
 - 440 Basin Avenue. 204-unit multi-family in Pahrump, NV. $56M in projected savings. In Development.
 
 ## Markets
-- Phoenix and Greater Arizona
+- Phoenix and Greater Arizona (home base)
 - Las Vegas, Nevada
 - Los Angeles and Southern California
+- Anywhere else in the United States: we price it from Phoenix and bid it with builders licensed where you build
 
 ## Part of the Common Ground Ecosystem
-LÏEF Builders is part of the Common Ground venture collective (https://commonground.ventures). Common Ground is a principal-led venture collective built by four operators across brand, capital, execution, and legal.
+Lïef Builders is part of the Common Ground venture collective (https://commonground.ventures). Common Ground is a principal-led venture collective built by four operators across brand, capital, execution, and legal.
 
 ## Frequently Asked Questions
 
@@ -81,14 +98,23 @@ A: An owner's representative is a professional who advocates exclusively for the
 Q: Why do I need an owner's rep?
 A: Because the people building your project are not paid to protect your interests. They are paid to finish the job. An owner's rep sits on your side of the table, reviewing bids, catching red flags, negotiating change orders, and making sure every dollar goes where it should.
 
-Q: What areas does LÏEF Builders serve?
-A: Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California.
+Q: What areas does Lïef Builders serve?
+A: Anywhere in the United States, from our base in Phoenix. We bid the work to builders licensed in the state where you are building. Home markets are Phoenix and Greater Arizona, Las Vegas and Nevada, and Los Angeles and Southern California.
 
-Q: How does LÏEF Builders save clients money?
+Q: Why does Lïef Builders cost less than a traditional owner's rep?
+A: A traditional rep bills you for the hours spent counting: quantities off the drawings, line items across bids, change orders against the scope. Kanopi, the software we built, does the counting. A person on our team reads what it flags and makes the call. You stop paying for counting and pay for judgment.
+
+Q: How does Lïef Builders save clients money?
 A: Three ways. First, contract negotiation. The team reviews every scope, bid, and vendor agreement before anything gets signed. Second, ongoing site oversight. Regular inspections catch problems when they are cheap to fix, not after they become six-figure change orders. Third, vendor and material verification. Confirming pricing, quantities, and specs match what was agreed to.
 
 Q: What is SABS construction technology?
-A: SABS stands for Saebi Alternative Building System. EPS foam panels, known as LÏEF Blocks, are coated with SABSCRETE, a high-strength cementitious composite, to form a single monolithic structure. The result is 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity. It builds faster and costs 15-20% less than traditional methods. LÏEF is the leading SABS builder in Arizona and offers it alongside conventional framing.
+A: SABS stands for Saebi Alternative Building System. EPS foam panels, known as LÏEF Blocks, are coated with SABSCRETE, a high-strength cementitious composite, to form a single monolithic structure. The result is 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity. It builds faster and costs 15-20% less than traditional methods. LÏEF is the leading SABS builder in Arizona and offers it alongside conventional framing. We build with SABS in Arizona and bid it anywhere.
+
+Q: I'm a builder or an architect. How do we work together?
+A: Builders: we bring you into bids we run in your market, and every bid is leveled against our takeoff, so you are judged on price and scope. Architects: send a schematic set and we return a budget before your client ever sees a bid. Want a takeoff for your own bid? That is Kanopi, at https://kanopibuild.com.
+
+Q: What is Kanopi?
+A: The design, takeoff and estimating software we built. Every Lïef Builders budget runs through it. https://kanopibuild.com
 
 ## Disclosure
 Jon Armstrong of Armstrong Construction Group (ACG) is a managing partner of LÏEF Development. Work is carried out by ACG and/or its trades and network.
@@ -98,6 +124,14 @@ Address: 8271 E Gelding Dr., Scottsdale, AZ 85260
 Phone: (805) 722-7598
 Email: hello@liefdev.com
 Website: https://liefbuilders.com
+
+## Learn
+- [Owner's Rep for Alternative Building Systems in Arizona](https://www.liefbuilders.com/learn/owners-rep-alternative-building-systems-arizona)
+- [Arizona Owner's Rep Case Files: SABS Project Chronicles](https://www.liefbuilders.com/learn/arizona-owners-rep-sabs-project-case-files)
+
+## Related
+- Lïef Development, the developer of Lïef Midtown at 301 W Osborn: https://www.anewlief.com
+- Kanopi, the design, takeoff and estimating software behind every Lïef Builders budget: https://kanopibuild.com
 
 ## Wiki
 - [LÏEF Builders wiki](https://www.liefbuilders.com/wiki): the record of LÏEF Builders and how Common Ground built it.

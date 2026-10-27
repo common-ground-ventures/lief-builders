@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import logoLight from "@/assets/logos/lief-logo-light.png";
+import { useNavigate } from "react-router-dom";
 import { useContactModal } from "@/contexts/ContactModalContext";
 
 const stagger = (i: number) => ({ delay: 0.3 + i * 0.15 });
@@ -8,6 +9,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const Hero = () => {
   const { openModal } = useContactModal();
+  const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const heroLogoOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
@@ -47,14 +49,14 @@ const Hero = () => {
           className="mb-6 md:mb-8"
         >
           <span className="v2-label hidden md:inline text-[1.25rem]">
-            Project Advocacy · Protection · Oversight · Representation
+            Budgets · Bidding · Owner's Representation · Nationwide
           </span>
-          {/* Phone: the four words wrap as whole items, so no line starts or ends on a stray dot. */}
+          {/* Phone: the four items wrap as whole items, so no line starts or ends on a stray dot. */}
           <span
             className="md:hidden flex flex-wrap gap-x-4 gap-y-1"
             style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--v2-neon)" }}
           >
-            {["Project Advocacy", "Protection", "Oversight", "Representation"].map((w) => <span key={w}>{w}</span>)}
+            {["Budgets", "Bidding", "Owner's Representation", "Nationwide"].map((w) => <span key={w}>{w}</span>)}
           </span>
         </motion.div>
 
@@ -76,7 +78,7 @@ const Hero = () => {
           transition={{ duration: 0.75, ...stagger(2), ease }}
           style={{ fontStyle: "italic", fontWeight: 300, fontSize: "clamp(1.1rem, 3vw, 1.4rem)", color: "var(--v2-muted)", lineHeight: 1.5 }}
         >
-          Your advocate. Your protector. Your team.
+          The number first. Every line read. Any state.
         </motion.p>
 
         <motion.p
@@ -86,7 +88,7 @@ const Hero = () => {
           className="mt-4 md:mt-5 max-w-[560px]"
           style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}
         >
-          Expertise across architecture, construction, insurance coordination, and legal advocacy, armed with AI-powered oversight tools. Property owners in the Palisades, Southern California, and the Southwest trust us to protect their build.
+          Most owners find out what a project really costs after they sign. We tell you before. Send us the plans and we build a budget from them, bid the work to licensed builders in your market, hold every bid to that budget, and stay on your side until the last draw.
         </motion.p>
 
         <motion.div
@@ -104,10 +106,10 @@ const Hero = () => {
               color: "var(--v2-btn-fg)", border: "1px solid var(--v2-loggia)", padding: "10px 24px", cursor: "pointer",
             }}
           >
-            Start a Conversation
+            Send Us Your Plans
           </button>
           <button
-            onClick={() => document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => { navigate("/national"); window.scrollTo({ top: 0 }); }}
             className="transition-all duration-300 hover:bg-[#C2B8A7] hover:text-[#0F1A14]"
             style={{
               fontFamily: "var(--v2-font-body)", fontSize: "clamp(1rem, 2.5vw, 1.25rem)", textTransform: "uppercase",
@@ -115,7 +117,7 @@ const Hero = () => {
               color: "var(--v2-neon)", border: "1px solid var(--v2-neon)", padding: "10px 24px", cursor: "pointer",
             }}
           >
-            Our Services
+            How It Works
           </button>
         </motion.div>
       </div>
