@@ -1,0 +1,170 @@
+{
+  "note": "Known findings on the day the gate was wired. Each entry is debt to fix, not a permission. Shrink it; never grow it without review.",
+  "export_commit": "7f969682a3f76ec867dc108d7fc2582f4bae9a19",
+  "findings": [
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|404.html|$1.3B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|404.html|$7.1B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|ai/index.html|$1.3B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|ai/index.html|$7.1B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|index.html|$1.3B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|index.html|$7.1B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|learn/arizona-owners-rep-sabs-project-case-files/index.html|$1.3B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|learn/arizona-owners-rep-sabs-project-case-files/index.html|$7.1B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|learn/owners-rep-alternative-building-systems-arizona/index.html|$1.3B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|learn/owners-rep-alternative-building-systems-arizona/index.html|$7.1B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|llms.txt|$1.3B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|llms.txt|$56M",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|llms.txt|$7.1B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|national/index.html|$1.3B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|national/index.html|$7.1B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|palisades-fire-rebuild-owners-rep/index.html|$1.3B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|palisades-fire-rebuild-owners-rep/index.html|$7.1B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|projects/index.html|$1.3B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|projects/index.html|$56M",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|projects/index.html|$7.1B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|sabs/index.html|$1.3B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|sabs/index.html|$7.1B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|team/index.html|$1.3B",
+      "count": 2
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|team/index.html|$7.1B",
+      "count": 2
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|testimonials/index.html|$1.3B",
+      "count": 1
+    },
+    {
+      "fingerprint": "FIGURE-UNAPPROVED|testimonials/index.html|$7.1B",
+      "count": 1
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|404.html|L\u00cfEF",
+      "count": 7
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|ai/index.html|L\u00cfEF",
+      "count": 7
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|index.html|L\u00cfEF",
+      "count": 8
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|learn/arizona-owners-rep-sabs-project-case-files/index.html|L\u00cfEF",
+      "count": 7
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|learn/owners-rep-alternative-building-systems-arizona/index.html|L\u00cfEF",
+      "count": 7
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|llms.txt|L\u00cfEF",
+      "count": 7
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|national/index.html|L\u00cfEF",
+      "count": 10
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|palisades-fire-rebuild-owners-rep/index.html|L\u00cfEF",
+      "count": 11
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|projects/index.html|L\u00cfEF",
+      "count": 8
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|sabs/index.html|L\u00cfEF",
+      "count": 16
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|team/index.html|L\u00cfEF",
+      "count": 8
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|testimonials/index.html|L\u00cfEF",
+      "count": 10
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|wiki/common-ground/index.html|L\u00cfEF",
+      "count": 33
+    },
+    {
+      "fingerprint": "NAME-LIEF-CAPS|wiki/index.html|L\u00cfEF",
+      "count": 48
+    },
+    {
+      "fingerprint": "NAME-ROBBY|wiki/common-ground/index.html|Robbie",
+      "count": 1
+    }
+  ]
+}
