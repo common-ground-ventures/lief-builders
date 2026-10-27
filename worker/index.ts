@@ -6,8 +6,9 @@
 // Secrets and vars (Worker > Settings > Variables and Secrets):
 //   RESEND_API_KEY  send-only Resend key (secret, same account as the other CG sites)
 //   LEAD_EMAIL_TO   optional, defaults to jesse@jfowler.io
-// No key set: the lead is still logged (Workers Logs, LIEF_LEAD) and the visitor gets a 503,
-// so the form shows its error state instead of claiming success.
+// No key set: the lead is logged (Workers Logs, LIEF_LEAD) and accepted with emailed:false, so it is
+// recoverable from the logs until the key is added. Cross-origin POSTs from the live hosts are allowed
+// (CORS) because the site may still be served from Vercel.
 
 export interface Env {
   RESEND_API_KEY?: string;
@@ -26,10 +27,14 @@ const ORIGINS = new Set([
 ]);
 const PREVIEW_ORIGIN = /^https:\/\/([a-z0-9-]+-)?lief-builders\.common-ground-ventures\.workers\.dev$/;
 
-const json = (body: unknown, status = 200) =>
+const jsonFor = (corsOrigin: string) => (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), {
     status,
-    headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },
+    headers: {
+      "Content-Type": "application/json",
+      "Cache-Control": "no-store",
+      ...(corsOrigin ? { "Access-Control-Allow-Origin": corsOrigin, Vary: "Origin" } : {}),
+    },
   });
 
 const clean = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
@@ -37,12 +42,28 @@ const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 export async function handleLead(request: Request, env: Env): Promise<Response> {
-  if (request.method !== "POST") return json({ ok: false, error: "Method not allowed" }, 405);
-
   const origin = request.headers.get("origin") || "";
-  if (origin && !ORIGINS.has(origin) && !PREVIEW_ORIGIN.test(origin)) {
-    return json({ ok: false, error: "Forbidden" }, 403);
+  const allowed = !origin || ORIGINS.has(origin) || PREVIEW_ORIGIN.test(origin);
+  // While www is still served by Vercel the page posts here cross-origin, so allowed origins get CORS.
+  const corsOrigin = origin && allowed ? origin : "";
+  const json = jsonFor(corsOrigin);
+
+  if (request.method === "OPTIONS") {
+    return new Response(null, {
+      status: allowed ? 204 : 403,
+      headers: corsOrigin
+        ? {
+            "Access-Control-Allow-Origin": corsOrigin,
+            "Access-Control-Allow-Methods": "POST, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type",
+            "Access-Control-Max-Age": "86400",
+            Vary: "Origin",
+          }
+        : {},
+    });
   }
+  if (request.method !== "POST") return json({ ok: false, error: "Method not allowed" }, 405);
+  if (!allowed) return json({ ok: false, error: "Forbidden" }, 403);
 
   let raw: Record<string, unknown>;
   try {
@@ -69,7 +90,9 @@ export async function handleLead(request: Request, env: Env): Promise<Response> 
   // Log first, so a delivery failure never loses a lead.
   console.log("LIEF_LEAD", JSON.stringify(lead));
 
-  if (!env.RESEND_API_KEY) return json({ ok: false, error: "Delivery not configured" }, 503);
+  // No key yet: the lead is already in Workers Logs (LIEF_LEAD above). Accept it so the visitor is
+  // not turned away, and flag it as not emailed. Setting RESEND_API_KEY turns on the email.
+  if (!env.RESEND_API_KEY) return json({ ok: true, emailed: false });
 
   const name = `${lead.first_name} ${lead.last_name}`.trim();
   const text = [
