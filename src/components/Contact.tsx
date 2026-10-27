@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 
-const WEBHOOK_URL =
-  "https://services.leadconnectorhq.com/hooks/LzgGOj1j1b3NFY8j9A9I/webhook-trigger/9510cfac-442e-43ee-b261-b3679c7cd3dc";
+// Same-origin lead intake (worker/index.ts): emails the owner. Replaced the LeadConnector webhook 10/26.
+const LEAD_URL = "/api/lead";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -12,13 +12,14 @@ const Contact = () => {
   const { ref, inView } = useInView(0.1);
   const [form, setForm] = useState({ firstName: "", lastName: "", email: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [honeypot, setHoneypot] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
 
     try {
-      await fetch(WEBHOOK_URL, {
+      const res = await fetch(LEAD_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -26,8 +27,11 @@ const Contact = () => {
           last_name: form.lastName,
           email: form.email,
           message: form.message,
+          page: window.location.pathname,
+          website: honeypot,
         }),
       });
+      if (!res.ok) throw new Error("lead " + res.status);
       setStatus("sent");
       setForm({ firstName: "", lastName: "", email: "", message: "" });
     } catch {
@@ -155,6 +159,16 @@ const Contact = () => {
                   >
                     {status === "sending" ? "Sending..." : "Send Message"}
                   </button>
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                    style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                  />
                 </form>
                 )}
               </div>
