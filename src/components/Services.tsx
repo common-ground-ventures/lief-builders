@@ -22,7 +22,7 @@ const services: ServiceData[] = [
     num: "02",
     label: "BIDDING AND PLACEMENT",
     title: "The right builder, in your market.",
-    body: "We run the bid with licensed builders where you are building, level every bid against our takeoff so you compare price and scope instead of guesses, and place the contract with the one we would hire for our own projects. In Arizona that is often Armstrong Construction Group, a Lïef partner.",
+    body: <>We run the bid with licensed builders where you are building, level every bid against our takeoff so you compare price and scope instead of guesses, and place the contract with the one we would hire for our own projects. In Arizona that is often <a href="https://acgarizona.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--v2-neon)", textDecoration: "underline", textUnderlineOffset: "3px" }}>Armstrong Construction Group</a>, a Lïef partner.</>,
   },
   {
     num: "03",
