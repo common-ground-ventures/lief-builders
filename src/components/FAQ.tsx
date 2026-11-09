@@ -64,7 +64,7 @@ const faqs: FAQItem[] = [
   },
 ];
 
-const FAQAccordion = ({ item, index, isOpen, onToggle }: { item: FAQItem; index: number; isOpen: boolean; onToggle: () => void }) => {
+const FAQAccordion = ({ item, isOpen, onToggle }: { item: FAQItem; isOpen: boolean; onToggle: () => void }) => {
   return (
     <div
       className="py-6"
@@ -157,7 +157,6 @@ const FAQ = () => {
             <FAQAccordion
               key={i}
               item={faq}
-              index={i}
               isOpen={openIndex === i}
               onToggle={() => setOpenIndex(openIndex === i ? null : i)}
             />
