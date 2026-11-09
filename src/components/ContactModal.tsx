@@ -35,6 +35,13 @@ const ContactModal = () => {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [honeypot, setHoneypot] = useState("");
   const backdropRef = useRef<HTMLDivElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const frame = requestAnimationFrame(() => dialogRef.current?.querySelector<HTMLButtonElement>("button")?.focus());
+    return () => cancelAnimationFrame(frame);
+  }, [isOpen]);
 
   // Lock body scroll when open
   useEffect(() => {
@@ -49,11 +56,25 @@ const ContactModal = () => {
   // Escape key to close
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (!isOpen) return;
       if (e.key === "Escape") closeModal();
+      if (e.key === "Tab") {
+        const dialog = dialogRef.current;
+        if (!dialog) return;
+        const controls = Array.from(dialog.querySelectorAll<HTMLElement>('button, input, textarea, select, a[href], [tabindex]'))
+          .filter(el => el.tabIndex >= 0 && !el.matches(':disabled') && el.getClientRects().length > 0);
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (!first) { e.preventDefault(); dialog.focus(); return; }
+        if (!dialog.contains(document.activeElement) || (e.shiftKey ? document.activeElement === first : document.activeElement === last)) {
+          e.preventDefault();
+          (e.shiftKey ? last : first).focus();
+        }
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [closeModal]);
+  }, [isOpen, closeModal]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -112,6 +133,11 @@ const ContactModal = () => {
           style={{ background: "rgba(0,0,0,.8)", backdropFilter: "blur(8px)" }}
         >
           <motion.div
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={isBuilder ? "Builder sign-up" : "Contact Lief Builders"}
+            tabIndex={-1}
             initial={{ opacity: 0, y: 30, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
@@ -128,6 +154,7 @@ const ContactModal = () => {
           >
             {/* Close button */}
             <button
+              aria-label="Close contact dialog"
               onClick={handleClose}
               className="absolute top-4 right-4 transition-opacity duration-300 hover:opacity-60"
               style={{ background: "none", border: "none", cursor: "pointer", color: "#0F1A14" }}
