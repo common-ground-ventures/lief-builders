@@ -5,7 +5,7 @@ import osbornImg from "@/assets/projects/301-osborn.png";
 import canyonImg from "@/assets/projects/canyon-corporate.jpg";
 import silverImg from "@/assets/projects/silver-mountain.jpg";
 import basinImg from "@/assets/projects/pahrump-basin.jpg";
-import vailImg from "@/assets/projects/the-vail.png";
+import vailImg from "@/assets/projects/the-vail.webp";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const accentColor = "#C2B8A7";

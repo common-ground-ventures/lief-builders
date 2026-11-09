@@ -3,7 +3,7 @@ import { useInView } from "@/hooks/useInView";
 import jesseImg from "@/assets/team/jesse.png";
 import scottImg from "@/assets/team/scott.png";
 import nickImg from "@/assets/team/nick.png";
-import joshImg from "@/assets/team/josh.png";
+import joshImg from "@/assets/team/josh.webp";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
