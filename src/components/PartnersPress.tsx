@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
 
 import ritzCarlton from "@/assets/partners/ritz-carlton.png";
-import discoveryChannel from "@/assets/partners/discovery-channel.png";
+import discoveryChannel from "@/assets/partners/discovery-channel.webp";
 import pgaTour from "@/assets/partners/pga-tour.png";
 import architecturalDigest from "@/assets/partners/architectural-digest.png";
 import shelby from "@/assets/partners/shelby.png";
