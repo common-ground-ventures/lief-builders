@@ -119,21 +119,21 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label style={labelStyle}>FIRST NAME</label>
-                      <input required style={inputStyle} value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} />
+                      <label htmlFor="contact-first-name" style={labelStyle}>FIRST NAME</label>
+                      <input id="contact-first-name" required style={inputStyle} value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} />
                     </div>
                     <div>
-                      <label style={labelStyle}>LAST NAME</label>
-                      <input required style={inputStyle} value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} />
+                      <label htmlFor="contact-last-name" style={labelStyle}>LAST NAME</label>
+                      <input id="contact-last-name" required style={inputStyle} value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} />
                     </div>
                   </div>
                   <div>
-                    <label style={labelStyle}>EMAIL</label>
-                    <input required type="email" style={inputStyle} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+                    <label htmlFor="contact-email" style={labelStyle}>EMAIL</label>
+                    <input id="contact-email" required type="email" style={inputStyle} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
                   </div>
                   <div>
-                    <label style={labelStyle}>MESSAGE</label>
-                    <textarea rows={4} style={inputStyle} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
+                    <label htmlFor="contact-message" style={labelStyle}>MESSAGE</label>
+                    <textarea id="contact-message" rows={4} style={inputStyle} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
                   </div>
                   {status === "error" && (
                     <p style={{ fontSize: "1rem", color: "#ff4444" }}>Something went wrong. Please try again.</p>
