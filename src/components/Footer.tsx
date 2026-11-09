@@ -1,21 +1,8 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logoConcrete from "@/assets/logos/logo-concrete.png";
 
 const Footer = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-
-  const scrollTo = (id: string) => {
-    if (location.pathname !== "/") {
-      navigate("/");
-      setTimeout(() => {
-        document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    } else {
-      document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <footer className="relative" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16">
