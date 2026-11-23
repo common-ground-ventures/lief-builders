@@ -57,7 +57,7 @@ const partners: Partner[] = [
 const PartnerItem = ({ partner }: { partner: Partner }) => (
   <div role="img" aria-label={partner.name} className="v2-partner relative flex items-center justify-center w-full max-w-[200px]">
     {/* invisible image keeps each logo's natural proportions */}
-    <img src={partner.logo} alt="" aria-hidden="true" style={{ height: "76px", maxWidth: "100%", width: "auto", objectFit: "contain", visibility: "hidden" }} />
+    <img src={partner.logo} alt={partner.name} aria-hidden="true" style={{ height: "76px", maxWidth: "100%", width: "auto", objectFit: "contain", visibility: "hidden" }} />
     {/* logo shape as a solid fill: soft grey at rest, Forest Green on hover */}
     <span
       className="v2-partner-fill absolute inset-0"

@@ -340,7 +340,7 @@ const NationalPage = () => {
               <div style={{ background: "var(--v2-deep)", position: "absolute", inset: 0, zIndex: -1 }} />
               <div className="flex flex-col items-center gap-3">
                 <span className="relative block">
-                  <img src={logoConcrete} alt="" className="h-14 w-auto block" style={{ visibility: "hidden" }} />
+                  <img src={logoConcrete} alt="LÏEF" className="h-14 w-auto block" style={{ visibility: "hidden" }} />
                   <span className="absolute inset-0" style={{ background: "var(--v2-loggia)", WebkitMaskImage: `url(${logoConcrete})`, maskImage: `url(${logoConcrete})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat", WebkitMaskPosition: "center", maskPosition: "center" }} />
                 </span>
                 <span className="v2-headline" style={{ fontSize: "1.05rem", letterSpacing: "0.18em", color: "var(--v2-loggia)" }}>
