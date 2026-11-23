@@ -37,7 +37,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h5 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-neon)" }}>Services</h5>
+            <h2 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-neon)" }}>Services</h2>
             <ul className="space-y-3">
               <li><span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Budgets From Your Plans</span></li>
               <li><span style={{ fontSize: "1.25rem", color: "var(--v2-dim)" }}>Bidding and Placement</span></li>
@@ -58,7 +58,7 @@ const Footer = () => {
 
           {/* Explore */}
           <div>
-            <h5 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-neon)" }}>Explore</h5>
+            <h2 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-neon)" }}>Explore</h2>
             <ul className="space-y-3">
               <li>
                 <a
@@ -140,7 +140,7 @@ const Footer = () => {
 
           {/* Connect */}
           <div>
-            <h5 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-neon)" }}>Connect</h5>
+            <h2 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-neon)" }}>Connect</h2>
             <ul className="space-y-3">
               <li>
                 <a href="tel:8057227598" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#C2B8A7] transition-colors duration-300">
