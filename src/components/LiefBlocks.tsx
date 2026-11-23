@@ -354,7 +354,7 @@ const LiefBlocks = () => {
                       <div className="w-14 h-14 flex items-center justify-center mb-5" style={{ border: `1px solid ${accentColor}40` }}>
                         <Icon size={32} style={{ color: accentColor }} />
                       </div>
-                      <h4 className="mb-3" style={{ fontSize: "1.25rem", fontWeight: 600, color: accentColor, textTransform: "uppercase" }}>{attr.title}</h4>
+                      <h3 className="mb-3" style={{ fontSize: "1.25rem", fontWeight: 600, color: accentColor, textTransform: "uppercase" }}>{attr.title}</h3>
                       <p style={{ fontSize: "1.25rem", color: "rgba(239,236,227,.85)", lineHeight: 1.6 }}>{attr.desc}</p>
                     </div>
                   );
@@ -407,7 +407,7 @@ const LiefBlocks = () => {
                         <Icon size={20} style={{ color: accentColor }} />
                       </div>
                       <div className="min-w-0">
-                        <h4 className="mb-2" style={{ fontWeight: 600, fontSize: "1.1rem", color: "var(--v2-white)" }}>{tech.title}</h4>
+                        <h3 className="mb-2" style={{ fontWeight: 600, fontSize: "1.1rem", color: "var(--v2-white)" }}>{tech.title}</h3>
                         <p style={{ fontSize: "1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}>{tech.detail}</p>
                       </div>
                     </div>
@@ -579,7 +579,7 @@ const LiefBlocks = () => {
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-20">
                 {pressOutlets.map((outlet) => (
                   <span key={outlet.name} role="img" aria-label={outlet.name} className="v2-logo-mask relative inline-block">
-                    <img src={outlet.src} alt="" aria-hidden="true" style={{ height: "48px", width: "auto", objectFit: "contain", visibility: "hidden" }} />
+                    <img src={outlet.src} alt={outlet.name} aria-hidden="true" style={{ height: "48px", width: "auto", objectFit: "contain", visibility: "hidden" }} />
                     <span className="v2-logo-fill absolute inset-0" style={{ WebkitMaskImage: `url(${outlet.src})`, maskImage: `url(${outlet.src})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat", WebkitMaskPosition: "center", maskPosition: "center" }} />
                   </span>
                 ))}
@@ -589,7 +589,7 @@ const LiefBlocks = () => {
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
                 {trustLogos.map((logo) => (
                   <span key={logo.name} role="img" aria-label={logo.name} className="v2-logo-mask relative inline-block">
-                    <img src={logo.src} alt="" aria-hidden="true" style={{ height: "60px", width: "auto", objectFit: "contain", visibility: "hidden" }} />
+                    <img src={logo.src} alt={logo.name} aria-hidden="true" style={{ height: "60px", width: "auto", objectFit: "contain", visibility: "hidden" }} />
                     <span className="v2-logo-fill absolute inset-0" style={{ WebkitMaskImage: `url(${logo.src})`, maskImage: `url(${logo.src})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat", WebkitMaskPosition: "center", maskPosition: "center" }} />
                   </span>
                 ))}

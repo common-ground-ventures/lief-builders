@@ -11,12 +11,12 @@ const BASE = "https://www.liefbuilders.com";
 // Descriptions are auto-generated from existing site facts and can be refined.
 const ROUTES = {
   "/": {
-    title: "Lïef Builders | Budgets, Bidding and Owner's Representation, Nationwide",
+    title: "Lïef Builders | Budgets, Bidding and Owner's Representation Nationwide",
     desc: "Send us the plans from any state. We tell you what it should cost, bid it to licensed builders in your market and stay on your side until the last draw.",
   },
   "/national": {
     title: "How It Works, Nationwide | Lïef Builders",
-    desc: "A budget from your plans, bids from licensed builders in your market, and someone on your side until the last draw, in any state. Our fee is written down before you sign.",
+    desc: "A budget from your plans, bids from licensed builders in your market, and someone on your side until the last draw. Our fee is written down before you sign.",
   },
   "/palisades-fire-rebuild-owners-rep": {
     title: "Palisades Fire Rebuild Owner's Representation | Lïef Builders",
@@ -40,18 +40,45 @@ const ROUTES = {
   },
   "/testimonials": {
     title: "Testimonials | Lïef Builders",
-    desc: "What owners say about working with Lïef Builders.",
+    desc: "Testimonials: what owners say about working with Lïef Builders.",
   },
   // Moved from anewlief.com/learn on 10/26 (narrative v4); the old addresses 301 here.
   "/learn/owners-rep-alternative-building-systems-arizona": {
-    title: "Owner's Rep for Alternative Building Systems in Arizona | Lïef Builders",
-    desc: "Owner's representation for SABS, ICCF, SCIP, and SIPs projects in Arizona. Firsthand take from Lïef Builders on what the role covers, where conventional reps miss, and how to evaluate the alt-system case for your project.",
+    title: "Arizona Owner's Rep for Alternative Building Systems | Lïef Builders",
+    desc: "Owner's rep for SABS, ICCF, SCIP and SIPs projects in Arizona: what the role covers, where conventional reps miss and how to weigh the alt-system case.",
   },
   "/learn/arizona-owners-rep-sabs-project-case-files": {
-    title: "Arizona Owner's Rep Case Files: SABS Project Chronicles | Lïef Builders",
-    desc: "Named-project case files from the Arizona owner's rep for SABS construction. 301 W Osborn (Phoenix), Canyon Corporate Plaza (Phoenix), Silver Mountain Ranches (Scottsdale), 440 Basin Avenue (Pahrump NV). AHJ, EOR, GC, and finance partner attribution by project. Written by Lïef Builders.",
+    title: "Arizona Owner's Rep Case Files: SABS Projects | Lïef Builders",
+    desc: "Arizona owner's rep case files on SABS projects: 301 W Osborn, Canyon Corporate Plaza, Silver Mountain Ranches and 440 Basin Avenue, and who did what on each.",
   },
 };
+
+// Breadcrumb trail per inner route (home is the root and carries none).
+const CRUMBS = {
+  "/national": "How It Works, Nationwide",
+  "/palisades-fire-rebuild-owners-rep": "Palisades Fire Rebuild Owner's Representation",
+  "/ai": "Technology and Innovation",
+  "/sabs": "SABS Construction Technology",
+  "/projects": "Projects",
+  "/team": "Our Team",
+  "/testimonials": "Testimonials",
+  "/learn/owners-rep-alternative-building-systems-arizona": "Owner's Rep for Alternative Building Systems in Arizona",
+  "/learn/arizona-owners-rep-sabs-project-case-files": "Arizona Owner's Rep Case Files",
+};
+
+function breadcrumbLd(url) {
+  const name = CRUMBS[url];
+  if (!name) return "";
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Lïef Builders", item: BASE + "/" },
+      { "@type": "ListItem", position: 2, name, item: BASE + url },
+    ],
+  };
+  return `    <script type="application/ld+json">${JSON.stringify(ld)}</script>\n  </head>`;
+}
 
 const distDir = path.resolve("dist");
 const template = fs.readFileSync(path.join(distDir, "index.html"), "utf-8");
@@ -84,6 +111,14 @@ function patchHead(html, url, meta) {
     .replace(
       /<meta name="twitter:title" content="[\s\S]*?"\s*\/>/,
       `<meta name="twitter:title" content="${esc(meta.title)}" />`
+    )
+    .replace(
+      /<meta property="og:description" content="[\s\S]*?"\s*\/>/,
+      `<meta property="og:description" content="${esc(meta.desc)}" />`
+    )
+    .replace(
+      /<meta name="twitter:description" content="[\s\S]*?"\s*\/>/,
+      `<meta name="twitter:description" content="${esc(meta.desc)}" />`
     );
 }
 
@@ -101,6 +136,8 @@ for (const [url, meta] of Object.entries(ROUTES)) {
     `<div id="root">${appHtml}</div>`
   );
   html = patchHead(html, url, meta);
+  const crumbs = breadcrumbLd(url);
+  if (crumbs) html = html.replace("</head>", crumbs);
   const outPath =
     url === "/"
       ? path.join(distDir, "index.html")
