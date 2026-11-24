@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
+import { sized, dimsOf } from "@/lib/imgDims";
 import { useInView } from "@/hooks/useInView";
-import jesseImg from "@/assets/team/jesse.png";
-import scottImg from "@/assets/team/scott.png";
-import nickImg from "@/assets/team/nick.png";
-import joshImg from "@/assets/team/josh.webp";
+import jesseImg_src from "@/assets/team/jesse.webp";
+const jesseImg = sized(jesseImg_src, 792, 792);
+import scottImg_src from "@/assets/team/scott.webp";
+const scottImg = sized(scottImg_src, 864, 702);
+import nickImg_src from "@/assets/team/nick.webp";
+const nickImg = sized(nickImg_src, 720, 767);
+import joshImg_src from "@/assets/team/josh.webp";
+const joshImg = sized(joshImg_src, 667, 667);
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -59,7 +64,7 @@ const Portrait = ({ member }: { member: Member }) => (
         {/* Crops measured with Apple Vision (10/25): every face is cut so eye-to-chin is 36% of the
             frame and the eye line sits 42% down: same size and eye height for all four, with the
             full head, chin and neck in frame (head tops from Vision person segmentation). */}
-        <img src={member.img} alt={member.name} className="absolute grayscale brightness-[.5] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.85]" style={{ maxWidth: "none", height: "auto", ...member.imgStyle }} />
+        <img src={member.img} {...dimsOf(member.img)} loading="lazy" alt={member.name} className="absolute grayscale brightness-[.5] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.85]" style={{ maxWidth: "none", height: "auto", ...member.imgStyle }} />
       </div>
     ) : (
       <div

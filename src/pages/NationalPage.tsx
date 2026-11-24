@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
+import { sized, dimsOf } from "@/lib/imgDims";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useInView } from "@/hooks/useInView";
 import { useContactModal } from "@/contexts/ContactModalContext";
 import NationalMap from "@/components/NationalMap";
-import logoConcrete from "@/assets/logos/logo-concrete.png";
+import logoConcrete_src from "@/assets/logos/logo-concrete.webp";
+const logoConcrete = sized(logoConcrete_src, 1920, 819);
 import { PINS } from "@/data/us-map";
 import { KanopiLink, PoweredByKanopiMark, KANOPI_URL } from "@/components/Kanopi";
 
@@ -340,7 +342,7 @@ const NationalPage = () => {
               <div style={{ background: "var(--v2-deep)", position: "absolute", inset: 0, zIndex: -1 }} />
               <div className="flex flex-col items-center gap-3">
                 <span className="relative block">
-                  <img src={logoConcrete} alt="LÏEF" className="h-14 w-auto block" style={{ visibility: "hidden" }} />
+                  <img src={logoConcrete} {...dimsOf(logoConcrete)} alt="LÏEF" className="h-14 w-auto block" style={{ visibility: "hidden" }} />
                   <span className="absolute inset-0" style={{ background: "var(--v2-loggia)", WebkitMaskImage: `url(${logoConcrete})`, maskImage: `url(${logoConcrete})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat", WebkitMaskPosition: "center", maskPosition: "center" }} />
                 </span>
                 <span className="v2-headline" style={{ fontSize: "1.05rem", letterSpacing: "0.18em", color: "var(--v2-loggia)" }}>

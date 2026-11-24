@@ -1,26 +1,47 @@
 import { motion } from "framer-motion";
+import { sized, dimsOf } from "@/lib/imgDims";
 import { useInView } from "@/hooks/useInView";
 
-import ritzCarlton from "@/assets/partners/ritz-carlton.png";
-import discoveryChannel from "@/assets/partners/discovery-channel.webp";
-import pgaTour from "@/assets/partners/pga-tour.png";
-import architecturalDigest from "@/assets/partners/architectural-digest.png";
-import shelby from "@/assets/partners/shelby.png";
-import lacma from "@/assets/partners/lacma.png";
-import hgtv from "@/assets/partners/hgtv.png";
-import planetGreen from "@/assets/partners/planet-green.png";
-import diyNetwork from "@/assets/partners/diy-network.png";
-import oakley from "@/assets/partners/oakley.png";
-import forbes from "@/assets/partners/forbes.png";
-import marucci from "@/assets/partners/marucci.png";
-import builderMagazine from "@/assets/partners/builder-magazine.png";
-import fox from "@/assets/partners/fox.png";
-import maya from "@/assets/partners/maya.png";
-import kellerWilliams from "@/assets/partners/keller-williams.png";
-import zillow from "@/assets/partners/zillow.png";
-import usNews from "@/assets/partners/us-news.png";
-import robbReport from "@/assets/partners/robb-report.png";
-import laTimes from "@/assets/partners/la-times.png";
+import ritzCarlton_src from "@/assets/partners/ritz-carlton.webp";
+const ritzCarlton = sized(ritzCarlton_src, 2400, 2400);
+import discoveryChannel_src from "@/assets/partners/discovery-channel.webp";
+const discoveryChannel = sized(discoveryChannel_src, 2400, 1116);
+import pgaTour_src from "@/assets/partners/pga-tour.webp";
+const pgaTour = sized(pgaTour_src, 1717, 2199);
+import architecturalDigest_src from "@/assets/partners/architectural-digest.webp";
+const architecturalDigest = sized(architecturalDigest_src, 550, 417);
+import shelby_src from "@/assets/partners/shelby.webp";
+const shelby = sized(shelby_src, 800, 800);
+import lacma_src from "@/assets/partners/lacma.webp";
+const lacma = sized(lacma_src, 5000, 1863);
+import hgtv_src from "@/assets/partners/hgtv.webp";
+const hgtv = sized(hgtv_src, 2400, 1346);
+import planetGreen_src from "@/assets/partners/planet-green.webp";
+const planetGreen = sized(planetGreen_src, 800, 287);
+import diyNetwork_src from "@/assets/partners/diy-network.webp";
+const diyNetwork = sized(diyNetwork_src, 550, 319);
+import oakley_src from "@/assets/partners/oakley.webp";
+const oakley = sized(oakley_src, 800, 305);
+import forbes_src from "@/assets/partners/forbes.webp";
+const forbes = sized(forbes_src, 2400, 896);
+import marucci_src from "@/assets/partners/marucci.webp";
+const marucci = sized(marucci_src, 550, 136);
+import builderMagazine_src from "@/assets/partners/builder-magazine.webp";
+const builderMagazine = sized(builderMagazine_src, 800, 147);
+import fox_src from "@/assets/partners/fox.webp";
+const fox = sized(fox_src, 543, 303);
+import maya_src from "@/assets/partners/maya.webp";
+const maya = sized(maya_src, 1200, 370);
+import kellerWilliams_src from "@/assets/partners/keller-williams.webp";
+const kellerWilliams = sized(kellerWilliams_src, 1280, 583);
+import zillow_src from "@/assets/partners/zillow.webp";
+const zillow = sized(zillow_src, 1280, 283);
+import usNews_src from "@/assets/partners/us-news.webp";
+const usNews = sized(usNews_src, 1252, 244);
+import robbReport_src from "@/assets/partners/robb-report.webp";
+const robbReport = sized(robbReport_src, 550, 127);
+import laTimes_src from "@/assets/partners/la-times.webp";
+const laTimes = sized(laTimes_src, 1280, 162);
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -57,7 +78,7 @@ const partners: Partner[] = [
 const PartnerItem = ({ partner }: { partner: Partner }) => (
   <div role="img" aria-label={partner.name} className="v2-partner relative flex items-center justify-center w-full max-w-[200px]">
     {/* invisible image keeps each logo's natural proportions */}
-    <img src={partner.logo} alt={partner.name} aria-hidden="true" style={{ height: "76px", maxWidth: "100%", width: "auto", objectFit: "contain", visibility: "hidden" }} />
+    <img src={partner.logo} {...dimsOf(partner.logo)} loading="lazy" alt={partner.name} aria-hidden="true" style={{ height: "76px", maxWidth: "100%", width: "auto", objectFit: "contain", visibility: "hidden" }} />
     {/* logo shape as a solid fill: soft grey at rest, Forest Green on hover */}
     <span
       className="v2-partner-fill absolute inset-0"
