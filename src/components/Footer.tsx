@@ -173,7 +173,7 @@ const Footer = () => {
           </div>
           <p style={{ fontSize: "1.25rem", color: "var(--v2-dim)", opacity: 0.5 }}>
             Created by{" "}
-            <a href="https://www.commonground.ventures/" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }} className="hover-cg transition-colors duration-300">
+            <a href="https://www.commonground.ventures/" target="_blank" rel="nofollow noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }} className="hover-cg transition-colors duration-300">
               Common Ground
             </a>
             {" · "}
