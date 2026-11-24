@@ -107,62 +107,6 @@
       "count": 1
     },
     {
-      "fingerprint": "NAME-LIEF-CAPS|404.html|L\u00cfEF",
-      "count": 7
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|ai/index.html|L\u00cfEF",
-      "count": 7
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|index.html|L\u00cfEF",
-      "count": 8
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|learn/arizona-owners-rep-sabs-project-case-files/index.html|L\u00cfEF",
-      "count": 7
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|learn/owners-rep-alternative-building-systems-arizona/index.html|L\u00cfEF",
-      "count": 7
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|llms.txt|L\u00cfEF",
-      "count": 7
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|national/index.html|L\u00cfEF",
-      "count": 10
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|palisades-fire-rebuild-owners-rep/index.html|L\u00cfEF",
-      "count": 11
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|projects/index.html|L\u00cfEF",
-      "count": 8
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|sabs/index.html|L\u00cfEF",
-      "count": 16
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|team/index.html|L\u00cfEF",
-      "count": 8
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|testimonials/index.html|L\u00cfEF",
-      "count": 10
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|wiki/common-ground/index.html|L\u00cfEF",
-      "count": 33
-    },
-    {
-      "fingerprint": "NAME-LIEF-CAPS|wiki/index.html|L\u00cfEF",
-      "count": 48
-    },
-    {
       "fingerprint": "NAME-ROBBY|wiki/common-ground/index.html|Robbie",
       "count": 1
     }
