@@ -180,6 +180,10 @@ const Footer = () => {
             <a href="/wiki" style={{ color: "inherit", textDecoration: "none" }} className="hover-cg transition-colors duration-300">
               About this build
             </a>
+            {" · "}
+            <a href="/privacy" style={{ color: "inherit", textDecoration: "none" }} className="hover-cg transition-colors duration-300">
+              Privacy
+            </a>
           </p>
         </div>
       </div>
