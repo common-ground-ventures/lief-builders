@@ -20,7 +20,7 @@ const ROUTES = {
   },
   "/palisades-fire-rebuild-owners-rep": {
     title: "Palisades Fire Rebuild Owner's Representation | Lïef Builders",
-    desc: "Owner's representation for homeowners rebuilding after the Palisades fire. LÏEF advocates for the owner through the contractor, the insurer and the build.",
+    desc: "Owner's representation for homeowners rebuilding after the Palisades fire. Lïef advocates for the owner through the contractor, the insurer and the build.",
   },
   "/ai": {
     title: "Technology and Innovation | Lïef Builders",

@@ -42,7 +42,7 @@ const steps = [
   {
     num: "3",
     title: "We stay on your side",
-    body: "From the first review to the last draw, LÏEF is the owner's representative. We advocate for you, not for the contractor and not for the insurer.",
+    body: "From the first review to the last draw, Lïef is the owner's representative. We advocate for you, not for the contractor and not for the insurer.",
   },
 ];
 
@@ -94,7 +94,7 @@ const PalisadesPage = () => {
           </motion.h1>
 
           <motion.p initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(2), ease }} className="max-w-[680px]" style={{ fontSize: "clamp(1.1rem, 2.2vw, 1.3rem)", color: "var(--v2-muted)", lineHeight: 1.6 }}>
-            LÏEF Builders provides owner's representation for homeowners rebuilding in Southern California. We advocate for the owner through the contractor, the insurer and the build, from the first review to the last draw.
+            Lïef Builders provides owner's representation for homeowners rebuilding in Southern California. We advocate for the owner through the contractor, the insurer and the build, from the first review to the last draw.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.75, ...stagger(3), ease }} className="mt-8 md:mt-12 flex flex-wrap gap-3 md:gap-4">
@@ -130,7 +130,7 @@ const PalisadesPage = () => {
               An owner's representative is a professional who advocates exclusively for the property owner during a construction project, protecting their financial and legal interests from start to finish.
             </p>
             <p className="mb-5" style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
-              Contractors and insurers do this every day. Most homeowners do it once. LÏEF puts experienced people on the owner's side so that contractors and insurers cannot take advantage of what an owner does not know.
+              Contractors and insurers do this every day. Most homeowners do it once. Lïef puts experienced people on the owner's side so that contractors and insurers cannot take advantage of what an owner does not know.
             </p>
             <p style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.7 }}>
               Our experience includes disaster recovery rebuilds, including the Greensburg, Kansas tornado and Santa Barbara fire damage.

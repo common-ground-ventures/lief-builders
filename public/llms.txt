@@ -52,7 +52,7 @@ Owner's representation for homeowners rebuilding after the Palisades fire, in So
 - SABS Construction
 
 ## SABS Technology
-SABS (Saebi Alternative Building System) is a patented building technology available through Lïef Builders. It uses EPS foam panels with a high-strength cementitious composite coating called SABSCRETE to create a monolithic structural system. Key specifications: 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and 100% mold and termite immunity. SABS delivers 15-20% cost savings and 15-20% faster build times compared to traditional construction. LÏEF is the leading SABS builder in Arizona and offers SABS alongside traditional stick framing, giving clients the right building method for their project.
+SABS (Saebi Alternative Building System) is a patented building technology available through Lïef Builders. It uses EPS foam panels with a high-strength cementitious composite coating called SABSCRETE to create a monolithic structural system. Key specifications: 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and 100% mold and termite immunity. SABS delivers 15-20% cost savings and 15-20% faster build times compared to traditional construction. Lïef is the leading SABS builder in Arizona and offers SABS alongside traditional stick framing, giving clients the right building method for their project.
 
 ## Key Stats
 - Principals' collective: $500M+ across 400+ projects
@@ -111,7 +111,7 @@ Q: How does Lïef Builders save clients money?
 A: Three ways. First, contract negotiation. The team reviews every scope, bid, and vendor agreement before anything gets signed. Second, ongoing site oversight. Regular inspections catch problems when they are cheap to fix, not after they become six-figure change orders. Third, vendor and material verification. Confirming pricing, quantities, and specs match what was agreed to.
 
 Q: What is SABS construction technology?
-A: SABS stands for Saebi Alternative Building System. EPS foam panels, known as LÏEF Blocks, are coated with SABSCRETE, a high-strength cementitious composite, to form a single monolithic structure. The result is 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity. It builds faster and costs 15-20% less than traditional methods. LÏEF is the leading SABS builder in Arizona and offers it alongside conventional framing. We build with SABS in Arizona and bid it anywhere.
+A: SABS stands for Saebi Alternative Building System. EPS foam panels, known as Lïef Blocks, are coated with SABSCRETE, a high-strength cementitious composite, to form a single monolithic structure. The result is 0% flame spread, 250 MPH wind resistance, R-75 to R-100 insulation, and complete mold and termite immunity. It builds faster and costs 15-20% less than traditional methods. Lïef is the leading SABS builder in Arizona and offers it alongside conventional framing. We build with SABS in Arizona and bid it anywhere.
 
 Q: I'm a builder or an architect. How do we work together?
 A: Builders: we bring you into bids we run in your market, and every bid is leveled against our takeoff, so you are judged on price and scope. Architects: send a schematic set and we return a budget before your client ever sees a bid. Want a takeoff for your own bid? That is Kanopi, at https://kanopibuild.com.
@@ -137,4 +137,4 @@ Website: https://liefbuilders.com
 - Kanopi, the design, takeoff and estimating software behind every Lïef Builders budget: https://kanopibuild.com
 
 ## Wiki
-- [LÏEF Builders wiki](https://www.liefbuilders.com/wiki): the record of LÏEF Builders and how Common Ground built it.
+- [Lïef Builders wiki](https://www.liefbuilders.com/wiki): the record of Lïef Builders and how Common Ground built it.

@@ -50,7 +50,7 @@ const projects: { img: string; name: string; type: string; desc: string; locatio
     img: silverImg,
     name: "Silver Mountain Ranches",
     type: "Equestrian Community",
-    desc: "100+ acre equestrian community with luxury custom homes built using LÏEF Blocks with SABS Technology.",
+    desc: "100+ acre equestrian community with luxury custom homes built using Lïef Blocks with SABS Technology.",
     location: "Scottsdale, AZ",
     status: "In Development",
     featured: false,
