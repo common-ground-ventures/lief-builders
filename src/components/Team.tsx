@@ -25,8 +25,8 @@ interface Member {
 const principals: Member[] = [
   {
     name: "Jesse Fowler",
-    title: "Principal and Operating Partner, LÏEF Development",
-    titleLines: ["Principal and Operating Partner,", "LÏEF Development"],
+    title: "Principal and Operating Partner, Lïef Development",
+    titleLines: ["Principal and Operating Partner,", "Lïef Development"],
     bio: "25 years in design, build and development. Featured in Architectural Digest, HGTV and Discovery Channel. Project advocacy across the Southwest.",
     img: jesseImg,
     imgStyle: { width: "185.26%", left: "-50.40%", top: "-11.29%" },
