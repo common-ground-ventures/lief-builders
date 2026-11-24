@@ -166,6 +166,9 @@ const Contact = () => {
                   />
                 </form>
                 )}
+                <p style={{ fontSize: "0.95rem", marginTop: "1rem", lineHeight: 1.6 }}>
+                  How we handle what you send: <a href="/privacy" style={{ color: "inherit", textDecoration: "underline" }}>privacy</a>.
+                </p>
               </div>
             </motion.div>
           </>
