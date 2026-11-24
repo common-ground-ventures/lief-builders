@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import logoConcrete from "@/assets/logos/logo-concrete.png";
+import logoConcrete from "@/assets/logos/logo-concrete.webp";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div>
-            <img src={logoConcrete} alt="Lïef" className="h-6 w-auto mb-4" />
+            <img src={logoConcrete} width={1920} height={819} loading="lazy" alt="Lïef" className="h-6 w-auto mb-4" />
             <p className="v2-headline text-sm mb-2" style={{ color: "var(--v2-white)" }}>
               BUDGETS, BIDDING AND OWNER'S REPRESENTATION
             </p>
