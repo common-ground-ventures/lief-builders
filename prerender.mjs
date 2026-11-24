@@ -42,6 +42,10 @@ const ROUTES = {
     title: "Testimonials | Lïef Builders",
     desc: "Testimonials: what owners say about working with Lïef Builders.",
   },
+  "/privacy": {
+    title: "Privacy | Lïef Builders",
+    desc: "What liefbuilders.com collects through the contact form and Google Analytics, what we do with it, and how to have it deleted.",
+  },
   // Moved from anewlief.com/learn on 10/26 (narrative v4); the old addresses 301 here.
   "/learn/owners-rep-alternative-building-systems-arizona": {
     title: "Arizona Owner's Rep for Alternative Building Systems | Lïef Builders",
@@ -62,6 +66,7 @@ const CRUMBS = {
   "/projects": "Projects",
   "/team": "Our Team",
   "/testimonials": "Testimonials",
+  "/privacy": "Privacy",
   "/learn/owners-rep-alternative-building-systems-arizona": "Owner's Rep for Alternative Building Systems in Arizona",
   "/learn/arizona-owners-rep-sabs-project-case-files": "Arizona Owner's Rep Case Files",
 };

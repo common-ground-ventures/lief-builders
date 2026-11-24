@@ -6,6 +6,7 @@ import SabsPage from "@/pages/SabsPage";
 import ProjectsPage from "@/pages/ProjectsPage";
 import TeamPage from "@/pages/TeamPage";
 import TestimonialsPage from "@/pages/TestimonialsPage";
+import PrivacyPage from "./pages/PrivacyPage";
 import NationalPage from "@/pages/NationalPage";
 import PalisadesPage from "@/pages/PalisadesPage";
 import NotFoundPage from "@/pages/NotFoundPage";
@@ -25,6 +26,7 @@ const AppInner = () => (
       <Route path="/projects" element={<ProjectsPage />} />
       <Route path="/team" element={<TeamPage />} />
       <Route path="/testimonials" element={<TestimonialsPage />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/learn/owners-rep-alternative-building-systems-arizona" element={<OwnersRepArizona />} />
       <Route path="/learn/arizona-owners-rep-sabs-project-case-files" element={<ArizonaOwnersRepSabsProjectCaseFiles />} />
       <Route path="*" element={<NotFoundPage />} />
