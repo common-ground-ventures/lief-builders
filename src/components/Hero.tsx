@@ -1,6 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import { sized, dimsOf } from "@/lib/imgDims";
 import { useRef, useState, useEffect } from "react";
-import logoLight from "@/assets/logos/lief-logo-light.png";
+import logoLight_src from "@/assets/logos/lief-logo-light.webp";
+const logoLight = sized(logoLight_src, 1920, 819);
 import { useNavigate } from "react-router-dom";
 import { useContactModal } from "@/contexts/ContactModalContext";
 
@@ -39,7 +41,7 @@ const Hero = () => {
           style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center", willChange: "transform, opacity" }}
           className="mb-5 md:mb-8"
         >
-          <img src={logoLight} alt="LÏEF" className="h-14 md:h-24 lg:h-32 w-auto" />
+          <img src={logoLight} {...dimsOf(logoLight)} alt="LÏEF" className="h-14 md:h-24 lg:h-32 w-auto" />
         </motion.div>
 
         <motion.div

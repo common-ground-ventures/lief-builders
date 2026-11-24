@@ -81,7 +81,7 @@ const Contact = () => {
               <div className="flex flex-col">
                 <div className="mb-8">
                   <span style={labelStyle}>VISIT US</span>
-                  <p style={{ fontSize: "1.1rem", color: "var(--v2-white)" }}>8271 E Gelding Dr.<br />Scottsdale, AZ 85260</p>
+                  <p style={{ fontSize: "1.1rem", color: "var(--v2-white)" }}><a href="https://www.google.com/maps/search/?api=1&query=8271+E+Gelding+Dr%2C+Scottsdale%2C+AZ+85260" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>8271 E Gelding Dr.<br />Scottsdale, AZ 85260</a></p>
                 </div>
                 <div className="mb-8">
                   <span style={labelStyle}>CALL US</span>

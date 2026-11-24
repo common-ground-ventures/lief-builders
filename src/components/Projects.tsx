@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
+import { sized, dimsOf } from "@/lib/imgDims";
 import { useInView } from "@/hooks/useInView";
-import osbornImg from "@/assets/projects/osborn-new.jpg";
-import canyonImg from "@/assets/projects/canyon-corporate.jpg";
-import silverImg from "@/assets/projects/silver-mountain.jpg";
+import osbornImg_src from "@/assets/projects/osborn-new.webp";
+const osbornImg = sized(osbornImg_src, 5712, 4284);
+import canyonImg_src from "@/assets/projects/canyon-corporate.webp";
+const canyonImg = sized(canyonImg_src, 1920, 1080);
+import silverImg_src from "@/assets/projects/silver-mountain.webp";
+const silverImg = sized(silverImg_src, 1920, 1080);
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -68,6 +72,8 @@ const Projects = () => {
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
                       src={p.img}
+                      {...dimsOf(p.img)}
+                      loading="lazy"
                       alt={p.name}
                       className="w-full h-full object-cover transition-all"
                       style={{ filter: "grayscale(1) brightness(.45)", transitionDuration: "1.2s" }}

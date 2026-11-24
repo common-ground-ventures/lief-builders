@@ -68,14 +68,13 @@ const CRUMBS = {
 
 function breadcrumbLd(url) {
   const name = CRUMBS[url];
-  if (!name) return "";
+  if (!name && url !== "/") return "";
+  const items = [{ "@type": "ListItem", position: 1, name: "Lïef Builders", item: BASE + "/" }];
+  if (name) items.push({ "@type": "ListItem", position: 2, name, item: BASE + url });
   const ld = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Lïef Builders", item: BASE + "/" },
-      { "@type": "ListItem", position: 2, name, item: BASE + url },
-    ],
+    itemListElement: items,
   };
   return `    <script type="application/ld+json">${JSON.stringify(ld)}</script>\n  </head>`;
 }
