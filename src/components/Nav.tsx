@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { sized, dimsOf } from "@/lib/imgDims";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logoConcrete from "@/assets/logos/logo-concrete.png";
+import logoConcrete_src from "@/assets/logos/logo-concrete.webp";
+const logoConcrete = sized(logoConcrete_src, 1920, 819);
 import { useContactModal } from "@/contexts/ContactModalContext";
 
 interface NavLink {
@@ -171,7 +173,7 @@ const Nav = () => {
           >
             {/* logo shape filled with the hunter green so it reads on the Loggia bar */}
             <span className="relative block">
-              <img src={logoConcrete} alt="LÏEF" aria-hidden="true" className="h-6 md:h-7 w-auto block" style={{ visibility: "hidden" }} />
+              <img src={logoConcrete} {...dimsOf(logoConcrete)} alt="LÏEF" aria-hidden="true" className="h-6 md:h-7 w-auto block" style={{ visibility: "hidden" }} />
               <span className="absolute inset-0" style={{ background: ink, WebkitMaskImage: `url(${logoConcrete})`, maskImage: `url(${logoConcrete})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat" }} />
             </span>
           </a>

@@ -1,42 +1,73 @@
 import { useState, useEffect } from "react";
+import { sized, dimsOf } from "@/lib/imgDims";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
 import { Flame, Droplets, Bug, Thermometer, Shield, Wind, Recycle, Volume2 } from "lucide-react";
 import { useContactModal } from "@/contexts/ContactModalContext";
 
 /* ── PARTNER LOGOS ── */
-import logoRitzCarlton from "@/assets/logos/ritz-carlton.png";
-import logoDiscovery from "@/assets/logos/discovery-channel.png";
-import logoPgaTour from "@/assets/logos/pga-tour.png";
-import logoAD from "@/assets/logos/architectural-digest.png";
-import logoCobra from "@/assets/logos/shelby.png";
-import logoLacma from "@/assets/logos/lacma.png";
-import logoHgtv from "@/assets/logos/hgtv.png";
-import logoPlanetGreen from "@/assets/logos/planet-green.png";
-import logoDiy from "@/assets/logos/diy-network.png";
-import logoOakley from "@/assets/logos/oakley.png";
-import logoForbes from "@/assets/logos/forbes.png";
-import logoMarucci from "@/assets/logos/marucci.png";
-import logoBuilder from "@/assets/logos/builder-magazine.png";
-import logoFoxRacing from "@/assets/logos/fox.png";
-import logoMaya from "@/assets/logos/maya.png";
-import logoKW from "@/assets/logos/keller-williams.png";
-import logoZillow from "@/assets/logos/zillow.png";
-import logoUSNews from "@/assets/logos/us-news.png";
-import logoRobbReport from "@/assets/logos/robb-report.png";
-import logoLATimes from "@/assets/logos/la-times.png";
+import logoRitzCarlton_src from "@/assets/logos/ritz-carlton.webp";
+const logoRitzCarlton = sized(logoRitzCarlton_src, 2400, 2400);
+import logoDiscovery_src from "@/assets/logos/discovery-channel.webp";
+const logoDiscovery = sized(logoDiscovery_src, 2400, 1116);
+import logoPgaTour_src from "@/assets/logos/pga-tour.webp";
+const logoPgaTour = sized(logoPgaTour_src, 1717, 2199);
+import logoAD_src from "@/assets/logos/architectural-digest.webp";
+const logoAD = sized(logoAD_src, 550, 417);
+import logoCobra_src from "@/assets/logos/shelby.webp";
+const logoCobra = sized(logoCobra_src, 800, 800);
+import logoLacma_src from "@/assets/logos/lacma.webp";
+const logoLacma = sized(logoLacma_src, 5000, 1863);
+import logoHgtv_src from "@/assets/logos/hgtv.webp";
+const logoHgtv = sized(logoHgtv_src, 2400, 1346);
+import logoPlanetGreen_src from "@/assets/logos/planet-green.webp";
+const logoPlanetGreen = sized(logoPlanetGreen_src, 800, 287);
+import logoDiy_src from "@/assets/logos/diy-network.webp";
+const logoDiy = sized(logoDiy_src, 550, 319);
+import logoOakley_src from "@/assets/logos/oakley.webp";
+const logoOakley = sized(logoOakley_src, 800, 305);
+import logoForbes_src from "@/assets/logos/forbes.webp";
+const logoForbes = sized(logoForbes_src, 2400, 896);
+import logoMarucci_src from "@/assets/logos/marucci.webp";
+const logoMarucci = sized(logoMarucci_src, 550, 136);
+import logoBuilder_src from "@/assets/logos/builder-magazine.webp";
+const logoBuilder = sized(logoBuilder_src, 800, 147);
+import logoFoxRacing_src from "@/assets/logos/fox.webp";
+const logoFoxRacing = sized(logoFoxRacing_src, 543, 303);
+import logoMaya_src from "@/assets/logos/maya.webp";
+const logoMaya = sized(logoMaya_src, 1200, 370);
+import logoKW_src from "@/assets/logos/keller-williams.webp";
+const logoKW = sized(logoKW_src, 1280, 583);
+import logoZillow_src from "@/assets/logos/zillow.webp";
+const logoZillow = sized(logoZillow_src, 1280, 283);
+import logoUSNews_src from "@/assets/logos/us-news.webp";
+const logoUSNews = sized(logoUSNews_src, 1248, 296);
+import logoRobbReport_src from "@/assets/logos/robb-report.webp";
+const logoRobbReport = sized(logoRobbReport_src, 550, 127);
+import logoLATimes_src from "@/assets/logos/la-times.webp";
+const logoLATimes = sized(logoLATimes_src, 1280, 162);
 
 /* ── PRESS LOGOS ── */
-import logoNBC from "@/assets/logos/nbc.svg";
-import logoFoxNews from "@/assets/logos/fox-news.svg";
-import logoCBS from "@/assets/logos/cbs.svg";
-import logoPBS from "@/assets/logos/pbs.svg";
-import logoAZCentral from "@/assets/logos/az-central.svg";
-import logoAZFamily from "@/assets/logos/az-family.svg";
-import logoABC15 from "@/assets/logos/abc15.svg";
-import logoFox10 from "@/assets/logos/fox10.svg";
-import logoAZRepublic from "@/assets/logos/arizona-republic.svg";
-import logoBizJournal from "@/assets/logos/business-journal.svg";
+import logoNBC_src from "@/assets/logos/nbc.svg";
+const logoNBC = sized(logoNBC_src, 400, 200);
+import logoFoxNews_src from "@/assets/logos/fox-news.svg";
+const logoFoxNews = sized(logoFoxNews_src, 400, 120);
+import logoCBS_src from "@/assets/logos/cbs.svg";
+const logoCBS = sized(logoCBS_src, 400, 200);
+import logoPBS_src from "@/assets/logos/pbs.svg";
+const logoPBS = sized(logoPBS_src, 400, 200);
+import logoAZCentral_src from "@/assets/logos/az-central.svg";
+const logoAZCentral = sized(logoAZCentral_src, 500, 120);
+import logoAZFamily_src from "@/assets/logos/az-family.svg";
+const logoAZFamily = sized(logoAZFamily_src, 500, 120);
+import logoABC15_src from "@/assets/logos/abc15.svg";
+const logoABC15 = sized(logoABC15_src, 400, 120);
+import logoFox10_src from "@/assets/logos/fox10.svg";
+const logoFox10 = sized(logoFox10_src, 400, 120);
+import logoAZRepublic_src from "@/assets/logos/arizona-republic.svg";
+const logoAZRepublic = sized(logoAZRepublic_src, 600, 100);
+import logoBizJournal_src from "@/assets/logos/business-journal.svg";
+const logoBizJournal = sized(logoBizJournal_src, 600, 100);
 
 const ease = [.16, 1, .3, 1] as const;
 const accentColor = "#C2B8A7";
@@ -453,6 +484,9 @@ const LiefBlocks = () => {
                       >
                         <img
                           src={`https://img.youtube.com/vi/${vid.id}/maxresdefault.jpg`}
+                          width={1280}
+                          height={720}
+                          loading="lazy"
                           alt={vid.title}
                           className="absolute inset-0 w-full h-full object-cover transition-all duration-700"
                           style={{
@@ -579,7 +613,7 @@ const LiefBlocks = () => {
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-20">
                 {pressOutlets.map((outlet) => (
                   <span key={outlet.name} role="img" aria-label={outlet.name} className="v2-logo-mask relative inline-block">
-                    <img src={outlet.src} alt={outlet.name} aria-hidden="true" style={{ height: "48px", width: "auto", objectFit: "contain", visibility: "hidden" }} />
+                    <img src={outlet.src} {...dimsOf(outlet.src)} loading="lazy" alt={outlet.name} aria-hidden="true" style={{ height: "48px", width: "auto", objectFit: "contain", visibility: "hidden" }} />
                     <span className="v2-logo-fill absolute inset-0" style={{ WebkitMaskImage: `url(${outlet.src})`, maskImage: `url(${outlet.src})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat", WebkitMaskPosition: "center", maskPosition: "center" }} />
                   </span>
                 ))}
@@ -589,7 +623,7 @@ const LiefBlocks = () => {
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(pressInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="flex flex-wrap justify-center items-center gap-10 md:gap-14">
                 {trustLogos.map((logo) => (
                   <span key={logo.name} role="img" aria-label={logo.name} className="v2-logo-mask relative inline-block">
-                    <img src={logo.src} alt={logo.name} aria-hidden="true" style={{ height: "60px", width: "auto", objectFit: "contain", visibility: "hidden" }} />
+                    <img src={logo.src} {...dimsOf(logo.src)} loading="lazy" alt={logo.name} aria-hidden="true" style={{ height: "60px", width: "auto", objectFit: "contain", visibility: "hidden" }} />
                     <span className="v2-logo-fill absolute inset-0" style={{ WebkitMaskImage: `url(${logo.src})`, maskImage: `url(${logo.src})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat", WebkitMaskPosition: "center", maskPosition: "center" }} />
                   </span>
                 ))}

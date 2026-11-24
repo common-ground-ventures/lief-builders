@@ -1,11 +1,17 @@
 import { useEffect } from "react";
+import { sized, dimsOf } from "@/lib/imgDims";
 import { motion } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
-import osbornImg from "@/assets/projects/301-osborn.png";
-import canyonImg from "@/assets/projects/canyon-corporate.jpg";
-import silverImg from "@/assets/projects/silver-mountain.jpg";
-import basinImg from "@/assets/projects/pahrump-basin.jpg";
-import vailImg from "@/assets/projects/the-vail.webp";
+import osbornImg_src from "@/assets/projects/301-osborn.webp";
+const osbornImg = sized(osbornImg_src, 1920, 1080);
+import canyonImg_src from "@/assets/projects/canyon-corporate.webp";
+const canyonImg = sized(canyonImg_src, 1920, 1080);
+import silverImg_src from "@/assets/projects/silver-mountain.webp";
+const silverImg = sized(silverImg_src, 1920, 1080);
+import basinImg_src from "@/assets/projects/pahrump-basin.webp";
+const basinImg = sized(basinImg_src, 1920, 1080);
+import vailImg_src from "@/assets/projects/the-vail.webp";
+const vailImg = sized(vailImg_src, 2592, 1660);
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const accentColor = "#C2B8A7";
@@ -83,7 +89,7 @@ const ProjectsPage = () => {
               {/* Featured project - 301 W Osborn */}
               {projects.filter(p => p.featured).map((proj) => (
                 <motion.div key={proj.name} initial={{ opacity: 0, y: 35 }} animate={projInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }} transition={{ duration: 0.75, delay: 0.16, ease }} className="v2-tile relative overflow-hidden group mb-px flex flex-col justify-end" style={{ minHeight: "520px", border: `2px solid ${accentColor}` }}>
-                  <img src={proj.img} alt={proj.name} className="absolute inset-0 w-full h-full object-cover brightness-[.5] transition-all duration-700 group-hover:brightness-[.65]" />
+                  <img src={proj.img} {...dimsOf(proj.img)} alt={proj.name} className="absolute inset-0 w-full h-full object-cover brightness-[.5] transition-all duration-700 group-hover:brightness-[.65]" />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(15,26,20,.95) 0%, rgba(15,26,20,.2) 50%, transparent 100%)" }} />
                   <div className="absolute top-4 left-4 z-10">
                     <span className="v2-badge inline-flex items-center gap-2 px-4 py-2" style={{ background: accentColor, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#0F1A14", fontWeight: 700 }}>
@@ -110,7 +116,7 @@ const ProjectsPage = () => {
               <motion.div initial={{ opacity: 0, y: 35 }} animate={projInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
                 {projects.filter(p => !p.featured).map((proj) => (
                   <div key={proj.name} className="v2-tile relative overflow-hidden group" style={{ minHeight: "380px", border: "1px solid var(--v2-rule)" }}>
-                    <img src={proj.img} alt={proj.name} className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.6]" style={proj.zoom ? { transform: `scale(${proj.zoom})` } : undefined} />
+                    <img src={proj.img} {...dimsOf(proj.img)} loading="lazy" alt={proj.name} className="absolute inset-0 w-full h-full object-cover grayscale brightness-[.4] transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-[.6]" style={proj.zoom ? { transform: `scale(${proj.zoom})` } : undefined} />
                     <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(15,26,20,.95) 0%, rgba(15,26,20,.3) 60%, transparent 100%)" }} />
                     <div className="absolute top-4 left-4 z-10">
                       <span className="v2-badge inline-flex items-center gap-2 px-3 py-1.5" style={{ background: "rgba(0,0,0,.8)", border: `1px solid ${accentColor}`, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: accentColor }}>
