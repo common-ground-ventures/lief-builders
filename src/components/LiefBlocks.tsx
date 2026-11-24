@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { sized, dimsOf } from "@/lib/imgDims";
+import { keepCase } from "@/lib/keepCase";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "@/hooks/useInView";
 import { Flame, Droplets, Bug, Thermometer, Shield, Wind, Recycle, Volume2 } from "lucide-react";
@@ -241,13 +242,13 @@ const LiefBlocks = () => {
                 className="mb-6 md:mb-8"
               >
                 <span className="v2-label hidden md:inline text-[1.25rem]">
-                  Lïef x SABS
+                  {keepCase("Lïef x SABS")}
                 </span>
                 <span
                   className="md:hidden"
                   style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--v2-neon)" }}
                 >
-                  Lïef x SABS
+                  {keepCase("Lïef x SABS")}
                 </span>
               </motion.div>
 
@@ -347,7 +348,7 @@ const LiefBlocks = () => {
                 <div className="w-full max-w-[420px]">
                   <SabsWall active={whatInView} />
                   <div className="text-center" style={{ letterSpacing: "0.12em", textTransform: "uppercase", color: accentColor }}>
-                    <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>Lïef EPS Core x SABS Coating</p>
+                    <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>{keepCase("Lïef EPS Core x SABS Coating")}</p>
                     <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>= Structural Concrete</p>
                   </div>
                 </div>

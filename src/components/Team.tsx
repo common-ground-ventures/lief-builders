@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { sized, dimsOf } from "@/lib/imgDims";
+import { keepCase } from "@/lib/keepCase";
 import { useInView } from "@/hooks/useInView";
 import jesseImg_src from "@/assets/team/jesse.webp";
 const jesseImg = sized(jesseImg_src, 792, 792);
@@ -78,7 +79,7 @@ const Portrait = ({ member }: { member: Member }) => (
     {/* Titles break on purpose and share one height, so every bio starts on the same line. */}
     <span className="v2-label v2-team-title mt-1 block" style={{ fontSize: "1rem" }}>
       {(member.titleLines ?? [member.title]).map((line) => (
-        <span key={line} className="block md:[&:last-child]:whitespace-nowrap">{line}</span>
+        <span key={line} className="block md:[&:last-child]:whitespace-nowrap">{keepCase(line)}</span>
       ))}
     </span>
     <p className="mt-3 max-w-[300px]" style={{ fontSize: "1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}>{member.bio}</p>
