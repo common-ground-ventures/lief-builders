@@ -95,7 +95,7 @@ const ProjectsPage = () => {
                   <div className="absolute top-4 left-4 z-10">
                     <span className="v2-badge inline-flex items-center gap-2 px-4 py-2" style={{ background: accentColor, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#0F1A14", fontWeight: 700 }}>
                       <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#0F1A14", display: "inline-block" }} />
-                      Featured: {keepCase(proj.status)}
+                      <span>Featured: {keepCase(proj.status)}</span>
                     </span>
                   </div>
                   {/* In flow, not absolute: the longer 301 copy grows the card instead of running under the badge on a phone. */}
@@ -122,7 +122,7 @@ const ProjectsPage = () => {
                     <div className="absolute top-4 left-4 z-10">
                       <span className="v2-badge inline-flex items-center gap-2 px-3 py-1.5" style={{ background: "rgba(0,0,0,.8)", border: `1px solid ${accentColor}`, fontSize: "0.7rem", letterSpacing: "0.1em", textTransform: "uppercase", color: accentColor }}>
                         <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: accentColor, display: "inline-block" }} />
-                        {keepCase(proj.status)}
+                        <span>{keepCase(proj.status)}</span>
                       </span>
                     </div>
                     <div className="absolute bottom-0 left-0 p-8 z-10">
