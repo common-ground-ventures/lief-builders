@@ -156,7 +156,7 @@ const projectTypes: Record<string, { traditional: number; liefBlocks: number }> 
 
 /* ── COMPONENT ── */
 
-/* LÏEF Blocks x SABS: twelve blocks start spread apart, slide together and lock
+/* Lïef Blocks x SABS: twelve blocks start spread apart, slide together and lock
    flush. Once locked, the seams glow to show one solid structure. Only the wall's
    outside corners are rounded; joined corners are square. Hover pulls it apart. */
 const CORNER: Record<number, string> = { 0: " c-tl", 2: " c-tr", 9: " c-bl", 11: " c-br" };
@@ -177,7 +177,7 @@ const SabsWall = ({ active }: { active: boolean }) => {
       onAnimationComplete={() => setGlow(locked)}
       onHoverStart={() => { setGlow(false); setLocked(false); }}
       onHoverEnd={() => setLocked(true)}
-      aria-label="Twelve LÏEF Blocks locking together into one solid SABS wall"
+      aria-label="Twelve Lïef Blocks locking together into one solid SABS wall"
       role="img"
     >
       {Array.from({ length: 12 }).map((_, i) => (
@@ -241,13 +241,13 @@ const LiefBlocks = () => {
                 className="mb-6 md:mb-8"
               >
                 <span className="v2-label hidden md:inline text-[1.25rem]">
-                  LÏEF x SABS
+                  Lïef x SABS
                 </span>
                 <span
                   className="md:hidden"
                   style={{ fontSize: "1rem", textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--v2-neon)" }}
                 >
-                  LÏEF x SABS
+                  Lïef x SABS
                 </span>
               </motion.div>
 
@@ -279,7 +279,7 @@ const LiefBlocks = () => {
                 className="mt-4 md:mt-5 max-w-[560px]"
                 style={{ fontSize: "1.1rem", color: "var(--v2-dim)", lineHeight: 1.6 }}
               >
-                Fire-proof, mold-proof, termite-proof concrete structures with built-in R-75 to R-100 insulation. We deploy it through our proprietary LÏEF Block&trade; components, engineered to bring this technology from blueprint to build.
+                Fire-proof, mold-proof, termite-proof concrete structures with built-in R-75 to R-100 insulation. We deploy it through our proprietary Lïef Block&trade; components, engineered to bring this technology from blueprint to build.
               </motion.p>
 
               <motion.div
@@ -320,7 +320,7 @@ const LiefBlocks = () => {
         </div>
       </section>
 
-      {/* ════════ WHAT ARE LÏEF BLOCKS ════════ */}
+      {/* ════════ WHAT ARE Lïef BLOCKS ════════ */}
       <section id="what-section" className="relative py-12 md:py-28" style={{ background: "var(--v2-deep)", borderTop: "1px solid var(--v2-rule)" }}>
         <div ref={whatRef} className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-12 items-center">
@@ -335,7 +335,7 @@ const LiefBlocks = () => {
                   SABS (Saebi Alternative Building System) is a patented cementitious coating technology that transforms lightweight structural panels into fire-proof, mold-proof, termite-proof concrete structures. The result: a monolithic building envelope with zero flame spread, 250 MPH wind resistance, and built-in R-75 to R-100 insulation, exceeding every major structural and energy code in the industry.
                 </motion.p>
                 <motion.p initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.24, ease }} style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                  We deploy SABS through our proprietary LÏEF Block&trade; components, precision-engineered EPS panels that form the structural core of walls, floors, and roofs. Once assembled and coated with the SABS compound, the system creates a seamless, reinforced concrete structure from the ground up.
+                  We deploy SABS through our proprietary Lïef Block&trade; components, precision-engineered EPS panels that form the structural core of walls, floors, and roofs. Once assembled and coated with the SABS compound, the system creates a seamless, reinforced concrete structure from the ground up.
                 </motion.p>
                 <motion.p initial={{ opacity: 0, y: 35 }} animate={show(whatInView)} transition={{ duration: 0.75, delay: 0.32, ease }} className="mt-6" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
                   We build across the full construction spectrum, from wood frame to steel to advanced modular, and we've incorporated SABS into our methods because its structural properties are simply unmatched. For our clients, that means another high-performance option and a builder equipped to match the right system to every project.
@@ -347,7 +347,7 @@ const LiefBlocks = () => {
                 <div className="w-full max-w-[420px]">
                   <SabsWall active={whatInView} />
                   <div className="text-center" style={{ letterSpacing: "0.12em", textTransform: "uppercase", color: accentColor }}>
-                    <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>LÏEF EPS Core x SABS Coating</p>
+                    <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>Lïef EPS Core x SABS Coating</p>
                     <p style={{ fontSize: "1.05rem", fontWeight: 600 }}>= Structural Concrete</p>
                   </div>
                 </div>
@@ -369,7 +369,7 @@ const LiefBlocks = () => {
               </motion.h2>
 
               <motion.p initial={{ opacity: 0, y: 35 }} animate={show(statsInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[550px] mb-20" style={{ fontWeight: 300, fontSize: "1.25rem", color: "rgba(239,236,227,.85)", lineHeight: 1.8 }}>
-                Arizona's #1 SABS-trained builder. LÏEF Blocks with SABS Technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
+                Arizona's #1 SABS-trained builder. Lïef Blocks with SABS Technology radically reduces the number of trades required on-site, allowing for total schedule control and unprecedented quality consistency.
               </motion.p>
 
               {/* Attribute cards */}
@@ -422,7 +422,7 @@ const LiefBlocks = () => {
                 ICC/ES<br /><span style={{ color: "var(--v2-neon)" }}>APPROVED<span className="v2-neon-period">.</span></span>
               </motion.h2>
               <motion.p initial={{ opacity: 0, y: 35 }} animate={show(techInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="max-w-[600px] mb-16" style={{ fontWeight: 300, fontSize: "1.25rem", color: "var(--v2-muted)", lineHeight: 1.8 }}>
-                Every component of the LÏEF Blocks system is tested, certified, and code-compliant. No shortcuts. No workarounds.
+                Every component of the Lïef Blocks system is tested, certified, and code-compliant. No shortcuts. No workarounds.
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(techInView)} transition={{ duration: 0.75, delay: 0.24, ease }} className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -639,7 +639,7 @@ const LiefBlocks = () => {
                 BUILD WITH US<span className="v2-neon-period">.</span>
               </motion.h2>
               <motion.p initial={{ opacity: 0, y: 35 }} animate={show(ctaInView)} transition={{ duration: 0.75, delay: 0.08, ease }} className="mb-10 max-w-[420px]" style={{ fontWeight: 300, fontSize: "1.3rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
-                Whether you're a developer, builder, or investor, let's talk about how LÏEF x SABS can transform your next project.
+                Whether you're a developer, builder, or investor, let's talk about how Lïef x SABS can transform your next project.
               </motion.p>
               <motion.div initial={{ opacity: 0, y: 35 }} animate={show(ctaInView)} transition={{ duration: 0.75, delay: 0.16, ease }} className="flex flex-wrap justify-center gap-4">
                 <button

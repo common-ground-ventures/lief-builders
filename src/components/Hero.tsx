@@ -41,7 +41,7 @@ const Hero = () => {
           style={{ opacity: heroLogoOpacity, scale: heroLogoScale, y: heroLogoY, transformOrigin: "left center", willChange: "transform, opacity" }}
           className="mb-5 md:mb-8"
         >
-          <img src={logoLight} {...dimsOf(logoLight)} alt="LÏEF" className="h-14 md:h-24 lg:h-32 w-auto" />
+          <img src={logoLight} {...dimsOf(logoLight)} alt="Lïef" className="h-14 md:h-24 lg:h-32 w-auto" />
         </motion.div>
 
         <motion.div

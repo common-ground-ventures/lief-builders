@@ -19,7 +19,7 @@ const navLinks: NavLink[] = [
   { href: "/national", label: "National", type: "route" },
   { href: "/ai", label: "AI", type: "route" },
   { href: "/projects", label: "Projects", type: "route" },
-  { href: "/sabs", label: "LÏEF x SABS", type: "route" },
+  { href: "/sabs", label: "Lïef x SABS", type: "route" },
   { href: "/team", label: "Team", type: "route" },
   { href: "/testimonials", label: "Testimonials", type: "route" },
 ];
@@ -169,11 +169,11 @@ const Nav = () => {
               background: "none", border: "none", cursor: "pointer",
               transition: "opacity 0.5s, transform 0.5s",
             }}
-            aria-label="LÏEF"
+            aria-label="Lïef"
           >
             {/* logo shape filled with the hunter green so it reads on the Loggia bar */}
             <span className="relative block">
-              <img src={logoConcrete} {...dimsOf(logoConcrete)} alt="LÏEF" aria-hidden="true" className="h-6 md:h-7 w-auto block" style={{ visibility: "hidden" }} />
+              <img src={logoConcrete} {...dimsOf(logoConcrete)} alt="Lïef" aria-hidden="true" className="h-6 md:h-7 w-auto block" style={{ visibility: "hidden" }} />
               <span className="absolute inset-0" style={{ background: ink, WebkitMaskImage: `url(${logoConcrete})`, maskImage: `url(${logoConcrete})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat" }} />
             </span>
           </a>

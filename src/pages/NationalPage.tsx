@@ -44,7 +44,7 @@ const steps = [
   {
     num: "2",
     title: "We build the pre-construction team",
-    body: "Design, engineering and permitting, produced under LÏEF's direction and sealed by professionals licensed where you are building.",
+    body: "Design, engineering and permitting, produced under Lïef's direction and sealed by professionals licensed where you are building.",
   },
   {
     num: "3",
@@ -336,13 +336,13 @@ const NationalPage = () => {
               <p style={{ fontSize: "0.95rem", color: "var(--v2-dim)" }}>{p.location}</p>
             </Reveal>
           ))}
-          {/* Fill an incomplete last row with the LÏEF mark so the grid never shows an empty cell. */}
+          {/* Fill an incomplete last row with the Lïef mark so the grid never shows an empty cell. */}
           {Array.from({ length: (3 - (coordinated.length % 3)) % 3 }).map((_, i) => (
             <div key={`fill-${i}`} className="relative hidden md:flex items-center justify-center p-7 md:p-8" aria-hidden="true">
               <div style={{ background: "var(--v2-deep)", position: "absolute", inset: 0, zIndex: -1 }} />
               <div className="flex flex-col items-center gap-3">
                 <span className="relative block">
-                  <img src={logoConcrete} {...dimsOf(logoConcrete)} alt="LÏEF" className="h-14 w-auto block" style={{ visibility: "hidden" }} />
+                  <img src={logoConcrete} {...dimsOf(logoConcrete)} alt="Lïef" className="h-14 w-auto block" style={{ visibility: "hidden" }} />
                   <span className="absolute inset-0" style={{ background: "var(--v2-loggia)", WebkitMaskImage: `url(${logoConcrete})`, maskImage: `url(${logoConcrete})`, WebkitMaskSize: "contain", maskSize: "contain", WebkitMaskRepeat: "no-repeat", maskRepeat: "no-repeat", WebkitMaskPosition: "center", maskPosition: "center" }} />
                 </span>
                 <span className="v2-headline" style={{ fontSize: "1.05rem", letterSpacing: "0.18em", color: "var(--v2-loggia)" }}>
