@@ -670,7 +670,7 @@ const LiefBlocks = () => {
               <motion.div initial={{ opacity: 0, y: 20 }} animate={show(ctaInView, 20)} transition={{ duration: 0.75, delay: 0.24, ease }} className="flex flex-wrap justify-center gap-12 mt-16">
                 <div className="text-center">
                   <div style={{ fontSize: "1rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--v2-dim)", marginBottom: "8px" }}>Email</div>
-                  <a href="mailto:hello@liefdev.com" style={{ fontSize: "1rem", color: "var(--v2-muted)", textDecoration: "none" }} className="hover:text-[#C2B8A7] transition-colors">hello@liefdev.com</a>
+                  <a href="mailto:hello@commonground.ventures" style={{ fontSize: "1rem", color: "var(--v2-muted)", textDecoration: "none" }} className="hover:text-[#C2B8A7] transition-colors">hello@commonground.ventures</a>
                 </div>
                 <div className="text-center">
                   <div style={{ fontSize: "1rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--v2-dim)", marginBottom: "8px" }}>Location</div>

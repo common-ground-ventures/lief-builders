@@ -85,11 +85,11 @@ const Contact = () => {
                 </div>
                 <div className="mb-8">
                   <span style={labelStyle}>CALL US</span>
-                  <a href="tel:8057227598" style={{ fontSize: "1.1rem", color: "var(--v2-white)", textDecoration: "none" }}>(805) 722-7598</a>
+                  <a href="tel:6024926479" style={{ fontSize: "1.1rem", color: "var(--v2-white)", textDecoration: "none" }}>(602) 492-6479</a>
                 </div>
                 <div className="mb-8">
                   <span style={labelStyle}>EMAIL US</span>
-                  <a href="mailto:hello@liefdev.com" style={{ fontSize: "1.1rem", color: "var(--v2-white)", textDecoration: "none" }}>hello@liefdev.com</a>
+                  <a href="mailto:hello@commonground.ventures" style={{ fontSize: "1.1rem", color: "var(--v2-white)", textDecoration: "none" }}>hello@commonground.ventures</a>
                 </div>
 
                 <div className="p-6 md:mt-auto" style={{ background: "rgba(239,236,227,.05)", border: "1px solid var(--v2-rule)" }}>
