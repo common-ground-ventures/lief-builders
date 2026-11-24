@@ -39,7 +39,7 @@ const PrivacyPage = () => {
 
         <h2 className="v2-label" style={H}>QUESTIONS</h2>
         <p style={P}>
-          Email <a href="mailto:hello@liefdev.com" style={A}>hello@liefdev.com</a> or call <a href="tel:8057227598" style={A}>(805) 722-7598</a>. If this page changes, the date at the top changes with it.
+          Email <a href="mailto:hello@commonground.ventures" style={A}>hello@commonground.ventures</a> or call <a href="tel:6024926479" style={A}>(602) 492-6479</a>. If this page changes, the date at the top changes with it.
         </p>
       </div>
     </section>

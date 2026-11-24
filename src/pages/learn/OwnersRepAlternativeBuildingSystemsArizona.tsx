@@ -278,8 +278,8 @@ const OwnersRepArizona = () => {
           <p style={{ fontSize: "0.85rem", color: "var(--v2-dim)", marginBottom: "6px", textTransform: "uppercase", letterSpacing: "0.1em" }}>About the Author</p>
           <p style={{ fontSize: "1rem", color: "var(--v2-muted)", lineHeight: 1.7 }}>
             <strong style={{ color: "var(--v2-white)" }}>Jesse Fowler</strong> is Principal and Operating Partner of Lïef Development. He has spent about twenty-five years in design, construction and development, and builds with SABS in Arizona. Lïef holds an exclusive arrangement with Xtrata (formerly Strata International), the SABS technology distributor, for the Arizona market. Project inquiries:{" "}
-            <a href="mailto:hello@liefdev.com" style={{ color: "var(--v2-neon)" }}>
-              hello@liefdev.com
+            <a href="mailto:hello@commonground.ventures" style={{ color: "var(--v2-neon)" }}>
+              hello@commonground.ventures
             </a>
           </p>
         </div>
