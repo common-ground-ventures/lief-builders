@@ -143,13 +143,13 @@ const Footer = () => {
             <h2 className="mb-4" style={{ fontSize: "1.25rem", textTransform: "uppercase", letterSpacing: "0.16em", color: "var(--v2-neon)" }}>Connect</h2>
             <ul className="space-y-3">
               <li>
-                <a href="tel:8057227598" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#C2B8A7] transition-colors duration-300">
-                  (805) 722-7598
+                <a href="tel:6024926479" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#C2B8A7] transition-colors duration-300">
+                  (602) 492-6479
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@liefdev.com" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#C2B8A7] transition-colors duration-300">
-                  hello@liefdev.com
+                <a href="mailto:hello@commonground.ventures" style={{ fontSize: "1.25rem", color: "var(--v2-dim)", textDecoration: "none" }} className="hover:text-[#C2B8A7] transition-colors duration-300">
+                  hello@commonground.ventures
                 </a>
               </li>
               <li>
@@ -179,6 +179,10 @@ const Footer = () => {
             {" · "}
             <a href="/wiki" style={{ color: "inherit", textDecoration: "none" }} className="hover-cg transition-colors duration-300">
               About this build
+            </a>
+            {" · "}
+            <a href="/privacy" style={{ color: "inherit", textDecoration: "none" }} className="hover-cg transition-colors duration-300">
+              Privacy
             </a>
           </p>
         </div>
